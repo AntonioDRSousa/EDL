@@ -56,6 +56,10 @@ As duas linguagens possuem muitas semalhanças já que ambas foram influênciada
 ### Procedimentos e Funções
 Pascal possui procedimentos e funções, enquanto C possui apenas funções. Isso ocorre porque a linguagem C tem o tipo void enquanto Pascal não. Desse modo o que seria um procedimento em pascal é uma função void no C.
 
+### Variáveis Locais
+Em C variaveis locais podem ser alocadas em qualquer bloco e em qualquer parte do bloco de comandos. Em Pascal não é possivel realizar esse tipo de declaração, sendo só permitida a declaração de variaveis antes do começo de um bloco de comandos de procedimentos/funções ou o bloco "main"(programa principal).
+
+
 ### A estrutura de controle de iteração for
 Pascal apenas permite que o um laço for tenha dois tipos de comportamento:
 * percorre um valor inicial até um valor final incrementando 1 na variavel de controle de laço for
@@ -70,9 +74,10 @@ Enquanto em Pascal a condição logica presente no until é a condição de para
 Pascal possui duas formas de passar argumentos para uma função: por referência(usa-se "var") ou por valor(usa-se "const"). C apenas possui passagem por valor, mas com o uso de ponteiros pode-se emular uma passagem por referência.
 
 ### Funções/procedimentos aninhados
-Uma função/procedimento aninhado é uma função/procedimento definida dentro de uma função, ou seja, a função/procedimento aninhada é encapsulada dentro da função de nível superior. Fora do escopo da função de nível superior a função aninhada não é detectada. Além disso, a função aninhada usa as variaveis locais da função de nível superior.
+Uma função/procedimento aninhado é uma função/procedimento definida dentro de uma função, ou seja, a função/procedimento aninhada é encapsulada dentro da função de nível superior. Fora do escopo da função de nível superior a função aninhada não é detectada. Além disso, a função aninhada usa as variaveis locais da função de nível superior.Uma das razões de sua utilização, é a utilidade de dividir subrotinas em outras subrotinas e encapsular-las. Funções/procedimentos aninhadas são usadas tipicamente como funções auxiliares ou funções recursivas dentro de outra função. Têm como vantagem organizar melhor o código, evitando de poluir o escopo, e compartilham variaveis dentro do escopo facilmente sem o uso de parametros ou usar uma variavel global. ALGOL, Pascal, Simula 67 são algumas das linguagens que possuem funções/procedimentos aninhados. C e sua familia de linguagens não possuem funções/procedimentos aninhados, sendo essa uma das diferenças entre C e Pascal.
 
 ### case e o switch
+No switch do C, cada case do switch senão terminar com o comando break o próximo case é executado, ou seja, o break impede a execução de blocos de outros cases que não eram para ser executados. Em Pascal a assensia de comando break não faz com que a execução do bloco de comandos do caso case(switch no C) seguinte seja executado.
 
 ## EXEMPLOS
 
