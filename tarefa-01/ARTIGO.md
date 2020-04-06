@@ -30,12 +30,21 @@ Programação Estruturada é uma paradigma de programação com enfase em decis�
 * **Iteração**: um comando ou bloco é executado até o programa chegar a certo estado
 * **Recursão**
 
-### Pascal possui como principio a programação estruturada
+### Algumas linguagens que têm como principio a programação estruturada
 
+#### Pascal
 Pascal possui as 3 estruturas de controle que o caracterizam como uma linguagem que tem como principio a programação estruturada:
 * **sequência**: os comandos em pascal são executados de modo sequencial
-* **seleção** pascal possui comandos como if, then, else, case que são estruturas de seleção
-* **iteração**  pascal possui comandos como for, repeat,until, while que são estruturas de iteração
+* **seleção**: pascal possui comandos como if, then, else, case que são estruturas de seleção
+* **iteração**: pascal possui comandos como for, repeat,until, while que são estruturas de iteração
+
+#### C
+C possui as 3 estruturas de controle que o caracterizam como uma linguagem que tem como principio a programação estruturada:
+* **sequência**: os comandos em C são executados de modo sequencial
+* **seleção**: C possui comandos como if, else, switch que são estruturas de seleção
+* **iteração**: C possui comandos como for, do while, while que são estruturas de iteração
+
+#### ALGOL
 
 ## COMPARAÇÃO DE PASCAL COM C
 
