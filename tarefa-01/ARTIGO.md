@@ -18,7 +18,7 @@
 * **Linguagem Estática**
 * **Tem como principio a programação estruturada**
 * **Tem tipagem forte**
-* **Não é case sensitive**
+* **Não é case sensitive**: Diferentemente de linguagens como o C, Pascal não diferencia o uppercase do lowercase dos caracteres do nome de uma variavel, função ou comando. Desse modo o comando "write" é o mesmo que "Write" e não ocorre erro de compilação por isso, a variavel "letra" é o mesmo que "LETRA" e etc.
 
 ## PROGRAMAÇÃO ESTRUTURADA
 
