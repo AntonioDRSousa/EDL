@@ -5,6 +5,10 @@
 ## INTRODUÇÃO
 
 ## ORIGENS
+Pascal foi criado por Niklaus Wirth em 1970, influenciado pelo padrão do ALGOL 60 sucessora do ALGOL 58, a linguagem que introduziu o paradigma da programação estruturada. Niklaus Wirth estava envolvido no desenvolvimento de ALGOL X e propôs ALGOL W. O desenvolvimento de ALGOL X foi abandonado pela decisão de escolha de ALGOL 68, uma linguagem mais complexa. Em 1968, Niklaus Wirth decide desenvolver mais ALGOL W 
+e cria linguagem Pascal em 1970. Portanto, temos como principal origem da linguagem Pascal as linguagens ALGOL,
+principalmente a linguagem ALGOL W.
+
 
 ## INFLUÊNCIAS
 
@@ -49,8 +53,6 @@ C possui as 3 estruturas de controle que o caracterizam como uma linguagem que t
 ## COMPARAÇÃO DE PASCAL COM C
 As duas linguagens possuem muitas semalhanças já que ambas foram influênciadas pela linguagem ALGOL e suas versões, além de possuitem como paradigma a programação estruturada. No entanto possuem diferenças.
 
-### Pascal possui Nested Procedures/Functions
-
 ### Procedimentos e Funções
 Pascal possui procedimentos e funções, enquanto C possui apenas funções. Isso ocorre porque a linguagem C tem o tipo void enquanto Pascal não. Desse modo o que seria um procedimento em pascal é uma função void no C.
 
@@ -66,6 +68,10 @@ Enquanto em Pascal a condição logica presente no until é a condição de para
 
 ### Argumentos de procedimentos/funções
 Pascal possui duas formas de passar argumentos para uma função: por referência(usa-se "var") ou por valor(usa-se "const"). C apenas possui passagem por valor, mas com o uso de ponteiros pode-se emular uma passagem por referência.
+
+### Funções/procedimentos aninhados
+
+### case e o switch
 
 ## EXEMPLOS
 
