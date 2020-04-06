@@ -20,7 +20,7 @@
 * Tem tipagem forte
 * Não é case sensitive
 
-## Programação Estruturada
+## PROGRAMAÇÃO ESTRUTURADA
 
 ## EXEMPLOS
 
