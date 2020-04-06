@@ -47,6 +47,23 @@ C possui as 3 estruturas de controle que o caracterizam como uma linguagem que t
 #### ALGOL
 
 ## COMPARAÇÃO DE PASCAL COM C
+As duas linguagens possuem muitas semalhanças já que ambas foram influênciadas pela linguagem ALGOL e suas versões, além de possuitem como paradigma a programação estruturada. No entanto possuem diferenças.
+
+### Pascal possui Nested Procedures/Functions
+
+#### Procedimentos e Funções
+Pascal possui procedimentos e funções, enquanto C possui apenas funções. Isso ocorre porque a linguagem C tem o tipo void enquanto Pascal não. Desse modo o que seria um procedimento em pascal é uma função void no C.
+
+#### A estrutura de controle de iteração for
+Pascal apenas permite que o um laço for tenha dois tipos de comportamento:
+* percorre um valor inicial até um valor final incrementando 1 na variavel de controle de laço for
+* percorre um valor inicial até um valor final decrementando 1 na variavel de controle de laço for. Já em C, temos a possibilidade de criar varios tipos de laço for além desses. Basicamente em C criamos um laço com valor inicial para a variavel de controle, um teste lógico e mudança de valor da variavel de controle. Desse modo, em Pascal o laço for tem um comportamento mais limitado que em C, tornando por vezes necessario a utilização de outras estruturas de iteração para executar a mesma tarefa que seria utilizada em C utilizando um laço for.
+
+#### repeat until e o do while
+Enquanto em Pascal a condição logica presente no until é a condição de parada do loop, em C a condição lógica presente no while é a condição para continuar o loop.
+
+#### Argumentos de procedimentos/funções
+Pascal possui duas formas de passar argumentos para uma função: por referência(usa-se "var") ou por valor(usa-se "const"). C apenas possui passagem por valor, mas com o uso de ponteiros pode-se emular uma passagem por referência.
 
 ## EXEMPLOS
 
