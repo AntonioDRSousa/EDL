@@ -11,7 +11,7 @@
 ## LINHA DO TEMPO
 
 ## CLASSIFICAÇÃO
-* Linguagem de Alto Nível
+* ** Linguagem de Alto Nível **
 * Linguagem Compilada
 * Linguagem Imperativa
 * Linguagem Procedural
