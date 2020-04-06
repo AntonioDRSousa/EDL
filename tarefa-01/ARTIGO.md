@@ -20,6 +20,8 @@
 * Tem tipagem forte
 * Não é case sensitive
 
+## Programação Estruturada
+
 ## EXEMPLOS
 
 ## REFERÊNCIAS
