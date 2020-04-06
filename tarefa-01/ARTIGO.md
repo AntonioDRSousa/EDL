@@ -57,7 +57,8 @@ Pascal possui procedimentos e funções, enquanto C possui apenas funções. Iss
 #### A estrutura de controle de iteração for
 Pascal apenas permite que o um laço for tenha dois tipos de comportamento:
 * percorre um valor inicial até um valor final incrementando 1 na variavel de controle de laço for
-* percorre um valor inicial até um valor final decrementando 1 na variavel de controle de laço for. Já em C, temos a possibilidade de criar varios tipos de laço for além desses. Basicamente em C criamos um laço com valor inicial para a variavel de controle, um teste lógico e mudança de valor da variavel de controle. Desse modo, em Pascal o laço for tem um comportamento mais limitado que em C, tornando por vezes necessario a utilização de outras estruturas de iteração para executar a mesma tarefa que seria utilizada em C utilizando um laço for.
+* percorre um valor inicial até um valor final decrementando 1 na variavel de controle de laço for. 
+Já em C, temos a possibilidade de criar varios tipos de laço for além desses. Basicamente em C criamos um laço com valor inicial para a variavel de controle, um teste lógico e mudança de valor da variavel de controle. Desse modo, em Pascal o laço for tem um comportamento mais limitado que em C, tornando por vezes necessario a utilização de outras estruturas de iteração para executar a mesma tarefa que seria utilizada em C utilizando um laço for.
 
 #### repeat until e o do while
 Enquanto em Pascal a condição logica presente no until é a condição de parada do loop, em C a condição lógica presente no while é a condição para continuar o loop.
