@@ -70,6 +70,7 @@ Enquanto em Pascal a condição logica presente no until é a condição de para
 Pascal possui duas formas de passar argumentos para uma função: por referência(usa-se "var") ou por valor(usa-se "const"). C apenas possui passagem por valor, mas com o uso de ponteiros pode-se emular uma passagem por referência.
 
 ### Funções/procedimentos aninhados
+Uma função/procedimento aninhado é uma função/procedimento definida dentro de uma função, ou seja, a função/procedimento aninhada é encapsulada dentro da função de nível superior. Fora do escopo da função de nível superior a função aninhada não é detectada. Além disso, a função aninhada usa as variaveis locais da função de nível superior.
 
 ### case e o switch
 
