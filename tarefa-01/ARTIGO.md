@@ -658,6 +658,455 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 ~~~
 
 ### Exemplos Interessantes
+~~~
+program pilha;
+
+type 
+	stack = record
+		v:array[1..100] of integer;
+		top:^integer;//topo da pilha
+		n:integer;//quantidade de elementos na pilha
+	end;
+var
+	s:stack;
+	ch:char;
+	x,i:integer;
+
+procedure cria(p:stack);
+begin
+	p.top:=nil;
+	p.n:=0;
+end;
+
+procedure empilha(var p:stack;const x:integer);//empilha um elemento na pilha
+begin
+	if p.n=0 then
+	begin
+		p.n:=1;
+		p.v[p.n]:=x;
+		p.top:=@(p.v[p.n]);
+	end
+	else if p.n<100 then
+	begin
+		p.n:=p.n+1;
+		p.v[p.n]:=x;
+		inc(p.top);
+	end
+	else
+	begin
+		writeln('Pilha cheia');
+	end;
+end;
+
+function tamanho(var p:stack):integer;//obtem o tamanho da pilha
+begin
+	tamanho:=p.n;
+end;
+
+function topo(var p:stack):integer;//obtem o elemento no topo da pilha
+begin
+	topo:=(p.top)^;
+end;
+
+procedure desempilha(var p:stack);//desempilha um elemento da pilha
+begin
+	if p.n=1 then
+	begin
+		writeln(topo(p),' desempilhado');
+		p.n:=0;
+		p.top:=nil;
+	end
+	else if p.n>1 then
+	begin
+		writeln(topo(p),' desempilhado');
+		p.n:=p.n-1;
+		dec(p.top);
+	end
+	else
+	begin
+		writeln('Pilha vazia');
+	end;
+end;
+
+begin
+	while true do
+	begin
+		writeln(#10,'Digite um caracter');
+		writeln('e -> empilha');
+		writeln('d -> desempilha');
+		writeln('s -> tamanho');
+		writeln('t -> topo');
+		writeln('l -> lista pilha inteira');
+		writeln('outro caracter -> sai',#10);
+		readln(ch);
+		if ch='e'then
+		begin
+			write('Digite um inteiro: ');
+			readln(x);
+			empilha(s,x);
+		end
+		else if ch='d' then
+		begin
+			desempilha(s);
+		end
+		else if ch='s' then
+		begin
+			writeln('tamanho ',tamanho(s));
+		end
+		else if ch='t' then
+		begin
+			if tamanho(s)=0 then
+			begin
+				writeln('pilha vazia');
+			end
+			else
+			begin
+				writeln('topo ',topo(s));
+			end;
+		end
+		else if ch='l' then
+		begin
+			write('pilha -> ');
+			for i:=tamanho(s) downto 1 do
+			begin
+				write(s.v[i],' ');
+			end;
+		end
+		else
+		begin
+			break;
+		end;
+	end;
+end. 
+~~~
+
+~~~
+#include<stdio.h>
+
+typedef struct stack{
+	int v[101];
+	int * top;
+	int n;
+}stack;
+
+stack s;
+char ch;
+int x,i;
+
+void cria(stack * p){
+	p->top=NULL;
+	p->n=0;
+}
+
+void empilha(stack * p,int x){
+	if(p->n==0){
+		p->n=1;
+		p->v[p->n]=x;
+		p->top=&(p->v[p->n]);
+	}
+	else if(p->n<100){
+		(p->n)++;
+		p->v[p->n]=x;
+		(p->top)++;
+	}
+	else{
+		printf("Pilha cheia\n");
+	}
+}
+
+int tamanho(stack * p){
+	return p->n;
+}
+
+int topo(stack * p){
+	return *(p->top);
+}
+
+void desempilha(stack * p){
+	if(p->n==1){
+		printf("%d desempilhado\n",topo(p));
+		p->n=0;
+		p->top=NULL;
+	}
+	else if(p->n>1){
+		printf("%d desempilhado\n",topo(p));
+		(p->n)--;
+		(p->top)--;
+	}
+	else{
+		printf("Pilha vazia\n");
+	}
+}
+
+int main(){
+	for(;;){
+		printf("\nDigite um caracter\n");
+		printf("e -> empilha\n");
+		printf("d -> desempilha\n");
+		printf("s -> tamanho\n");
+		printf("t -> topo\n");
+		printf("l -> lista pilha inteira\n");
+		printf("outro caracter -> sai\n\n");
+		scanf("%c",&ch);
+		if(ch=='e'){
+			printf("Digite um inteiro: ");
+			scanf("%d",&x);
+			empilha(&s,x);
+		}
+		else if(ch=='d'){
+			desempilha(&s);
+		}
+		else if(ch=='s'){
+			printf("tamanho %d\n",tamanho(&s));
+		}
+		else if(ch=='t'){
+			if(tamanho(&s)==0){
+				printf("pilha vazia\n");
+			}
+			else{
+				printf("topo %d\n",topo(&s));
+			}
+		}
+		else if(ch=='l'){
+			printf("pilha -> ");
+			for(i=tamanho(&s);i>=1;i--){
+				printf("%d ",s.v[i]);//write(s.v[i],' ');
+			}
+		}
+		else{
+			break;
+		}
+		fflush(stdin);
+	}
+	return 0;
+} 
+~~~
+
+~~~
+program Criptografia;
+
+var
+	s,t:string;
+	ch:char;
+	chave: array[1..100] of integer;
+
+procedure leMensagem();
+begin
+	write('Digite a mensagem: ');
+	readln(s);
+end;
+
+procedure initChave();//o usuario informa a chave
+var
+	i:integer;
+var 
+	b:boolean;
+begin
+	while true do
+	begin
+		b:=true;
+		write('Chave -> ');
+		readln(t);
+		for i:=1 to 100 do
+		begin
+			if i>length(t) then//zera todas as posicoes da chave que vao alem da string
+			begin
+				chave[i]:=0;
+			end
+			else if (ord(t[i])>=49) and (ord(t[i])<=57) then//verifica se e' digito numerico
+			begin
+				chave[i]:=ord(t[i])-48;
+			end
+			else
+			begin
+				writeln('Chave Invalida',#10);
+				b:=false;
+				break;
+			end;
+		end;
+		if b then//flag
+		begin
+			break;
+		end;
+	end;
+end;
+
+procedure Encript();//encriptacao
+var
+	i,j,x:integer;
+begin
+	j:=1;
+	for i:=1 to length(s) do
+	begin
+		if chave[j]=0 then
+		begin
+			j:=1;
+		end;
+		x:=(chave[j]+ord(s[i])) mod 256;
+		s[i]:=chr(x);
+		j:=j+1;
+	end;
+end;
+
+procedure Decript();//decriptacao
+var
+	i,j,x:integer;
+begin
+	j:=1;
+	for i:=1 to length(s) do
+	begin
+		if chave[j]=0 then
+		begin
+			j:=1;
+		end;
+		x:=(ord(s[i])-chave[j]) mod 256;
+		s[i]:=chr(x);
+		j:=j+1;
+	end;
+end;
+
+begin
+	while true do
+	begin
+		writeln('Digite um caracter');
+		writeln('e -> encriptar mensagem');
+		writeln('d -> decriptar mensagem');
+		writeln('t -> testar encripatacao e decriptacao');
+		writeln('outro caracter -> sai');
+		readln(ch);
+		if ch='e' then
+		begin
+			leMensagem();
+			initChave();
+			Encript();
+			writeln('mensagem encriptada -> ',s,#10,#10);
+		end
+		else if ch='d' then
+		begin
+			leMensagem();
+			initChave();
+			Decript();
+			writeln('mensagem decriptada -> ',s,#10,#10);
+		end
+		else if ch='t' then
+		begin
+			leMensagem();
+			initChave();
+			Encript();
+			writeln('mensagem encriptada -> ',s);
+			Decript();
+			writeln('mensagem decriptada -> ',s,#10,#10);
+		end
+		else
+		begin
+			break;
+		end;
+	end;
+end.
+~~~
+
+~~~
+#include<stdio.h>
+#include<string.h>
+
+char s[100];
+char ch;
+int chave[100];
+
+void leMensagem(){
+	printf("Digite a mensagem: ");
+	scanf("%s",s);
+}
+
+void initChave(){
+	int i;
+	char t[100];
+	int b;//b:boolean;
+	for(;;){
+		b=1;
+		printf("Chave -> ");
+		scanf("%s",&t);
+		for(i=0;i<100;i++){
+			if(i>=strlen(t)){//zera todas as posicoes da chave que vao alem da string
+				chave[i]=0;
+			}
+			else if((t[i]>='1') && (t[i]<='9')){//verifica se e' digito numerico
+				chave[i]=t[i]-48;
+			}
+			else{
+				printf("Chave Invalida\n\n");
+				b=0;
+				break;
+			}
+		}
+		if(b){//flag
+			break;
+		}
+	}
+}
+
+void Encript(){
+	int i,j,x;
+	j=0;
+	for(i=0;i<strlen(s);i++){
+		if(chave[j]==0){
+			j=0;
+		}
+		x=(chave[j]+s[i])%256;
+		s[i]=(char)x;
+		j++;
+	}
+}
+
+void Decript(){
+	int i,j,x;
+	j=0;
+	for(i=0;i<strlen(s);i++){
+		if(chave[j]==0){
+			j=0;
+		}
+		x=(s[i]-chave[j])%256;
+		s[i]=(char)x;
+		j++;
+	}
+}
+
+int main(){
+	for(;;){
+		printf("Digite um caracter\n");
+		printf("e -> encriptar mensagem\n");
+		printf("d -> decriptar mensagem\n");
+		printf("t -> testar encripatacao e decriptacao\n");
+		printf("outro caracter -> sai\n");
+		scanf("%c",&ch);
+		if(ch=='e'){
+			leMensagem();
+			initChave();
+			Encript();
+			printf("mensagem encriptada -> %s\n\n\n",s);
+		}
+		else if(ch=='d'){
+			leMensagem();
+			initChave();
+			Decript();
+			printf("mensagem decriptada -> %s\n\n\n",s);
+		}
+		else if(ch=='t'){
+			leMensagem();
+			initChave();
+			Encript();
+			printf("mensagem encriptada -> %s\n",s);
+			Decript();
+			printf("mensagem decriptada -> %s\n\n\n",s);
+		}
+		else{
+			break;
+		}
+		fflush(stdin);
+	}
+	return 0;
+}
+~~~
 
 ## Referências
 
