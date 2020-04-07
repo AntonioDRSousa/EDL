@@ -7,7 +7,11 @@
 - [Linha do Tempo](#Linha-do-Tempo)
 - [Classificação](#Classificação)
 - [Programação Estruturada](#Programação-Estruturada)
+	-[Algumas linguagens que têm como principio a programação estruturada](#Algumas-linguagens-que-têm-como-principio-a-programação-estruturada)
 - [Comparação de Pascal com outras linguagens](#Comparação-de-Pascal-com-outras-linguagens)
+	-[C](#C)
+	-[ALGOL 68](#ALGOL-68)
+	-[ALGOL 60](#ALGOL-60)
 - [Exemplos](#Exemplos)
 - [Referências](#Referências)
 
