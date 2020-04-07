@@ -7,9 +7,9 @@
 - [Linha do Tempo](#Linha do Tempo)
 - [Classificação](#Classificação)
 - [Programação Estruturada](#Programação Estruturada)
--[Comparação de Pascal com outras linguagens](#Comparação de Pascal com outras linguagens)
--[Exemplos](#Exemplos)
--[Referências](#Referências)
+- [Comparação de Pascal com outras linguagens](#Comparação de Pascal com outras linguagens)
+- [Exemplos](#Exemplos)
+- [Referências](#Referências)
 
 ## Introdução
 Pascal é uma linguagem imperativa, puramente procedural e que tem como principio a programação estruturada. Criada em 1970 por Niklaus Wirth. Foi influênciada por ALGOL 60 e mais especificamente ALGOL W, proposta de Niklaus para evoluir a linguagem ALGOL. É uma linguagem compilada e de proposito geral, criada como uma linguagem eficiente e que encoraja boas praticas de programação.
