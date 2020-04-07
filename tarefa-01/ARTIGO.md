@@ -114,6 +114,8 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 
 ## Exemplos
 ### Exemplos Simples
+#### Exemplo 1
+Comparação de um programa basico entre pascal e C. É printado na tela a frase: Ola, Mundo!
 ~~~
 	program OlaMundo;  
 	begin
@@ -130,6 +132,8 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 	}
 ~~~
 
+#### Exemplo 2
+Esse programa basicamente lê um conjunto de valores reais e calcula a média aritemética. É interessante notar o uso da estrutura em pascal repeat..until em contraste com a estrutura do..while do C, e como a expressão booleana a seguir do until é uma condição de parada, enquanto a seguir ao while é uma condição de continuação do loop.
 ~~~
 	program Media;
 	var v: array[1..100] of REAL;
@@ -193,7 +197,8 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 		return 0;
 	}
 ~~~
-
+#### Exemplo 3
+Programa que implementa uma função que troca o valor entre duas variáveis, ou seja, uma variavel adquire o valor da outra e vice-versa. No código em Pascal estam definidos três tipos de procedimento: com passagem de parametros por valor, por referência e um com parametros sendo ponteiros. A função swap1 e swap2 têm a mesma funcionalidade de trocar o valor das variáveis. Já no código C temos dois tipos de funções: a passagem por valor e uma com os parametros sendo ponteiros. No caso do swap1 nada acontece com o valor das variáveis, já o swap2 do C tem a mesma funcionadade que o swap1 e swap2 do Pascal, e o valor das variáveis são trocados. Isso demonstra que enquanto o Pascal tem um recurso próprio que permite a passagem de argumentos por referência, o C não possui, tornando muito necessário o uso de ponteiros.
 ~~~
 	program swap;
 	type
@@ -270,7 +275,8 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 	return 0;
 	}
 ~~~
-
+#### Exemplo 4
+Programa que é uma calculadora de números complexos que realiza três operações: adição, subtração e multiplicação. É importante notar a necessidade do uso do comando break em cada case do switch do C, enquanto em Pascal esse comando não é necessário.
 ~~~
 	program complexo;
 
@@ -361,7 +367,8 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 		return 0;
 	}
 ~~~
-
+#### Exemplo 5
+Programa que basicamente demonstra a necessidade do uso do comando break ao fim de cada case no switch do C, enquanto no Pascal isso não é necessário. Enquanto no código em Pascal só será executado o caso do caracter digitado correspondente, no C ou todas as opções são executadas ou duas opções são executadas, respectivamente, se o caracter digitado for 'a' todas são executadas, se o caracter digitado for 'b' o caso b e o default é executado.
 ~~~
 	program flow;
 
@@ -400,7 +407,8 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 		return 0;
 	}
 ~~~
-
+#### Exemplo 6
+Programa que printa uma serie de números formados apartir de opreações de multiplicação. Tem como objetivo demonstrar a versatilidade do comando for no C em constraste com o do Pascal que é bem restrito, de tal modo que é mais interessante usar um while..do nesse caso.
 ~~~
 	program serie;
 
@@ -435,7 +443,8 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 		return 0;
 	}
 ~~~
-
+#### Exemplo 7
+Programa que calcula a diferença entre o elemento máximo e o mínimo num conjunto de valores inteiros. Tem a presença de função aninhada no código Pascal, onde se observa como o código fica mais organizado e o escopo global menos poluido perante o código em C.
 ~~~
 	program distancia;
 
@@ -520,7 +529,8 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 		return 0;
 	}
 ~~~
-
+#### Exemplo 8
+Programa que calcula o numero de euler de modo recursivo usando como auxilio uma função fatorial recursiva. O código em Pascal utiliza função aninhada, sendo algo interessante já que a função fatorial só é utilizada pela função calc, que calcula o número de euler.
 ~~~
 	program euler;
 
@@ -587,7 +597,8 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 		return 0;
 	}
 ~~~
-
+#### Exemplo 9
+Programa que obtem a fatoração de um número inteiro. Em Pascal se utiliza de função aninhada. É importante observar o contraste com a mesma versão do programa em C, que não possui o recurso de funções aninhadas, a função divsuc tem dois parametros sendo um deles um ponteiro. 
 ~~~
 	program fatoracao;
 
@@ -658,6 +669,8 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 ~~~
 
 ### Exemplos Interessantes
+#### Programa interessante 1
+Implementação de uma pilha em Pascal, comparando com a mesma implementação em C.
 ~~~
 program pilha;
 
@@ -881,7 +894,26 @@ int main(){
 	return 0;
 } 
 ~~~
-
+#### Programa interessante 2
+Programa de criptografia, implementado em Pascal e comparado com a implementação em C, que utiliza uma chave com digitos sendo que cada digito soma a letra da string que esta' na mesma posicao que ele, de modo 'circular', ou seja, a chave volta para o digito inicial depois que percorre todos os digitos.Na desencriptacao e' usada a subtracao da letra pelo digito correspondente da chave de modo a obter a mensagem original.
+Exemplo: se a chave possuir 3 digitos e a string 7 digitos:
+encriptacao:
+		letra 1 = letra 1  +  digito 1
+		letra 2 = letra 2  +  digito 2
+		letra 3 = letra 3  +  digito 3
+		letra 4 = letra 4  +  digito 1
+		letra 5 = letra 5  +  digito 2
+		letra 6 = letra 6  +  digito 3
+		letra 7 = letra 7  +  digito 1
+desencriptacao:
+		letra 1 = letra 1  -  digito 1
+		letra 2 = letra 2  -  digito 2
+		letra 3 = letra 3  -  digito 3
+		letra 4 = letra 4  -  digito 1
+		letra 5 = letra 5  -  digito 2
+		letra 6 = letra 6  -  digito 3
+		letra 7 = letra 7  -  digito 1
+Exemplo: chave=123 string='banana' string encriptada='ccqbpd' desencriptacao da string encriptada='banana'
 ~~~
 program Criptografia;
 
@@ -1107,7 +1139,8 @@ int main(){
 	return 0;
 }
 ~~~
-
+#### Programa interessante 3
+Programa que converte de binário para decimal e de decimal para binario(de modo recursivo), implementado em Pascal e comparado com C.
 ~~~
 program BinDec;
 
@@ -1336,7 +1369,8 @@ int main(){
 	return 0;
 }
 ~~~
-
+#### Programa interessante 4
+Programa que calcula todos os números primos menores ou iguais ao número inteiro digitado pelo usuário. 
 ~~~
 program Primos;
 
