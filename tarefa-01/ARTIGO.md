@@ -55,10 +55,10 @@ ALGOL 60 possui as 3 estruturas de controle que o caracterizam como uma linguage
 * **iteração**: ALGOL 60  possui comandos como for, while, que são estruturas de iteração
 
 #### ALGOL 68
-ALGOL 60 possui as 3 estruturas de controle que o caracterizam como uma linguagem que tem como principio a programação estruturada:
-* **sequência**: os comandos em ALGOL 60 são executados de modo sequencial
-* **seleção**: ALGOL 60 possui comandos como if, else, then, case que são estruturas de seleção
-* **iteração**: ALGOL 60  possui comandos como for, while, que são estruturas de iteração
+ALGOL 68 possui as 3 estruturas de controle que o caracterizam como uma linguagem que tem como principio a programação estruturada:
+* **sequência**: os comandos em ALGOL 68 são executados de modo sequencial
+* **seleção**: ALGOL 68 possui comandos como if, else, then, case que são estruturas de seleção
+* **iteração**: ALGOL 68  possui comandos como for, while, que são estruturas de iteração
 
 ## COMPARAÇÃO DE PASCAL COM C
 As duas linguagens possuem muitas semalhanças já que ambas foram influênciadas pela linguagem ALGOL e suas versões, além de possuirem como paradigma a programação estruturada. No entanto possuem diferenças.
