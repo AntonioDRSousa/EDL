@@ -35,6 +35,8 @@
 		- [Exemplo 7](#Exemplo-7)
 		- [Exemplo 8](#Exemplo-8)
 		- [Exemplo 9](#Exemplo-9)
+		- [Exemplo 10](#Exemplo-10)
+		- [Exemplo 11](#Exemplo-11)
 	- [Exemplos Interessantes](#Exemplos-Interessantes)
 		- [Programa interessante 1](#Programa-interessante-1)
 		- [Programa interessante 2](#Programa-interessante-2)
