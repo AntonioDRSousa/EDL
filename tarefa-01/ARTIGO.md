@@ -143,6 +143,8 @@ Em **ALGOL 60** o *SWITCH* deve ter um índice inteiro não negativo e a ordem d
 ### Exemplos Simples
 #### Exemplo 1
 Comparação de um programa básico entre **Pascal** e **C**. É printado na tela a frase: Ola, Mundo!
+
+**Pascal**:
 ~~~
 	program OlaMundo;  
 	begin
@@ -150,6 +152,7 @@ Comparação de um programa básico entre **Pascal** e **C**. É printado na tel
 	end.
 ~~~
 
+**C**:
 ~~~
 	#include<stdio.h>
 
@@ -161,6 +164,8 @@ Comparação de um programa básico entre **Pascal** e **C**. É printado na tel
 
 #### Exemplo 2
 Esse programa basicamente lê um conjunto de valores reais e calcula a média aritemética. É interessante notar o uso da estrutura em **Pascal** *repeat..until* em contraste com a estrutura *do..while* do **C**, e como a expressão booleana a seguir do *until* é uma condição de parada, enquanto a seguir ao *while* é uma condição de continuação do *loop*.
+
+**Pascal**:
 ~~~
 	program Media;
 	var v: array[1..100] of REAL;
@@ -194,6 +199,7 @@ Esse programa basicamente lê um conjunto de valores reais e calcula a média ar
 	end.
 ~~~
 
+**C**:
 ~~~
 	#include<stdio.h>
 
@@ -224,8 +230,11 @@ Esse programa basicamente lê um conjunto de valores reais e calcula a média ar
 		return 0;
 	}
 ~~~
+
 #### Exemplo 3
 Programa que implementa uma *função* que troca o valor entre duas *variáveis*, ou seja, uma *variável* adquire o valor da outra e vice-versa. No código em **Pascal** estam definidos três tipos de *procedimento*: com *passagem de parâmetros por valor*, *por referência* e um com *parâmetros* sendo *ponteiros*. A *função* swap1 e swap2 têm a mesma funcionalidade de trocar o valor das *variáveis*. Já no código em **C** temos dois tipos de *funções*: a *passagem por valor* e uma com os *parâmetros* sendo *ponteiros*. No caso do swap1 nada acontece com o valor das *variáveis*, já o swap2 do **C** tem a mesma funcionadade que o swap1 e swap2 do **Pascal**, e o valor das *variáveis* são trocados. Isso demonstra que enquanto o **Pascal** tem um recurso próprio que permite a *passagem de argumentos por referência*, o **C** não possui, tornando muito necessário o uso de *ponteiros* na linguagem **C**.
+
+**Pascal**:
 ~~~
 	program swap;
 	type
@@ -269,6 +278,8 @@ Programa que implementa uma *função* que troca o valor entre duas *variáveis*
 		prog();
 	end.
 ~~~
+
+**C**:
 ~~~
 	#include<stdio.h>
 
@@ -302,8 +313,11 @@ Programa que implementa uma *função* que troca o valor entre duas *variáveis*
 	return 0;
 	}
 ~~~
+
 #### Exemplo 4
 Programa que é uma calculadora de números complexos que realiza três operações: adição, subtração e multiplicação. É importante notar a necessidade do uso do *comando break* em cada *case* do *switch* do **C**, enquanto em **Pascal** esse *comando* não é necessário.
+
+**Pascal**:
 ~~~
 	program complexo;
 
@@ -347,6 +361,7 @@ Programa que é uma calculadora de números complexos que realiza três operaç�
 	end.
 ~~~
 
+**C**:
 ~~~
 	#include<stdio.h>
 	#include<stdlib.h>
@@ -394,8 +409,11 @@ Programa que é uma calculadora de números complexos que realiza três operaç�
 		return 0;
 	}
 ~~~
+
 #### Exemplo 5
 Programa que basicamente demonstra a necessidade do uso do *comando break* ao fim de cada *case* no *switch* do **C**, enquanto no **Pascal** isso não é necessário. Enquanto no código em **Pascal** só será executado o caso do caracter digitado correspondente, no **C** ou todas as opções são executadas ou duas opções são executadas, respectivamente, se o caracter digitado for 'a' todas são executadas, se o caracter digitado for 'b' o caso b e o default é executado.
+
+**Pascal**:
 ~~~
 	program flow;
 
@@ -415,6 +433,7 @@ Programa que basicamente demonstra a necessidade do uso do *comando break* ao fi
 	end.
 ~~~
 
+**C**:
 ~~~
 	#include<stdio.h>
 
@@ -434,8 +453,11 @@ Programa que basicamente demonstra a necessidade do uso do *comando break* ao fi
 		return 0;
 	}
 ~~~
+
 #### Exemplo 6
 Programa que printa uma série de números formados apartir de operações de multiplicação. Tem como objetivo demonstrar a versatilidade do *comando for* no **C** em constraste com o *for..do* do Pascal que é bem restrito, de tal modo que é mais interessante usar um *while..do* nesse caso.
+
+**Pascal**:
 ~~~
 	program serie;
 
@@ -456,6 +478,7 @@ Programa que printa uma série de números formados apartir de operações de mu
 	end.
 ~~~
 
+**C**:
 ~~~
 	#include<stdio.h>
 	int main(){
@@ -470,8 +493,11 @@ Programa que printa uma série de números formados apartir de operações de mu
 		return 0;
 	}
 ~~~
+
 #### Exemplo 7
 Programa que calcula a diferença entre o elemento máximo e o mínimo num conjunto de valores inteiros. Tem a presença de *função aninhada* no código **Pascal**, onde se observa como o código fica mais organizado e o escopo global menos poluido perante o código em **C**.
+
+**Pascal**:
 ~~~
 	program distancia;
 
@@ -519,6 +545,7 @@ Programa que calcula a diferença entre o elemento máximo e o mínimo num conju
 	end.
 ~~~
 
+**C**:
 ~~~
 	#include<stdio.h>
 
@@ -556,8 +583,11 @@ Programa que calcula a diferença entre o elemento máximo e o mínimo num conju
 		return 0;
 	}
 ~~~
+
 #### Exemplo 8
 Programa que calcula o número de euler de modo recursivo usando como auxilio uma *função* fatorial recursiva. O código em **Pascal** utiliza *função aninhada*, sendo algo interessante já que a *função* fatorial só é utilizada dentro da *função* calc, que calcula o número de euler.
+
+**Pascal**:
 ~~~
 	program euler;
 
@@ -593,6 +623,7 @@ Programa que calcula o número de euler de modo recursivo usando como auxilio um
 	end.
 ~~~
 
+**C**:
 ~~~
 	#include<stdio.h>
 
@@ -624,8 +655,11 @@ Programa que calcula o número de euler de modo recursivo usando como auxilio um
 		return 0;
 	}
 ~~~
+
 #### Exemplo 9
 Programa que obtem a fatoração de um número inteiro. Em **Pascal** se utiliza de *função aninhada*. É importante observar o contraste com a mesma versão do programa em **C**, que não possui o recurso de *funções aninhadas*. No código em **C**, a *função* divsuc tem dois *parâmetros* sendo um deles um *ponteiro*. 
+
+**Pascal**:
 ~~~
 	program fatoracao;
 
@@ -664,6 +698,7 @@ Programa que obtem a fatoração de um número inteiro. Em **Pascal** se utiliza
 	end.
 ~~~
 
+**C**:
 ~~~
 	#include<stdio.h>
 
@@ -694,8 +729,11 @@ Programa que obtem a fatoração de um número inteiro. Em **Pascal** se utiliza
 		return 0;
 	}
 ~~~
+
 #### Exemplo 10
 Programa que printa a relação de ordem entre dois números inteiros. Tem como objetivo comparar a programação estruturada com a não estruturada. O código em **C** que usa muito comando goto e poucas estruturas de controle é menos legível que o código em **Pascal** que utiliza **programação estruturada**.
+
+**Pascal**:
 ~~~
 	program jump;
 
@@ -721,6 +759,8 @@ Programa que printa a relação de ordem entre dois números inteiros. Tem como 
 		end;
 	end.
 ~~~
+
+**C**:
 ~~~
 	#include<stdio.h>
 
@@ -745,8 +785,11 @@ Programa que printa a relação de ordem entre dois números inteiros. Tem como 
 		return 0;
 	}
 ~~~
+
 #### Exemplo 11
 Programa que printa varias potencias de um número inteiro. Tem como objetivo comparar a programação estruturada com a não estruturada. O código em **C** que usa muito comando goto e poucas estruturas de controle é menos legível que o código em **Pascal** que utiliza **programação estruturada**.
+
+**Pascal**:
 ~~~
 	program gotoc;
 
@@ -782,6 +825,8 @@ Programa que printa varias potencias de um número inteiro. Tem como objetivo co
 		end;
 	end.
 ~~~
+
+**C**:
 ~~~
 	#include<stdio.h>
 
@@ -821,6 +866,8 @@ Programa que printa varias potencias de um número inteiro. Tem como objetivo co
 ### Exemplos Interessantes
 #### Programa interessante 1
 Implementação de uma pilha em **Pascal**, comparando com a mesma implementação em **C**.
+
+**Pascal**:
 ~~~
 program pilha;
 
@@ -943,6 +990,7 @@ begin
 end. 
 ~~~
 
+**C**:
 ~~~
 #include<stdio.h>
 
@@ -1044,6 +1092,7 @@ int main(){
 	return 0;
 } 
 ~~~
+
 #### Programa interessante 2
 Programa de criptografia, implementado em **Pascal** e comparado com a implementação em **C**, que utiliza uma chave com dígitos sendo que cada dígito soma a letra da string que está na mesma posicao que ele, de modo "circular", ou seja, a chave volta para o dígito inicial depois que percorre todos os dígitos. Na desencriptacao é usada a subtração da letra pelo dígito correspondente da chave de modo a obter a mensagem original.
 Exemplo: se a chave possuir 3 dígitos e a string 7 letras:
@@ -1064,6 +1113,8 @@ desencriptacao:
 		letra 6 = letra 6  -  dígito 3
 		letra 7 = letra 7  -  dígito 1
 Exemplo: chave=123 string='banana' string encriptada='ccqbpd' desencriptacao da string encriptada='banana'
+
+**Pascal**:
 ~~~
 program Criptografia;
 
@@ -1187,6 +1238,7 @@ begin
 end.
 ~~~
 
+**C**:
 ~~~
 #include<stdio.h>
 #include<string.h>
@@ -1289,8 +1341,11 @@ int main(){
 	return 0;
 }
 ~~~
+
 #### Programa interessante 3
 Programa que converte de binário para decimal e de decimal para binário(de modo recursivo), implementado em **Pascal** e comparado com **C**.
+
+**Pascal**:
 ~~~
 program BinDec;
 
@@ -1420,6 +1475,7 @@ begin
 end.
 ~~~
 
+**C**:
 ~~~
 #include<stdio.h>
 #include<string.h>
@@ -1519,8 +1575,11 @@ int main(){
 	return 0;
 }
 ~~~
+
 #### Programa interessante 4
 Programa que calcula todos os números primos menores ou iguais ao número inteiro digitado pelo usuário. 
+
+**Pascal**:
 ~~~
 program Primos;
 
@@ -1588,6 +1647,7 @@ begin
 end.
 ~~~
 
+**C**:
 ~~~
 #include<stdio.h>
 #include<math.h>
