@@ -9,7 +9,6 @@ Pascal foi criado por Niklaus Wirth em 1970, influenciado pelo padrão do ALGOL 
 e cria linguagem Pascal em 1970. Portanto, temos como principal origem da linguagem Pascal as linguagens ALGOL,
 principalmente a linguagem ALGOL W.
 
-
 ## INFLUÊNCIAS
 
 ## LINHA DO TEMPO
@@ -25,14 +24,13 @@ principalmente a linguagem ALGOL W.
 * **Não é case sensitive**: Diferentemente de linguagens como o C, Pascal não diferencia o uppercase do lowercase dos caracteres do nome de uma variavel, função ou comando. Desse modo o comando "write" é o mesmo que "Write" e não ocorre erro de compilação por isso, a variavel "letra" é o mesmo que "LETRA" e etc.
 
 ## PROGRAMAÇÃO ESTRUTURADA
-Programação Estruturada é uma paradigma de programação com enfase em decisão, iteração e sequência. Surgiu no final da decada de 1950 com linguagens como ALGOL 58 e ALGOL 60. Algumas linguagens que têm como principio a programação estruturada são o ALGOL, Pascal, C e etc. Se sustenta teoricamente pelo **teorema do programa estruturado** de 1966. Segundo o **teorema do programa estruturado**, qualquer funcao computavel pode ser expressa por 3 estruturas de controle: sequência, seleção e iteração. Em Programação Estruturada, programas são vistos como compostos de estruras de controles.
-
-### Estruturas de Controles:
-
+Programação Estruturada é uma paradigma de programação com enfase em decisão, iteração e sequência. Surgiu no final da decada de 1950 com linguagens como ALGOL 58 e ALGOL 60. Algumas linguagens que têm como principio a programação estruturada são o ALGOL, Pascal, C e etc. Se sustenta teoricamente pelo **teorema do programa estruturado** de 1966. Segundo o **teorema do programa estruturado**, qualquer funcao computavel pode ser expressa por 3 estruturas de controle: sequência, seleção e iteração. Em Programação Estruturada, programas são vistos como compostos de estruras de controles:
 * **Sequência**: comandos ou subrotinas são todos executados em sequência
 * **Seleção ou Decisão**: comandos são executados dependendo do estado do programa, a partir de um teste lógico
 * **Iteração**: um comando ou bloco é executado até o programa chegar a certo estado
 * **Recursão**: uma função que chama a si mesma. Essa estrutura já era usada em linguagens com o paradigma funcional
+
+Além disso, possuem estruturas como subrotinas, também conhecidos como funções ou procedimentos, que dividem o código em subprogramas e evitam a repetição dos mesmos trechos de código. Existe também a estrutura de bloco, que basicamente trata um conjunto de comando como se fosse um único comando. Estruturas como sequência, seleção, iteração, recursão, subrotinas e blocos tornam a programação muito mais organizada e eficiente, além de tornar o código mais manutenível. Antes da programação estruturada, os códigos eram muito mais desorganizados com muitos "jumps", tornando a programação confusa.  De modo simplificado programação estruturada pode ser descrita como "programação sem goto". Esse comando basicamente equivale a jumps nas linhas do código, ou seja, o goto se refere a uma label que existe em uma parte do código e quando é executado a execução passa para o comando a seguir a essa label ao que o goto se refere. O uso de goto torna muitas vezes o código desorganizado e confuso., Foi fortemente atacado por muitos dos defensores da programação estruturada embora existem aqueles como Donald Knuth que defendem seu uso em certas situações. Muitas linguagens que seguem o paradigma estruturado não possuem goto, de modo a impedir a programação não estruturada. A maioria das linguagens que seguem o paradigma da programação estruturada não o seguem totalmente. Muitas possuem o comando goto, como a linguagem C e o Pascal. Além disso, grande parte das linguagens que seguem esse paradigma possuem comando como break, continue, return que exercem funcionadades similares ao goto.
 
 ### Algumas linguagens que têm como principio a programação estruturada
 
