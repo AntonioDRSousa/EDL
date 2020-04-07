@@ -1764,6 +1764,5 @@ https://pt.wikipedia.org/wiki/Pascal_(linguagem_de_programa%C3%A7%C3%A3o)
 https://en.wikipedia.org/wiki/Pascal_(programming_language)
 https://en.wikipedia.org/wiki/Structured_programming
 https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_estruturada
-
-A comparison of Pascal and ALGOL 68 - A.S.Tanenbaum
+<p>A comparison of Pascal and ALGOL 68 - A.S.Tanenbaum</p>
 SOS ALGOL 60 REFERENCE MANUAL
