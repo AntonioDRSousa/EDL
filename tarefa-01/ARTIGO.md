@@ -61,10 +61,10 @@ ALGOL 60 possui as 3 estruturas de controle que o caracterizam como uma linguage
 * **iteração**: ALGOL 60  possui comandos como for, while, que são estruturas de iteração
 
 ## COMPARAÇÃO DE PASCAL COM C
-As duas linguagens possuem muitas semalhanças já que ambas foram influênciadas pela linguagem ALGOL e suas versões, além de possuitem como paradigma a programação estruturada. No entanto possuem diferenças.
+As duas linguagens possuem muitas semalhanças já que ambas foram influênciadas pela linguagem ALGOL e suas versões, além de possuirem como paradigma a programação estruturada. No entanto possuem diferenças.
 
 ### Procedimentos e Funções
-Pascal possui procedimentos e funções, enquanto C possui apenas funções. Isso ocorre porque a linguagem C tem o tipo void enquanto Pascal não. Desse modo o que seria um procedimento em pascal é uma função void no C.
+Pascal possui procedimentos e funções, enquanto C possui apenas funções. Isso ocorre porque a linguagem C tem o tipo void enquanto Pascal não. Desse modo o que seria um procedimento em Pascal é uma função void no C.
 
 ### Variáveis Locais
 Em C variaveis locais podem ser alocadas em qualquer bloco e em qualquer parte do bloco de comandos. Em Pascal não é possivel realizar esse tipo de declaração, sendo só permitida a declaração de variaveis antes do começo de um bloco de comandos de procedimentos/funções ou o bloco "main"(programa principal).
@@ -75,19 +75,19 @@ Pascal apenas permite que o um laço for tenha dois tipos de comportamento:
 * percorre um valor inicial até um valor final incrementando 1 na variavel de controle de laço for
 * percorre um valor inicial até um valor final decrementando 1 na variavel de controle de laço for. 
 
-Já em C, temos a possibilidade de criar varios tipos de laço for além desses. Basicamente em C criamos um laço com valor inicial para a variavel de controle, um teste lógico e mudança de valor da variavel de controle. Desse modo, em Pascal o laço for tem um comportamento mais limitado que em C, tornando por vezes necessario a utilização de outras estruturas de iteração para executar a mesma tarefa que seria utilizada em C utilizando um laço for.
+Já em C, temos a possibilidade de criar varios tipos de laço for além desses. Em C criamos um laço com valor inicial para a variavel de controle, um teste lógico e a mudança de valor da variavel de controle. Além disso, o laço for pode possuir mais que uma variavel de controle em C, existindo portanto vários tipos de laços forn a linguagem. Em Pascal o laço for tem um comportamento mais limitado que em C, tornando por vezes necessario a utilização de outras estruturas de iteração, como while..do e repeat..until, para executar a mesma tarefa que seria utilizada em C utilizando um laço for.
 
-### repeat until e o do while
+### repeat..until e o do..while
 Enquanto em Pascal a condição logica presente no until é a condição de parada do loop, em C a condição lógica presente no while é a condição para continuar o loop.
 
 ### Argumentos de procedimentos/funções
-Pascal possui duas formas de passar argumentos para uma função: por referência(usa-se "var") ou por valor(usa-se "const"). C apenas possui passagem por valor, mas com o uso de ponteiros pode-se emular uma passagem por referência.
+Pascal possui duas formas de passar argumentos para uma função: por referência(usa-se "var") ou por valor(usa-se "const"). C apenas possui passagem de argumentos por valor, mas com o uso de ponteiros pode-se emular uma passagem por referência. Esse é um dos motivos porque a utilização de ponteiros é tão necessaria em C.
 
 ### Funções/procedimentos aninhados
 Uma função/procedimento aninhado é uma função/procedimento definida dentro de uma função, ou seja, a função/procedimento aninhada é encapsulada dentro da função de nível superior. Fora do escopo da função de nível superior a função aninhada não é detectada. Além disso, a função aninhada usa as variaveis locais da função de nível superior.Uma das razões de sua utilização, é a utilidade de dividir subrotinas em outras subrotinas e encapsular-las. Funções/procedimentos aninhadas são usadas tipicamente como funções auxiliares ou funções recursivas dentro de outra função. Têm como vantagem organizar melhor o código, evitando de poluir o escopo, e compartilham variaveis dentro do escopo facilmente sem o uso de parametros ou usar uma variavel global. ALGOL, Pascal, Simula 67 são algumas das linguagens que possuem funções/procedimentos aninhados. C e sua familia de linguagens não possuem funções/procedimentos aninhados, sendo essa uma das diferenças entre C e Pascal.
 
 ### case e o switch
-No switch do C, cada case do switch senão terminar com o comando break o próximo case é executado, ou seja, o break impede a execução de blocos de outros cases que não eram para ser executados. Em Pascal a assensia de comando break não faz com que a execução do bloco de comandos do caso case(switch no C) seguinte seja executado.
+No switch do C, cada case do switch senão terminar com o comando break o próximo case é executado, ou seja, o break impede a execução de blocos de comandos de outros cases que não eram para ser executados. Em Pascal a assensia de comando break não faz com que a execução do bloco de comandos do caso case(switch no C) seguinte seja executado.
 
 ## COMPARAÇÃO DE PASCAL COM ALGOL 68
 
