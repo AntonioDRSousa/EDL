@@ -262,74 +262,98 @@ int main(){
 	return 0;
 
 }
+
 ~~~
 	program swap;
-
-
-
 	type
-
 		pint=^integer;
-
-
-
 	procedure impr(const a,b:integer);//por valor
-
 	begin
-
 		writeln('x=',a,' ','y=',b);
-
 	end;
-
-
-
 	procedure swap1(var a,b:integer);//por referencia, uso de 'var'
-
 	var
-
 		tmp:integer;
-
 	begin
-
 		tmp:=a;
-
 		a:=b;
-
 		b:=tmp;
-
 	end;
-
-
 
 	procedure swap2(a,b:pint);//por referencia, uso de ponteiros
-
 	var
-
 		tmp:integer;
-
 	begin
-
 		tmp:=a^;
-
 		a^:=b^;
-
 		b^:=tmp;
-
 	end;
 
-
-
 	procedure prog();
-
 	var
-
 		x,y:integer;
-
 	begin
-
 		x:=10;
-
 		y:=20;
+		impr(x,y);
+		swap1(x,y);
+		impr(x,y);
+		swap2(@x,@y);
+		impr(x,y);
+	end;
+	
+	begin
+		prog();
+	end.
+
+~~~
+	#include<stdio.h>
+
+
+
+	void impr(const int a,const int b){//por valor
+
+		printf("x=%d y=%d\n",a,b);
+
+	}
+
+
+
+	void swap1(int a,int b){//por valor
+
+		int tmp;
+
+		tmp=a;
+
+		a=b;
+
+		b=tmp;
+
+	}
+
+
+
+	void swap2(int * a, int * b){//por referencia
+
+		int tmp;
+
+		tmp=*a;
+
+		*a=*b;
+
+		*b=tmp;
+
+	}
+
+
+
+	void prog(){
+
+		int x,y;
+
+		x=10;
+
+		y=20;
 
 		impr(x,y);
 
@@ -341,24 +365,21 @@ int main(){
 
 
 
-		swap2(@x,@y);
+		swap2(&x,&y);
 
 		impr(x,y);
 
-	end;
+	}
 
 
 
-	begin
+	int main(){
 
 		prog();
 
-	end.
-~~~
+		return 0;
 
-~~~
-
-~~~
+	}
 
 ## Referências
 
