@@ -113,6 +113,252 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 #### Variáveis Locais
 
 ## Exemplos
+### Exemplos Simples
+~~~
+program Media;
+
+
+
+var v: array[1..100] of REAL;
+
+var m,x: real;
+
+var i,n: integer;
+
+
+
+begin
+
+
+
+	n:=0;
+
+	m:=0;
+
+	
+
+	repeat
+
+	begin
+
+		write('v[',(n+1),'] = ');
+
+		readln(x);
+
+				
+
+		v[n+1]:=x;
+
+		n:=n+1;
+
+	end;
+
+	until x<0;
+
+
+
+	n:=n-1;
+
+
+
+	for i:=1 to n+1 do
+
+	begin
+
+		m:=m+v[i];
+
+	end;
+
+	
+
+	if n<=0 then
+
+	begin
+
+		writeln('Erro no Calculo da Media.....');
+
+	end
+
+	else
+
+	begin
+
+		writeln('Media -> ',m/n:0:3);
+
+	end;
+
+
+
+end.
+~~~
+
+~~~
+#include<stdio.h>
+
+
+
+float v[100];
+
+float m,x;
+
+int i,n;
+
+
+
+int main(){
+
+
+
+	n=0;
+
+	m=0;
+
+	
+
+	do{
+
+		printf("v[%d] = ",n+1);
+
+		scanf("%f",&x);
+
+		printf("%f\n",x);
+
+				
+
+		v[n+1]=x;
+
+		n++;
+
+	}while(x>=0);
+
+
+
+	n--;
+
+
+
+	for(i=1;i<n+1;i++){
+
+		m+=v[i];
+
+	}
+
+	
+
+	if(n<=0){
+
+		printf("Erro no Calculo da Media.....\n");
+
+	}
+
+	else{
+
+		printf("Media -> %0.3f\n",m/n);
+
+	}
+
+	
+
+	return 0;
+
+}
+~~~
+	program swap;
+
+
+
+	type
+
+		pint=^integer;
+
+
+
+	procedure impr(const a,b:integer);//por valor
+
+	begin
+
+		writeln('x=',a,' ','y=',b);
+
+	end;
+
+
+
+	procedure swap1(var a,b:integer);//por referencia, uso de 'var'
+
+	var
+
+		tmp:integer;
+
+	begin
+
+		tmp:=a;
+
+		a:=b;
+
+		b:=tmp;
+
+	end;
+
+
+
+	procedure swap2(a,b:pint);//por referencia, uso de ponteiros
+
+	var
+
+		tmp:integer;
+
+	begin
+
+		tmp:=a^;
+
+		a^:=b^;
+
+		b^:=tmp;
+
+	end;
+
+
+
+	procedure prog();
+
+	var
+
+		x,y:integer;
+
+	begin
+
+		x:=10;
+
+		y:=20;
+
+		impr(x,y);
+
+
+
+		swap1(x,y);
+
+		impr(x,y);
+
+
+
+		swap2(@x,@y);
+
+		impr(x,y);
+
+	end;
+
+
+
+	begin
+
+		prog();
+
+	end.
+~~~
+
+~~~
+
+~~~
 
 ## Referências
 
