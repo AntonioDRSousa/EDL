@@ -271,5 +271,137 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 	}
 ~~~
 
+~~~
+	program complexo;
+
+	type 
+		comp=record
+			re:integer;
+			im:integer;
+		end;
+
+	var a,b:comp;
+	var ch:char;
+
+	begin
+		writeln('a -> ');
+		write('Re(a) = ');
+		readln(a.re);
+		write('Im(a) = ');
+		readln(a.im);
+		writeln('b -> ');
+		write('Re(b) = ');
+		readln(b.re);
+		write('Im(b) = ');
+		readln(b.im);
+		writeln(#10,#10,'a = ',a.re,' + ',a.im,'i',#10,'b = ',b.re,' + ',b.im,'i');
+		while true do
+		begin
+			writeln(#10,'Digite um caracter');
+			writeln('a -> soma',#10,'s -> subtrai',#10,'m -> multiplica',#10,'outro caracter -> termina execucao');
+			readln(ch);
+			case ch of
+				'a':
+					writeln('a+b = ',a.re+b.re,' + ',a.im+b.im,'i');
+				's':
+					writeln('a-b = ',a.re-b.re,' + ',a.im-b.im,'i');
+				'm':
+					writeln('a*b = ',((a.re*b.re)-(a.im*b.im)),' + ',((a.re*b.im)+(a.im*b.re)),'i');
+				else
+					break;
+			end;
+		end;
+	end.
+~~~
+
+~~~
+	#include<stdio.h>
+	#include<stdlib.h>
+
+	typedef struct comp{
+		int re;
+		int im;
+	}comp;
+
+	comp a,b;
+	char ch;
+
+	int main(){
+		printf("a -> \n");
+		printf("Re(a) = ");
+		scanf("%d",&a.re);
+		printf("Im(a) = ");
+		scanf("%d",&a.im);
+		printf("b -> \n");
+		printf("Re(b) = ");
+		scanf("%d",&b.re);
+		printf("Im(b) = ");
+		scanf("%d",&b.im);
+		fflush(stdin);
+		printf("\na = %d + %di\nb = %d + %di\n",a.re,a.im,b.re,b.im);
+		while(1){
+			printf("\nDigite um caracter\n");
+			printf("a -> soma\ns -> subtrai\nm -> multiplica\noutro caracter -> termina execucao\n");
+			scanf("%c",&ch);
+			switch(ch){
+				case 'a':
+					printf("a+b = %d + %di\n",a.re+b.re,a.im+b.im);
+					break;
+				case 's':
+					printf("a-b = %d + %di\n",a.re-b.re,a.im-b.im);
+					break;
+				case 'm':
+					printf("a*b = %d + %di\n",((a.re*b.re)-(a.im*b.im)),((a.re*b.im)+(a.im*b.re)));
+					break;
+				default:
+					exit(1);
+			}
+			fflush(stdin);
+		}
+		return 0;
+	}
+~~~
+
+~~~
+	program flow;
+
+	var ch:char;
+
+	begin
+		writeln('Digite o caracter a ou b: ');
+		readln(ch);
+		case ch of
+			'a':
+				writeln('caso a');
+			'b':
+				writeln('caso b');
+			else
+				writeln('nao foi digitado nem a e nem b');
+		end;
+	end.
+~~~
+
+~~~
+	#include<stdio.h>
+
+	char ch;
+
+	int main(){
+		printf("Digite o caracter a ou b: \n");
+		scanf("%c",&ch);
+		switch(ch){//nao colocando o comando break, todos os case sao executados no C
+			case 'a':
+				printf("caso a\n");
+			case 'b':
+				printf("caso b\n");
+			default:
+				printf("nao foi digitado nem a e nem b\n");
+		}
+		return 0;
+	}
+~~~
+
+### Exemplos Interessantes
+
 ## Referências
 
