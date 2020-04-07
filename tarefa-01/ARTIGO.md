@@ -187,12 +187,12 @@ Em **ALGOL 60** o *SWITCH* deve ter um índice inteiro não negativo e a ordem d
 Comparação de um programa básico entre **Pascal** e **C**. É printado na tela a frase: Ola, Mundo!
 
 **Pascal**:
-~~~
+``` pascal
 	program OlaMundo;  
 	begin
 	   writeln('Ola, Mundo!');
 	end.
-~~~
+```
 
 **C**:
 ~~~
