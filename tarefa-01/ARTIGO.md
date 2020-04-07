@@ -401,6 +401,262 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 	}
 ~~~
 
+~~~
+	program serie;
+
+	var r:integer;
+	var s,i:integer;
+
+	begin
+		write('base: ');
+		readln(r);
+		s:=0;
+		i:=1;
+		while i<=1000 do
+		begin
+			s:=s+i;
+			i:=i*r;
+			write(s,' ');
+		end;
+	end.
+~~~
+
+~~~
+	#include<stdio.h>
+	int main(){
+		int r,s,i;
+		printf("base: ");
+		scanf("%d",&r);
+		s=0;
+		for(i=1;i<=1000;i*=r){
+			s+=i;
+			printf("%d ",s);
+		}
+		return 0;
+	}
+~~~
+
+~~~
+	program distancia;
+
+	var v:array[1..10] of integer;
+	var i,x:integer;
+
+	function dist():integer;
+	var
+		m:integer;
+		function max():integer;
+		begin
+			m:=0;
+			for i:=1 to 10 do
+			begin
+				if v[i]>m then
+				begin
+					m:=v[i];
+				end;	
+			end;
+			max:=m;
+		end;
+		function min():integer;
+		begin
+			m:=v[1];
+			for i:=2 to 10 do
+			begin
+				if v[i]<m then
+				begin
+					m:=v[i];
+				end;	
+			end;
+			min:=m;
+		end;
+	begin
+		dist:=max()-min();
+	end;
+
+	begin
+		for i:=1 to 10 do
+		begin
+			write('v[',i,'] = ');
+			readln(v[i]);
+		end;
+		writeln(#10,#10,'distancia entre o maximo e o minimo: ',dist());
+	end.
+~~~
+
+~~~
+	#include<stdio.h>
+
+	int v[10];
+	int i,x;
+
+	int max(){
+		int m=0;
+		for(i=0;i<10;i++){ 
+			if(v[i]>m){
+				m=v[i];
+			}	
+		}
+		return m;
+	}
+	int min(){
+		int m=v[0];
+		for(i=0;i<10;i++){ 
+			if(v[i]<m){
+				m=v[i];
+			}	
+		}
+		return m;
+	}
+
+	int dist(){
+		return max()-min();
+	}
+	int main(){
+		for(i=0;i<10;i++){
+			printf("v[%d] = ",i);
+			scanf("%d",&v[i]);
+		}
+		printf("\n\ndistancia entre o maximo e o minimo: %d\n",dist());
+		return 0;
+	}
+~~~
+
+~~~
+	program euler;
+
+	var e:real;
+	var x:integer;
+
+	procedure calc(i:integer);
+		function fat(x:integer):integer;
+		begin
+			if x=0 then
+			begin
+				fat:=1;
+			end
+			else
+			begin
+				fat:=x*fat(x-1);
+			end;
+		end;
+	begin
+		if i>=0 then
+		begin
+			e:=e+(1/fat(i));
+			calc(i-1);
+		end;
+	end;
+
+	begin
+		e:=0;
+		write('Digite o numero de iteracoes: ');
+		readln(x);
+		calc(x);
+		writeln('e = ',e:0:20);
+	end.
+~~~
+
+~~~
+	#include<stdio.h>
+
+	double e;
+	int x;
+
+	int fat(int x){
+		if(x==0){
+			return 1;
+		}
+		else{
+			return x*fat(x-1);
+		}
+	}
+
+	void calc(int i){
+		if(i>=0){
+			e+=(1/((double)fat(i)));
+			calc(i-1);
+		}
+	}
+
+	int main(){
+		e=0;
+		printf("Digite o numero de iteracoes: ");
+		scanf("%d",&x);
+		calc(x);
+		printf("e = %0.20lf\n",e);
+		return 0;
+	}
+~~~
+
+~~~
+	program fatoracao;
+
+	var
+		a:integer;
+	procedure fat(n:integer);
+	var
+		i,x:integer;
+		function divsuc():integer;
+		var 
+			e:integer;
+		begin
+			e:=0;
+			while (n mod i)=0 do
+			begin
+				e:=e+1;
+				n:=n div i;
+			end;
+			divsuc:=e;
+		end;
+	begin
+		for i:=2 to n-1 do
+		begin
+			x:=divsuc();
+			if x<>0 then
+			begin
+				write(i,'^',x,' ');
+			end;
+		end;
+	end;
+
+	begin
+		write('a = ');
+		readln(a);
+		fat(a);
+	end.
+~~~
+
+~~~
+	#include<stdio.h>
+
+	int a;
+
+	int divsuc(int * n,int i){
+		int e=0;
+		while(((*n)%i)==0){
+			e++;
+			*n=(int) (*n)/i;
+		}
+		return e;
+	}
+
+	void fat(int n){
+		int i,x;
+		for(i=2;i<=n;i++){
+			x=divsuc(&n,i);
+			if(x!=0){
+				printf("%d^%d ",i,x);
+			}
+		}
+	}
+	int main(){
+		printf("a = ");
+		scanf("%d",&a);
+		fat(a);
+		return 0;
+	}
+~~~
+
 ### Exemplos Interessantes
 
 ## Referências
