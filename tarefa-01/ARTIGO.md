@@ -110,12 +110,10 @@ Pascal tem o comando repeat, já ALGOL 68 não tem. O comando o while, também e
 Em ALGOL 68 o case deve ter um indice inteiro não negativo e a ordem das "clauses" é essencial, já que The index, say i,  selects the i-th clause for execution. Em pascal o indice pode ser qualquer "scalar expression"
 
 ### Estruturas de Controle de Iteração
-Em ALGOL 68 combina o comando for e while em um unico comando, já em pascal eles são comandos distintos. Ale´mde que for, from, by, to e while são individualmente opcionais, exceto qye se for for omitido não há nenhuma variavel de controle
-Em ALGOL 68 o laço for possui mais possibilidades como por exemplo o numero de paços a incrementar varia 
-A variavel de controle no ALGOL 68 é implicitamente declarada pelo comando for. Atribuições a ela são ilegais. E o escopo está no loop, tornando ele inacessivel fora do loop. Desse modo se uma variavel fora do loop for declarada com o mesmo nome, ela não afeta a variavel de controle. Além disso, a variavel de controle é declarada como um inteiro. Já em pascal a variavel de controle deve ser declarada, e o seu tipo não precisa ser necessariamente um inteiro, mas sim um scalar type. Além disso, a variavel de controle é acessivel fora do loop. Em ALGOL 68 as expressões depois de by e to são avaliadas antes do começo do loop. permitindo desse modo a alteração das variaveis que compoem esse comando
+Em ALGOL 68 combina o comando for e while em um unico comando, já em pascal eles são comandos distintos. Os comandos for, from, by, to e while são individualmente opcionais, exceto que se for é omitido não há nenhuma variavel de controle, e consequentemente o loop não funciona como o esperado. Em ALGOL 68 o laço for possui mais possibilidades como por exemplo o numero de paços a incrementar varia. A variavel de controle no ALGOL 68 é implicitamente declarada pelo comando for e atribuições a ela são ilegais. O escopo da variável de controle está no loop, tornando ela inacessivel fora do laço. Desse modo, se uma variavel fora do loop for declarada com o mesmo nome, ela não afeta a variavel de controle. Além disso, a variavel de controle é declarada como um inteiro. Já em pascal a variavel de controle deve ser declarada, e o seu tipo não precisa ser necessariamente um inteiro, mas sim um scalar type. Além disso, a variavel de controle é acessivel fora do loop. Em ALGOL 68 as expressões depois de by e to são avaliadas antes do começo do loop. permitindo desse modo a alteração das variaveis que compoem esse comando
 
 ### Argumentos
-Em ALGOL 68 existe um unico tipo de parametro, aquele que é chamado por valor. Já em pascal são permitidos 3: valor, referencia, procedure(incluindo function)
+Em ALGOL 68 existe um unico tipo de parametro, aquele que é chamado por valor. Já em pascal existem três tipos de parametros: por valor, por referencia, procedure(incluindo function).
 
 ## COMPARAÇÃO DE PASCAL COM ALGOL 60 
 
