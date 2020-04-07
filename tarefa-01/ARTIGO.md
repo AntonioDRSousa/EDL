@@ -20,14 +20,14 @@ Pascal é uma linguagem imperativa, puramente procedural e que tem como principi
 
 
 ## Origens
-Pascal foi criado por Niklaus Wirth em 1970, influenciado pelo padrão do ALGOL 60, sucessora do ALGOL 58. ALGOL 60 foi a linguagem que introduziu o paradigma da programação estruturada. Niklaus Wirth estava envolvido no desenvolvimento de ALGOL X e propôs ALGOL W. O desenvolvimento de ALGOL X foi abandonado pela decisão de escolha de ALGOL 68, uma linguagem mais complexa. Em 1968, Niklaus Wirth decide desenvolver mais ALGOL W 
-e cria linguagem Pascal em 1970. Portanto, temos como principal origem da linguagem Pascal as linguagens ALGOL,
-principalmente a linguagem ALGOL W. Além disso, Pascal foi influênciado pela linguagem de programação Simula 67.
+Pascal foi criado por Niklaus Wirth em 1970, influenciado pelo padrão do ALGOL 60, sucessora do ALGOL 58. ALGOL 60 foi a linguagem que introduziu o paradigma da programação estruturada. Niklaus Wirth estava envolvido no desenvolvimento de ALGOL X e propôs ALGOL W. O desenvolvimento de ALGOL X foi abandonado pela decisão de escolha de ALGOL 68, uma linguagem mais complexa. Em 1968, Niklaus Wirth decide desenvolver mais ALGOL W e cria linguagem Pascal em 1970. Portanto, temos como principal origem da linguagem Pascal as linguagens ALGOL,
+principalmente a linguagem ALGOL W.
 
 ## Influências
 Várias foram as linguagens influênciadas por pascal: Ada, Java, Oberon, Oberon-2, Object Pascal, Oxygene e etc. Object pascal, extensao da linguagem pascal com orientacao a objetos. Além disso, Pascal deu origem a diversos dialetos. Academicamente seus sucessores são Modula-2 e Oberon, linguagens criadas pelo mesmo criador de Pascal, Niklaus Wirth.
 
 ## Linha do Tempo
+![logo](img/graphic.png "logo")
 
 ## CLASSIFICAÇÃO
 * **Linguagem de Alto Nível**
@@ -65,14 +65,14 @@ C possui as 3 estruturas de controle que o caracterizam como uma linguagem que t
 #### ALGOL 60
 ALGOL 60 possui as 3 estruturas de controle que o caracterizam como uma linguagem que tem como principio a programação estruturada:
 * **sequência**: os comandos em ALGOL 60 são executados de modo sequencial
-* **seleção**: ALGOL 60 possui comandos como if, else, then, case que são estruturas de seleção
-* **iteração**: ALGOL 60  possui comandos como for, while, que são estruturas de iteração
+* **seleção**: ALGOL 60 possui comandos como if, else, then, switch que são estruturas de seleção
+* **iteração**: ALGOL 60  possui comandos como for, while,until,do que são estruturas de iteração
 
 #### ALGOL 68
 ALGOL 68 possui as 3 estruturas de controle que o caracterizam como uma linguagem que tem como principio a programação estruturada:
 * **sequência**: os comandos em ALGOL 68 são executados de modo sequencial
 * **seleção**: ALGOL 68 possui comandos como if, else, then, case que são estruturas de seleção
-* **iteração**: ALGOL 68  possui comandos como for, while, que são estruturas de iteração
+* **iteração**: ALGOL 68  possui comandos como for, while,by, do, until que são estruturas de iteração
 
 ## Comparação de Pascal com outras linguagens
 
