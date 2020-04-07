@@ -1108,5 +1108,355 @@ int main(){
 }
 ~~~
 
+~~~
+program BinDec;
+
+uses math;
+
+var 
+	b: string;//numero binario
+	d: integer;//numero decimal
+	k:integer;
+	ch:char;
+
+procedure init();
+var
+	i:integer;
+begin
+	SetLength(b,100);
+	for i:=0 to length(b) do
+	begin
+		b[i]:=' ';
+	end;
+	d:=0;
+	k:=1;
+end;
+
+procedure inputBin();
+var
+	i:integer;
+	bol:boolean;
+begin
+	while true do
+	begin
+		bol:=true;
+		write('Digite um numero binario: ');
+		readln(b);
+		
+		for i:=1 to length(b) do//verifica se o numero e' binario
+		begin
+			if (b[i]<>'1') and (b[i]<>'0') then
+			begin
+				writeln('Nao e numero binario');
+				bol:=false;
+				break;
+			end;
+		end;
+		if bol then
+		begin
+			break;
+		end;
+	end;
+end;
+
+procedure inputDec();
+begin
+	write('Digite um numero decimal: ');
+	readln(d);
+end;
+
+function pot(n:integer;e:integer):integer;//potenciacao
+var
+	j:integer;
+begin
+	pot:=1;
+	for j:=1 to e do
+	begin
+		pot:=pot*n;
+	end;
+end;
+
+procedure BinToDec();//converte de binario para decimal
+var
+	i:integer;
+begin
+	d:=0;
+	for i:=length(b) downto 1 do
+	begin
+		if b[i]='1' then
+		begin
+			d:=d+pot(2,length(b)-i);
+		end;
+	end;
+end;
+
+procedure DecToBin(n:integer);//converte de decimal para binario usando recursao
+begin
+	if n>0 then
+	begin
+		DecToBin(n div 2);
+		if n mod 2 = 0 then
+		begin
+			b[k]:='0';
+		end
+		else
+		begin
+			b[k]:='1';
+		end;
+		k:=k+1;
+	end;
+end;
+
+begin
+	while true do
+	begin
+		writeln();
+		writeln('Digite um caracter');
+		writeln('b -> converte de binario para decimal');
+		writeln('d -> converte de decimal para binario');
+		writeln('outros caracteres -> sai');
+		readln(ch);
+		init();
+		if ch='b' then
+		begin
+			inputBin();
+			BinToDec();
+			writeln(d);
+		end
+		else if ch='d' then
+		begin
+			inputDec();
+			DecToBin(d);
+			writeln(b);
+		end
+		else
+		begin
+			break;
+		end;
+	end;
+end.
+~~~
+
+~~~
+#include<stdio.h>
+#include<string.h>
+
+char b[100];//numero binario
+int d;//numero decimal
+int k;
+char ch;
+
+void init(){
+	int i;
+	for(i=0;i<strlen(b);i++){
+		b[i]=' ';
+	}
+}
+
+void inputBin(){
+	int i;
+	int bol;//bol:boolean;
+	for(;;){
+		bol=1;
+		printf("Digite um numero binario: ");
+		scanf("%s",b);
+		for(i=0;i<strlen(b);i++){
+			if((b[i]!='1') && (b[i]!='0')){
+				printf("Nao e numero binario\n");
+				bol=0;
+				break;
+			}
+		}
+		if(bol){
+			break;
+		}
+	}
+}
+
+void inputDec(){
+	printf("Digite um numero decimal: ");
+	scanf("%d",&d);
+}
+
+int pot(int n,int e){//potenciacao
+	int j;
+	int p=1;
+	for(j=1;j<=e;j++){
+		p*=n;
+	}
+	return p;
+}
+
+void BinToDec(){//converte de binario para decimal
+	int i;
+	d=0;
+	for(i=strlen(b)-1;i>=0;i--){
+		if(b[i]=='1'){
+			d+=pot(2,strlen(b)-i-1);
+		}
+	}
+}
+
+void DecToBin(int n){//converte de decimal para binario
+	if(n>0){
+		DecToBin(n/2);
+		if(n%2==0){
+			b[k]='0';
+		}
+		else{
+			b[k]='1';
+		}
+		k++;
+	}
+}
+
+int main(){
+	while(1){
+		printf("\nDigite um caracter");
+		printf("\nb -> converte de binario para decimal");
+		printf("\nd -> converte de decimal para binario");
+		printf("\noutros caracteres -> sai\n");
+		scanf("%c",&ch);
+		init();
+		if(ch=='b'){
+			inputBin();
+			BinToDec();
+			printf("%d\n",d);
+		}
+		else if(ch=='d'){
+			inputDec();
+			DecToBin(d);
+			printf("%s\n",b);
+		}
+		else{
+			break;
+		}
+		fflush(stdin);
+	}
+	return 0;
+}
+~~~
+
+~~~
+program Primos;
+
+uses math;
+
+var p: array[1..100000000] of Longint;
+var n,max: Longint; 
+
+procedure input();
+begin
+	write('Numeros primos ate: ');
+	readln(max);
+	writeln();
+end;
+
+procedure calc();
+var
+	i,j:Longint;
+	b: boolean;
+begin
+	p[1]:=2; //inicializa com o primeiro primo
+	n:=1;
+	for i:=3 to max do//percorre todos os numeros entre 3 e o numero maximo
+	begin
+		b:=true;
+		j:=1;
+		while p[j]<=sqrt(i) and p[j]>=2 do//p[j]>=2 verifica se o valor foi inicializado ou nao; percorre-se todos os primos menores que a raiz quadrada do numero i
+		begin
+			if i mod p[j] = 0 then//verifica se o numero i e' divisivel pelo primo p[j]
+			begin
+				b:=false;
+				break;
+			end;
+			j:=j+1;
+		end;				
+		if b then
+		begin
+			n:=n+1;
+			p[n]:=i;
+		end;			
+	end;
+end;
+
+procedure impr();
+var
+	i:Longint;
+begin
+	for i:=1 to n do//imprime os primos
+	begin
+		write(p[i],' ');
+		if i mod 10 = 0 then//pula de linha a cada 10 primos
+		begin
+			writeln();
+		end;
+	end;
+	writeln();
+	writeln();
+	write('n = ',n);//numero de primos
+end;
+		
+begin
+	input();
+	calc();
+	impr();								
+end.
+~~~
+
+~~~
+#include<stdio.h>
+#include<math.h>
+
+long p[100000000];
+long n,max; 
+
+void input(){
+	printf("Numeros primos ate: ");
+	scanf("%ld",&max);
+	printf("\n");
+}
+
+void calc(){
+	long i,j;
+	int b;//b: boolean;
+	p[0]=2; //inicializa com o primeiro primo
+	n=1;
+	for(i=3;i<=max;i++){
+		b=1;	
+		j=0;
+		while(p[j]<=sqrt(i) && p[j]!=0){//p[j]!=0 verifica se tem numero primo nessa posicao
+			if(i%p[j]==0){;
+				b=0;
+				break;
+			}
+			j++;
+		}		
+		if(b){
+			p[n]=i;
+			n++;
+		}		
+	}
+}
+
+void impr(){
+	long i;
+	for(i=0;i<n;i++){//imprime os primos
+		printf("%ld ",p[i]);
+		if(i%10==0){//pula de linha a cada 10 primos
+			printf("\n");
+		}
+	}
+	printf("\n\nn = %ld\n",n);//numero de primos
+}
+
+int main(){
+	input();
+	calc();
+	impr();
+	return 0;								
+}
+~~~
+
 ## Referências
 
