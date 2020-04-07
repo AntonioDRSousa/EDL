@@ -60,7 +60,13 @@ ALGOL 68 possui as 3 estruturas de controle que o caracterizam como uma linguage
 * **seleção**: ALGOL 68 possui comandos como if, else, then, case que são estruturas de seleção
 * **iteração**: ALGOL 68  possui comandos como for, while, que são estruturas de iteração
 
+## COMPARAÇÃO DE PASCAL COM OUTRAS LINGUAGENS
+
 ## COMPARAÇÃO DE PASCAL COM C
+### Estruturas de Seleção
+### Estruturas de Iteração
+### Subrotinas
+
 As duas linguagens possuem muitas semalhanças já que ambas foram influênciadas pela linguagem ALGOL e suas versões, além de possuirem como paradigma a programação estruturada. No entanto possuem diferenças.
 
 ### Procedimentos e Funções
@@ -90,6 +96,9 @@ Uma função/procedimento aninhado é uma função/procedimento definida dentro 
 No switch do C, cada case do switch senão terminar com o comando break o próximo case é executado, ou seja, o break impede a execução de blocos de comandos de outros cases que não eram para ser executados. Em Pascal a assensia de comando break não faz com que a execução do bloco de comandos do caso case(switch no C) seguinte seja executado.
 
 ## COMPARAÇÃO DE PASCAL COM ALGOL 68
+### Estruturas de Seleção
+### Estruturas de Iteração
+### Subrotinas
 
 ### Procedimentos
 No ALGOL 68 procedimentos podem ser elementos de arrays, campos de estruturas, retorno de funções e etc. Além disso, pode existir ponteiro para procedimentos no ALGOL 68. Isso ocorre porque no ALGOL 68 os procedimentos são vistos como "objects"(não confundir com o conceito de programação orientada a objetos). Já no Pascal, procedimentos apenas podem ser chamados ou passados em argumentos.
@@ -116,6 +125,9 @@ Em ALGOL 68 combina o comando for e while em um unico comando, já em pascal ele
 Em ALGOL 68 existe um unico tipo de parametro, aquele que é chamado por valor. Já em pascal existem três tipos de parametros: por valor, por referencia, procedure(incluindo function).
 
 ## COMPARAÇÃO DE PASCAL COM ALGOL 60 
+### Estruturas de Seleção
+### Estruturas de Iteração
+### Subrotinas
 
 
 ## EXEMPLOS
