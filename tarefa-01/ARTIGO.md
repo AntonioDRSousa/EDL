@@ -32,7 +32,7 @@ Programação Estruturada é uma paradigma de programação com enfase em decis�
 * **Sequência**: comandos ou subrotinas são todos executados em sequência
 * **Seleção ou Decisão**: comandos são executados dependendo do estado do programa, a partir de um teste lógico
 * **Iteração**: um comando ou bloco é executado até o programa chegar a certo estado
-* **Recursão**
+* **Recursão**: uma função que chama a si mesma. Essa estrutura já era usada em linguagens com o paradigma funcional
 
 ### Algumas linguagens que têm como principio a programação estruturada
 
