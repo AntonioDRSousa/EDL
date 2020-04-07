@@ -195,14 +195,14 @@ Comparação de um programa básico entre **Pascal** e **C**. É printado na tel
 ```
 
 **C**:
-~~~
+``` C
 	#include<stdio.h>
 
 	int main(){
 		printf("Ola, Mundo!\n");
 		return 0;
 	}
-~~~
+```
 
 #### Exemplo 2
 
