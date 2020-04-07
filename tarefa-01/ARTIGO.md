@@ -3,20 +3,27 @@
 ## INDICE
 - [Introdução](#Introdução)
 - [Origens](#Origens)
+- [Influências](#Influências)
+- [Linha do Tempo](#Linha do Tempo)
+- [Classificação](#Classificação)
+- [Programação Estruturada](#Programação Estruturada)
+-[Comparação de Pascal com outras linguagens](#Comparação de Pascal com outras linguagens)
+-[Exemplos](#Exemplos)
+-[Referências](#Referências)
 
-## INTRODUÇÃO
+## Introdução
 Pascal é uma linguagem imperativa, puramente procedural e que tem como principio a programação estruturada. Criada em 1970 por Niklaus Wirth. Foi influênciada por ALGOL 60 e mais especificamente ALGOL W, proposta de Niklaus para evoluir a linguagem ALGOL. É uma linguagem compilada e de proposito geral, criada como uma linguagem eficiente e que encoraja boas praticas de programação.
 
 
-## ORIGENS
+## Origens
 Pascal foi criado por Niklaus Wirth em 1970, influenciado pelo padrão do ALGOL 60, sucessora do ALGOL 58. ALGOL 60 foi a linguagem que introduziu o paradigma da programação estruturada. Niklaus Wirth estava envolvido no desenvolvimento de ALGOL X e propôs ALGOL W. O desenvolvimento de ALGOL X foi abandonado pela decisão de escolha de ALGOL 68, uma linguagem mais complexa. Em 1968, Niklaus Wirth decide desenvolver mais ALGOL W 
 e cria linguagem Pascal em 1970. Portanto, temos como principal origem da linguagem Pascal as linguagens ALGOL,
 principalmente a linguagem ALGOL W. Além disso, Pascal foi influênciado pela linguagem de programação Simula 67.
 
-## INFLUÊNCIAS
+## Influências
 Várias foram as linguagens influênciadas por pascal: Ada, Java, Oberon, Oberon-2, Object Pascal, Oxygene e etc. Object pascal, extensao da linguagem pascal com orientacao a objetos. Além disso, Pascal deu origem a diversos dialetos. Academicamente seus sucessores são Modula-2 e Oberon, linguagens criadas pelo mesmo criador de Pascal, Niklaus Wirth.
 
-## LINHA DO TEMPO
+## Linha do Tempo
 
 ## CLASSIFICAÇÃO
 * **Linguagem de Alto Nível**
@@ -28,7 +35,7 @@ Várias foram as linguagens influênciadas por pascal: Ada, Java, Oberon, Oberon
 * **Tem tipagem forte**
 * **Não é case sensitive**: Diferentemente de linguagens como o C, Pascal não diferencia o uppercase do lowercase dos caracteres do nome de uma variavel, função ou comando. Desse modo o comando "write" é o mesmo que "Write" e não ocorre erro de compilação por isso, a variavel "letra" é o mesmo que "LETRA" e etc.
 
-## PROGRAMAÇÃO ESTRUTURADA
+## Programação Estruturada
 Programação Estruturada é uma paradigma de programação com enfase em decisão, iteração e sequência. Surgiu no final da decada de 1950 com linguagens como ALGOL 58 e ALGOL 60. Algumas linguagens que têm como principio a programação estruturada são o ALGOL, Pascal, C e etc. Se sustenta teoricamente pelo **teorema do programa estruturado** de 1966. Segundo o **teorema do programa estruturado**, qualquer funcao computavel pode ser expressa por 3 estruturas de controle: sequência, seleção e iteração. Em Programação Estruturada, programas são vistos como compostos de estruras de controles:
 * **Sequência**: comandos ou subrotinas são todos executados em sequência
 * **Seleção ou Decisão**: comandos são executados dependendo do estado do programa, a partir de um teste lógico
@@ -63,7 +70,7 @@ ALGOL 68 possui as 3 estruturas de controle que o caracterizam como uma linguage
 * **seleção**: ALGOL 68 possui comandos como if, else, then, case que são estruturas de seleção
 * **iteração**: ALGOL 68  possui comandos como for, while, que são estruturas de iteração
 
-## COMPARAÇÃO DE PASCAL COM OUTRAS LINGUAGENS
+## Comparação de Pascal com outras linguagens
 
 ### C
 As duas linguagens possuem muitas semalhanças já que ambas foram influênciadas pela linguagem ALGOL e suas versões, além de possuirem como paradigma a programação estruturada. No entanto possuem diferenças.
@@ -101,7 +108,7 @@ ALGOL 60 usava como estrutura de iteração o for, que combinado com step..until
 #### Subrotinas
 #### Variáveis Locais
 
-## EXEMPLOS
+## Exemplos
 
-## REFERÊNCIAS
+## Referências
 
