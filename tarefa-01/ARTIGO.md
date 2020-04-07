@@ -1643,4 +1643,12 @@ int main(){
 ~~~
 
 ## Referências
-
+https://www.masswerk.at/algol60/report.htm
+https://en.wikipedia.org/wiki/Nested_function
+https://en.wikipedia.org/wiki/Comparison_of_Pascal_and_C
+https://pt.wikipedia.org/wiki/Pascal_(linguagem_de_programa%C3%A7%C3%A3o)
+https://en.wikipedia.org/wiki/Pascal_(programming_language)
+https://en.wikipedia.org/wiki/Structured_programming
+https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_estruturada
+A comparison of Pascal and ALGOL 68 - A.S.Tanenbaum
+SOS ALGOL 60 REFERENCE MANUAL
