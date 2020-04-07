@@ -4,10 +4,10 @@
 - [Introdução](#Introdução)
 - [Origens](#Origens)
 - [Influências](#Influências)
-- [Linha do Tempo](#Linha do Tempo)
+- [Linha do Tempo](#Linha-do-Tempo)
 - [Classificação](#Classificação)
-- [Programação Estruturada](#Programação Estruturada)
-- [Comparação de Pascal com outras linguagens](#Comparação de Pascal com outras linguagens)
+- [Programação Estruturada](#Programação-Estruturada)
+- [Comparação de Pascal com outras linguagens](#Comparação-de-Pascal-com-outras-linguagens)
 - [Exemplos](#Exemplos)
 - [Referências](#Referências)
 
