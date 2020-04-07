@@ -27,7 +27,7 @@ principalmente a linguagem ALGOL W.
 Várias foram as linguagens influênciadas por pascal: Ada, Java, Oberon, Oberon-2, Object Pascal, Oxygene e etc. Object pascal, extensao da linguagem pascal com orientacao a objetos. Além disso, Pascal deu origem a diversos dialetos. Academicamente seus sucessores são Modula-2 e Oberon, linguagens criadas pelo mesmo criador de Pascal, Niklaus Wirth.
 
 ## Linha do Tempo
-![logo](img/graphic.png "logo")
+![logo](graphic.png "logo")
 
 ## CLASSIFICAÇÃO
 * **Linguagem de Alto Nível**
