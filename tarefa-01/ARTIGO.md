@@ -45,20 +45,25 @@
 - [Referências](#Referências)
 
 ## Introdução
+
 **Pascal** é uma linguagem **imperativa**, puramente **procedural** e que tem como principio a **programação estruturada**. Criada em 1970 por **Niklaus Wirth**. Foi influênciada por **ALGOL 60** e mais especificamente **ALGOL W**, proposta de **Niklaus Wirth** para evoluir a linguagem **ALGOL**. É uma linguagem compilada e de proposito geral, criada como uma linguagem eficiente e que encoraja boas praticas de programação.
 
 
 ## Origens
+
 **Pascal** foi criado por **Niklaus Wirth** em 1970, influenciado pelo padrão do **ALGOL 60**, sucessora do **ALGOL 58**. **ALGOL 60** foi a linguagem que introduziu o paradigma da **programação estruturada**. **Niklaus Wirth** estava envolvido no desenvolvimento de **ALGOL X** e propôs **ALGOL W**. O desenvolvimento de **ALGOL X** foi abandonado pela decisão de escolha de **ALGOL 68**, uma linguagem mais complexa. Em 1968, **Niklaus Wirth** decide desenvolver mais o **ALGOL W** e cria linguagem **Pascal** em 1970. Portanto, temos como principal origem da linguagem Pascal as linguagens **ALGOL**,
 principalmente a linguagem **ALGOL W**.
 
 ## Influências
+
 Várias foram as linguagens influênciadas por **Pascal**: Ada, Java, Oberon, Oberon-2, **Object Pascal**, Oxygene e etc. **Object Pascal**, extensao da linguagem pascal com orientacao a objetos. Além disso, **Pascal** deu origem a diversos dialetos. Academicamente seus sucessores são **Modula-2** e **Oberon**, linguagens criadas pelo mesmo criador de **Pascal**, **Niklaus Wirth**.
 
 ## Linha do Tempo
+
 ![logo](graphic.png "logo")
 
 ## CLASSIFICAÇÃO
+
 * **Linguagem de Alto Nível**
 * **Linguagem Compilada**
 * **Linguagem Imperativa**: paradigma de programação que usa *comandos* para mudar o *estado* do programa.
@@ -69,7 +74,9 @@ Várias foram as linguagens influênciadas por **Pascal**: Ada, Java, Oberon, Ob
 * **Não é case sensitive**: Diferentemente de linguagens como o **C**, **Pascal** não diferencia o uppercase do lowercase dos caracteres do nome de uma variavel, função ou comando. Desse modo o comando "write" é o mesmo que "Write" e não ocorre erro de compilação por isso, a variavel "letra" é o mesmo que "LETRA" e etc.
 
 ## Programação Estruturada
+
 **Programação Estruturada** é uma paradigma de programação com enfase em **decisão**, **iteração** e **sequência**. Surgiu no final da decada de 1950 com linguagens como **ALGOL 58** e **ALGOL 60**. Algumas linguagens que têm como principio a programação estruturada são o **ALGOL**, **Pascal**, **C** e etc. Se sustenta teoricamente pelo **teorema do programa estruturado** de 1966. Segundo o **teorema do programa estruturado**, qualquer *funcao computavel* pode ser expressa por 3 *estruturas de controle*: **sequência**, **seleção** e **iteração**. Em **Programação Estruturada**, programas são vistos como compostos de *estruras de controles*:
+
 * **Sequência**: *comandos* e *subrotinas* são todos executados em sequência
 * **Seleção ou Decisão**: *comandos* são executados dependendo do *estado* do programa, a partir de um teste lógico
 * **Iteração**: um *comando* ou *bloco de comandos* é executado até o programa chegar a certo *estado*
@@ -104,6 +111,7 @@ Além disso, possuem estruturas como *subrotinas*, também conhecidos como *fun�
 * **iteração**: **ALGOL 68**  possui *comandos* como *for*, *while*, *by*,*from*, *to*, *do* que são partes constituintes de **estruturas de iteração**
 
 ## Comparação de Pascal com outras linguagens
+
 As duas linguagens possuem muitas semalhanças já que ambas foram influênciadas pela linguagem ALGOL e suas versões, além de possuirem como paradigma a programação estruturada. No entanto possuem diferenças.
 ### C
 #### Estruturas de Seleção
@@ -140,6 +148,7 @@ Em **ALGOL 60** o *SWITCH* deve ter um índice inteiro não negativo e a ordem d
 #### Variáveis Locais
 
 ## Exemplos
+
 ### Exemplos Simples
 #### Exemplo 1
 Comparação de um programa básico entre **Pascal** e **C**. É printado na tela a frase: Ola, Mundo!
@@ -864,6 +873,7 @@ Programa que printa varias potencias de um número inteiro. Tem como objetivo co
 ~~~
 
 ### Exemplos Interessantes
+
 #### Programa interessante 1
 Implementação de uma pilha em **Pascal**, comparando com a mesma implementação em **C**.
 
@@ -1703,6 +1713,7 @@ int main(){
 ~~~
 
 ## Referências
+
 https://www.masswerk.at/algol60/report.htm
 https://en.wikipedia.org/wiki/Nested_function
 https://en.wikipedia.org/wiki/Comparison_of_Pascal_and_C
