@@ -48,7 +48,9 @@ C possui as 3 estruturas de controle que o caracterizam como uma linguagem que t
 * **seleção**: C possui comandos como if, else, switch que são estruturas de seleção
 * **iteração**: C possui comandos como for, do while, while que são estruturas de iteração
 
-#### ALGOL
+#### ALGOL 60
+
+#### ALGOL 68
 
 ## COMPARAÇÃO DE PASCAL COM C
 As duas linguagens possuem muitas semalhanças já que ambas foram influênciadas pela linguagem ALGOL e suas versões, além de possuitem como paradigma a programação estruturada. No entanto possuem diferenças.
@@ -78,6 +80,35 @@ Uma função/procedimento aninhado é uma função/procedimento definida dentro 
 
 ### case e o switch
 No switch do C, cada case do switch senão terminar com o comando break o próximo case é executado, ou seja, o break impede a execução de blocos de outros cases que não eram para ser executados. Em Pascal a assensia de comando break não faz com que a execução do bloco de comandos do caso case(switch no C) seguinte seja executado.
+
+## COMPARAÇÃO DE PASCAL COM ALGOL 68
+
+### Procedimentos
+No ALGOL 68 procedimentos podem ser elementos de arrays, campos de estruturas, retorno de funções e etc. Além disso, pode existir ponteiro para procedimentos no ALGOL 68. Isso ocorre porque no ALGOL 68 os procedimentos são vistos como "objects"(não confundir com o conceito de programação orientada a objetos). Já no Pascal, procedimentos apenas podem ser chamados ou passados em argumentos.
+
+### Retorno de Procedimentos
+No ALGOL 68 todo procedimento retorna algo. Em Pascal, procedimentos por definição não retornam nada.
+
+### Retorno de Funções
+No ALGOL 68 funções podem retornar qualquer tipo existente na linguagem. Já em Pascal nem todos os tipos são permitidos como retorno de uma função. Arrays e structs não podem ser retorno de uma função. Desse modo, existe uma coleção de tipos restrita no Pascal que podem ser retorno de funções. 
+
+### Variaveis Locais
+No ALGOL 68 é possivel declarar variaveis locais em qualquer bloco e em qualquer parte de bloco. As variaveis passam a existir quando a execução entra no bloco e deixam de existir quando sai do bloco. Em Pascal só é permitida a declaração de variáveis locais dentro do nível de procedimento, ou seja, não é permitida a declaração de variaveis locais em outros tipos de bloco que não o de procedimentos/funções ou o do programa "main". Além disso, Pascal só permite a declaração de variáveis locais antes do bloco.
+
+### repeat
+Pascal tem o comando repeat, já ALGOL 68 não tem. O comando o while, também existente no Pascal,
+
+### case
+Em ALGOL 68 o case deve ter um indice inteiro não negativo e a ordem das "clauses" é essencial, já que The index, say i,  selects the i-th clause for execution. Em pascal o indice pode ser qualquer "scalar expression"
+
+### Estruturas de Controle de Iteração
+Em ALGOL 68 combina o comando for e while em um unico comando, já em pascal eles são comandos distintos. Ale´mde que for, from, by, to e while são individualmente opcionais, exceto qye se for for omitido não há nenhuma variavel de controle
+Em ALGOL 68 o laço for possui mais possibilidades como por exemplo o numero de paços a incrementar varia 
+A variavel de controle no ALGOL 68 é implicitamente declarada pelo comando for. Atribuições a ela são ilegais. E o escopo está no loop, tornando ele inacessivel fora do loop. Desse modo se uma variavel fora do loop for declarada com o mesmo nome, ela não afeta a variavel de controle. Além disso, a variavel de controle é declarada como um inteiro. Já em pascal a variavel de controle deve ser declarada, e o seu tipo não precisa ser necessariamente um inteiro, mas sim um scalar type. Além disso, a variavel de controle é acessivel fora do loop. Em ALGOL 68 as expressões depois de by e to são avaliadas antes do começo do loop. permitindo desse modo a alteração das variaveis que compoem esse comando
+
+### Argumentos
+Em ALGOL 68 existe um unico tipo de parametro, aquele que é chamado por valor. Já em pascal são permitidos 3: valor, referencia, procedure(incluindo function)
+
 
 ## EXEMPLOS
 
