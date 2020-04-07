@@ -148,75 +148,35 @@ end.
 ~~~
 
 ~~~
-#include<stdio.h>
+	#include<stdio.h>
 
+	float v[100];
+	float m,x;
+	int i,n;
 
-
-float v[100];
-
-float m,x;
-
-int i,n;
-
-
-
-int main(){
-
-
-
-	n=0;
-
-	m=0;
-
-	
-
-	do{
-
-		printf("v[%d] = ",n+1);
-
-		scanf("%f",&x);
-
-		printf("%f\n",x);
-
-				
-
-		v[n+1]=x;
-
-		n++;
-
-	}while(x>=0);
-
-
-
-	n--;
-
-
-
-	for(i=1;i<n+1;i++){
-
-		m+=v[i];
-
+	int main(){
+		n=0;
+		m=0;
+		do{
+			printf("v[%d] = ",n+1);
+			scanf("%f",&x);
+			printf("%f\n",x);
+			v[n+1]=x;
+			n++;
+		}while(x>=0);
+		n--;
+		for(i=1;i<n+1;i++){
+			m+=v[i];
+		}
+		if(n<=0){
+			printf("Erro no Calculo da Media.....\n");
+		}
+		else{
+			printf("Media -> %0.3f\n",m/n);
+		}
+		return 0;
 	}
-
-	
-
-	if(n<=0){
-
-		printf("Erro no Calculo da Media.....\n");
-
-	}
-
-	else{
-
-		printf("Media -> %0.3f\n",m/n);
-
-	}
-
-	
-
-	return 0;
-
-}
+~~~
 
 ~~~
 	program swap;
@@ -260,39 +220,39 @@ int main(){
 	begin
 		prog();
 	end.
-
 ~~~
-#include<stdio.h>
+~~~
+	#include<stdio.h>
 
-void impr(const int a,const int b){//por valor
-	printf("x=%d y=%d\n",a,b);
-}
-void swap1(int a,int b){//por valor
-	int tmp;
-	tmp=a;
-	a=b;
-	b=tmp;
-}
-void swap2(int * a, int * b){//por referencia
-	int tmp;
-	tmp=*a;
-	*a=*b;
-	*b=tmp;
-}
-void prog(){
-	int x,y;
-	x=10;
-	y=20;
-	impr(x,y);
-	swap1(x,y);
-	impr(x,y);
-	swap2(&x,&y);
-	impr(x,y);
-}
-int main(){
-	prog();
-return 0;
-}
+	void impr(const int a,const int b){//por valor
+		printf("x=%d y=%d\n",a,b);
+	}
+	void swap1(int a,int b){//por valor
+		int tmp;
+		tmp=a;
+		a=b;
+		b=tmp;
+	}
+	void swap2(int * a, int * b){//por referencia
+		int tmp;
+		tmp=*a;
+		*a=*b;
+		*b=tmp;
+	}
+	void prog(){
+		int x,y;
+		x=10;
+		y=20;
+		impr(x,y);
+		swap1(x,y);
+		impr(x,y);
+		swap2(&x,&y);
+		impr(x,y);
+	}
+	int main(){
+		prog();
+	return 0;
+	}
 ~~~
 
 ## Referências
