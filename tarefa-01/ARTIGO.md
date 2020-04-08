@@ -9,7 +9,7 @@
 - [Classificação](#Classificação)
 - [Programação Estruturada](#Programação-Estruturada)
 	- [Algumas linguagens que têm como principio a programação estruturada](#Algumas-linguagens-que-têm-como-principio-a-programação-estruturada)
-		- [Pascal](#Pascal)
+		- [Pascal](###Pascal)
 		- [C](#C)
 		- [ALGOL 60](#ALGOL-60)
 		- [ALGOL 68](#ALGOL-68)
