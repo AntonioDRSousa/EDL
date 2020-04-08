@@ -18,7 +18,7 @@
 		- [Estruturas de Seleção](#Estruturas-de-Seleção)
 		- [Estruturas de Iteração](#Estruturas-de-Iteração)
 		- [Subrotinas](#Subrotinas)
-			- [Funções/procedimentos aninhados](#Funções/procedimentos-aninhados)
+			- [Funções/procedimentos aninhados](#nested)
 		- [Variaveis Locais](#Variáveis-Locais)
 	- [ALGOL 68](#ALGOL-68-1)
 		- [Estruturas de Seleção](#Estruturas-de-Seleção-1)
@@ -141,7 +141,7 @@ Já em **C**, temos a possibilidade de criar varios tipos de *laço for* além d
 #### Subrotinas
 
 **Pascal** possui *procedimentos* e *funções*, enquanto **C** possui apenas *funções*. Isso ocorre porque a linguagem **C** tem o tipo *void* e **Pascal** não tem. Desse modo o que seria um *procedimento* em **Pascal** é uma *função void* no **C**. **Pascal** possui duas formas de passar *argumentos* para uma *função*: *por referência*(usa-se *var*) ou *por valor*(usa-se *const*). **C** apenas possui passagem de *argumentos por valor*, mas com o uso de *ponteiros* pode-se emular uma passagem de argumentos por *referência*. Esse é um dos motivos porque a utilização de *ponteiros* é tão necessaria em **C**. Em **C** é possivel ter *ponteiros de funções*, emquanto em **Pascal** isso não é possivel. **C** permite retorno de *struct* nas *funções*. Em **Pascal** isso não é permitido.
-
+<a name="nested"><\a>
 ##### Funções/procedimentos aninhados
 
 Uma *função/procedimento aninhado* é uma *função/procedimento* definida dentro de uma *função*, ou seja, a *função/procedimento aninhada* é encapsulada dentro da *função* de nível superior. Fora do *escopo da função* de nível superior a *função aninhada não é detectada. Além disso, a *função aninhada* usa as *variaveis locais* da *função* de nível superior. Uma das razões de sua utilização, é a utilidade de dividir *subrotinas* em outras *subrotinas* e encapsular-las. *Funções/procedimentos aninhadas* são usadas tipicamente como *funções* auxiliares ou *funções recursivas* dentro de outra *função*. Têm como vantagem organizar melhor o código, evitando poluir o *escopo*, e compartilham *variaveis* dentro do *escopo* facilmente sem o uso de *parametros* ou usar uma *variavel global*. **ALGOL**, **Pascal**, **Simula 67** são algumas das linguagens que possuem *funções/procedimentos aninhados*. **C** e sua familia de linguagens não possuem *funções/procedimentos aninhados*, sendo essa uma das diferenças entre **C** e **Pascal**. Um dos motivos é que **C** não possui *escopo lexico*. *Funções aninhadas* são tratadas como *escopo lexico*, que não é valido em **C** porque o *compilador* não consegue acessar a localização na *memoria* da *função* interna a outra *função*. Em **C** existem apenas dois *escopos*: o *local* e o *global*. **C** tem como alternativas às *funções aninhadas* o uso de *variaveis static*, além de poder passar a *referência(endereço)* de *variaveis* de um certo *escopo* às *funções que deveriam ser aninhadas*, algo que aumenta a complexidade da *chamada de funções*.
