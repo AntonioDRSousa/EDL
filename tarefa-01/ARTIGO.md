@@ -192,20 +192,20 @@ Comparação de um programa básico entre **Pascal** e **C**. É printado na tel
 
 **Pascal** :
 ``` pascal
-	program OlaMundo;  
-	begin
-	   writeln('Ola, Mundo!');
-	end.
+program OlaMundo;  
+begin
+	writeln('Ola, Mundo!');
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
+#include<stdio.h>
 
-	int main(){
-		printf("Ola, Mundo!\n");
-		return 0;
-	}
+int main(){
+	printf("Ola, Mundo!\n");
+	return 0;
+}
 ```
 
 #### Exemplo 2
@@ -214,68 +214,68 @@ Esse programa basicamente lê um conjunto de valores reais e calcula a média ar
 
 **Pascal** :
 ``` pascal
-	program Media;
-	var v: array[1..100] of REAL;
-	var m,x: real;
-	var i,n: integer;
+program Media;
+var v: array[1..100] of REAL;
+var m,x: real;
+var i,n: integer;
 
+begin
+	n:=0;
+	m:=0;
+	repeat
 	begin
-		n:=0;
-		m:=0;
-		repeat
-		begin
-			write('v[',(n+1),'] = ');
-			readln(x);			
-			v[n+1]:=x;
-			n:=n+1;
-		end;
-		until x<0;
-		n:=n-1;
-		for i:=1 to n+1 do
-		begin
-			m:=m+v[i];
-		end;
-		if n<=0 then
-		begin
-			writeln('Erro no Calculo da Media.....');
-		end
-		else
-		begin
-			writeln('Media -> ',m/n:0:3);
-		end;
-	end.
+		write('v[',(n+1),'] = ');
+		readln(x);			
+		v[n+1]:=x;
+		n:=n+1;
+	end;
+	until x<0;
+	n:=n-1;
+	for i:=1 to n+1 do
+	begin
+		m:=m+v[i];
+	end;
+	if n<=0 then
+	begin
+		writeln('Erro no Calculo da Media.....');
+	end
+	else
+	begin
+		writeln('Media -> ',m/n:0:3);
+	end;
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
+#include<stdio.h>
 
-	float v[100];
-	float m,x;
-	int i,n;
+float v[100];
+float m,x;
+int i,n;
 
-	int main(){
-		n=0;
-		m=0;
-		do{
-			printf("v[%d] = ",n+1);
-			scanf("%f",&x);
-			printf("%f\n",x);
-			v[n+1]=x;
-			n++;
-		}while(x>=0);
-		n--;
-		for(i=1;i<n+1;i++){
-			m+=v[i];
-		}
-		if(n<=0){
-			printf("Erro no Calculo da Media.....\n");
-		}
-		else{
-			printf("Media -> %0.3f\n",m/n);
-		}
-		return 0;
+int main(){
+	n=0;
+	m=0;
+	do{
+		printf("v[%d] = ",n+1);
+		scanf("%f",&x);
+		printf("%f\n",x);
+		v[n+1]=x;
+		n++;
+	}while(x>=0);
+	n--;
+	for(i=1;i<n+1;i++){
+		m+=v[i];
 	}
+	if(n<=0){
+		printf("Erro no Calculo da Media.....\n");
+	}
+	else{
+		printf("Media -> %0.3f\n",m/n);
+	}
+	return 0;
+}
 ```
 
 #### Exemplo 3
@@ -284,82 +284,82 @@ Programa que implementa uma *função* que troca o valor entre duas *variáveis*
 
 **Pascal** :
 ``` pascal
-	program swap;
-	type
-		pint=^integer;
-	procedure impr(const a,b:integer);//por valor
-	begin
-		writeln('x=',a,' ','y=',b);
-	end;
-	procedure swap1(var a,b:integer);//por referencia, uso de 'var'
-	var
-		tmp:integer;
-	begin
-		tmp:=a;
-		a:=b;
-		b:=tmp;
-	end;
+program swap;
+type
+	pint=^integer;
+procedure impr(const a,b:integer);//por valor
+begin
+	writeln('x=',a,' ','y=',b);
+end;
+procedure swap1(var a,b:integer);//por referencia, uso de 'var'
+var
+	tmp:integer;
+begin
+	tmp:=a;
+	a:=b;
+	b:=tmp;
+end;
 
-	procedure swap2(a,b:pint);//por referencia, uso de ponteiros
-	var
-		tmp:integer;
-	begin
-		tmp:=a^;
-		a^:=b^;
-		b^:=tmp;
-	end;
+procedure swap2(a,b:pint);//por referencia, uso de ponteiros
+var
+	tmp:integer;
+begin
+	tmp:=a^;
+	a^:=b^;
+	b^:=tmp;
+end;
 
-	procedure prog();
-	var
-		x,y:integer;
-	begin
-		x:=10;
-		y:=20;
-		impr(x,y);
-		swap1(x,y);
-		impr(x,y);
-		swap2(@x,@y);
-		impr(x,y);
-	end;
-	
-	begin
-		prog();
-	end.
+procedure prog();
+var
+	x,y:integer;
+begin
+	x:=10;
+	y:=20;
+	impr(x,y);
+	swap1(x,y);
+	impr(x,y);
+	swap2(@x,@y);
+	impr(x,y);
+end;
+
+begin
+	prog();
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
+#include<stdio.h>
 
-	void impr(const int a,const int b){//por valor
-		printf("x=%d y=%d\n",a,b);
-	}
-	void swap1(int a,int b){//por valor
-		int tmp;
-		tmp=a;
-		a=b;
-		b=tmp;
-	}
-	void swap2(int * a, int * b){//por referencia
-		int tmp;
-		tmp=*a;
-		*a=*b;
-		*b=tmp;
-	}
-	void prog(){
-		int x,y;
-		x=10;
-		y=20;
-		impr(x,y);
-		swap1(x,y);
-		impr(x,y);
-		swap2(&x,&y);
-		impr(x,y);
-	}
-	int main(){
-		prog();
-	return 0;
-	}
+void impr(const int a,const int b){//por valor
+	printf("x=%d y=%d\n",a,b);
+}
+void swap1(int a,int b){//por valor
+	int tmp;
+	tmp=a;
+	a=b;
+	b=tmp;
+}
+void swap2(int * a, int * b){//por referencia
+	int tmp;
+	tmp=*a;
+	*a=*b;
+	*b=tmp;
+}
+void prog(){
+	int x,y;
+	x=10;
+	y=20;
+	impr(x,y);
+	swap1(x,y);
+	impr(x,y);
+	swap2(&x,&y);
+	impr(x,y);
+}
+int main(){
+	prog();
+return 0;
+}
 ```
 
 #### Exemplo 4
@@ -368,95 +368,95 @@ Programa que é uma calculadora de números complexos que realiza três operaç�
 
 **Pascal** :
 ``` pascal
-	program complexo;
+program complexo;
 
-	type 
-		comp=record
-			re:integer;
-			im:integer;
-		end;
+type 
+	comp=record
+		re:integer;
+		im:integer;
+	end;
 
-	var a,b:comp;
-	var ch:char;
+var a,b:comp;
+var ch:char;
 
+begin
+	writeln('a -> ');
+	write('Re(a) = ');
+	readln(a.re);
+	write('Im(a) = ');
+	readln(a.im);
+	writeln('b -> ');
+	write('Re(b) = ');
+	readln(b.re);
+	write('Im(b) = ');
+	readln(b.im);
+	writeln(#10,#10,'a = ',a.re,' + ',a.im,'i',#10,'b = ',b.re,' + ',b.im,'i');
+	while true do
 	begin
-		writeln('a -> ');
-		write('Re(a) = ');
-		readln(a.re);
-		write('Im(a) = ');
-		readln(a.im);
-		writeln('b -> ');
-		write('Re(b) = ');
-		readln(b.re);
-		write('Im(b) = ');
-		readln(b.im);
-		writeln(#10,#10,'a = ',a.re,' + ',a.im,'i',#10,'b = ',b.re,' + ',b.im,'i');
-		while true do
-		begin
-			writeln(#10,'Digite um caracter');
-			writeln('a -> soma',#10,'s -> subtrai',#10,'m -> multiplica',#10,'outro caracter -> termina execucao');
-			readln(ch);
-			case ch of
-				'a':
-					writeln('a+b = ',a.re+b.re,' + ',a.im+b.im,'i');
-				's':
-					writeln('a-b = ',a.re-b.re,' + ',a.im-b.im,'i');
-				'm':
-					writeln('a*b = ',((a.re*b.re)-(a.im*b.im)),' + ',((a.re*b.im)+(a.im*b.re)),'i');
-				else
-					break;
-			end;
+		writeln(#10,'Digite um caracter');
+		writeln('a -> soma',#10,'s -> subtrai',#10,'m -> multiplica',#10,'outro caracter -> termina execucao');
+		readln(ch);
+		case ch of
+			'a':
+				writeln('a+b = ',a.re+b.re,' + ',a.im+b.im,'i');
+			's':
+				writeln('a-b = ',a.re-b.re,' + ',a.im-b.im,'i');
+			'm':
+				writeln('a*b = ',((a.re*b.re)-(a.im*b.im)),' + ',((a.re*b.im)+(a.im*b.re)),'i');
+			else
+				break;
 		end;
-	end.
+	end;
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
-	#include<stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-	typedef struct comp{
-		int re;
-		int im;
-	}comp;
+typedef struct comp{
+	int re;
+	int im;
+}comp;
 
-	comp a,b;
-	char ch;
+comp a,b;
+char ch;
 
-	int main(){
-		printf("a -> \n");
-		printf("Re(a) = ");
-		scanf("%d",&a.re);
-		printf("Im(a) = ");
-		scanf("%d",&a.im);
-		printf("b -> \n");
-		printf("Re(b) = ");
-		scanf("%d",&b.re);
-		printf("Im(b) = ");
-		scanf("%d",&b.im);
-		fflush(stdin);
-		printf("\na = %d + %di\nb = %d + %di\n",a.re,a.im,b.re,b.im);
-		while(1){
-			printf("\nDigite um caracter\n");
-			printf("a -> soma\ns -> subtrai\nm -> multiplica\noutro caracter -> termina execucao\n");
-			scanf("%c",&ch);
-			switch(ch){
-				case 'a':
-					printf("a+b = %d + %di\n",a.re+b.re,a.im+b.im);
-					break;
-				case 's':
-					printf("a-b = %d + %di\n",a.re-b.re,a.im-b.im);
-					break;
-				case 'm':
-					printf("a*b = %d + %di\n",((a.re*b.re)-(a.im*b.im)),((a.re*b.im)+(a.im*b.re)));
-					break;
-				default:
-					exit(1);
-			}
-			fflush(stdin);
+int main(){
+	printf("a -> \n");
+	printf("Re(a) = ");
+	scanf("%d",&a.re);
+	printf("Im(a) = ");
+	scanf("%d",&a.im);
+	printf("b -> \n");
+	printf("Re(b) = ");
+	scanf("%d",&b.re);
+	printf("Im(b) = ");
+	scanf("%d",&b.im);
+	fflush(stdin);
+	printf("\na = %d + %di\nb = %d + %di\n",a.re,a.im,b.re,b.im);
+	while(1){
+		printf("\nDigite um caracter\n");
+		printf("a -> soma\ns -> subtrai\nm -> multiplica\noutro caracter -> termina execucao\n");
+		scanf("%c",&ch);
+		switch(ch){
+			case 'a':
+				printf("a+b = %d + %di\n",a.re+b.re,a.im+b.im);
+				break;
+			case 's':
+				printf("a-b = %d + %di\n",a.re-b.re,a.im-b.im);
+				break;
+			case 'm':
+				printf("a*b = %d + %di\n",((a.re*b.re)-(a.im*b.im)),((a.re*b.im)+(a.im*b.re)));
+				break;
+			default:
+				exit(1);
 		}
-		return 0;
+		fflush(stdin);
 	}
+	return 0;
+}
 ```
 
 #### Exemplo 5
@@ -465,43 +465,43 @@ Programa que basicamente demonstra a necessidade do uso do *comando break* ao fi
 
 **Pascal** :
 ``` pascal
-	program flow;
+program flow;
 
-	var ch:char;
+var ch:char;
 
-	begin
-		writeln('Digite o caracter a ou b: ');
-		readln(ch);
-		case ch of
-			'a':
-				writeln('caso a');
-			'b':
-				writeln('caso b');
-			else
-				writeln('nao foi digitado nem a e nem b');
-		end;
-	end.
+begin
+	writeln('Digite o caracter a ou b: ');
+	readln(ch);
+	case ch of
+		'a':
+			writeln('caso a');
+		'b':
+			writeln('caso b');
+		else
+			writeln('nao foi digitado nem a e nem b');
+	end;
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
+#include<stdio.h>
 
-	char ch;
+char ch;
 
-	int main(){
-		printf("Digite o caracter a ou b: \n");
-		scanf("%c",&ch);
-		switch(ch){//nao colocando o comando break, todos os case sao executados no C
-			case 'a':
-				printf("caso a\n");
-			case 'b':
-				printf("caso b\n");
-			default:
-				printf("nao foi digitado nem a e nem b\n");
-		}
-		return 0;
+int main(){
+	printf("Digite o caracter a ou b: \n");
+	scanf("%c",&ch);
+	switch(ch){//nao colocando o comando break, todos os case sao executados no C
+		case 'a':
+			printf("caso a\n");
+		case 'b':
+			printf("caso b\n");
+		default:
+			printf("nao foi digitado nem a e nem b\n");
 	}
+	return 0;
+}
 ```
 
 #### Exemplo 6
@@ -510,39 +510,39 @@ Programa que printa uma série de números formados apartir de operações de mu
 
 **Pascal** :
 ``` pascal
-	program serie;
+program serie;
 
-	var r:integer;
-	var s,i:integer;
+var r:integer;
+var s,i:integer;
 
+begin
+	write('base: ');
+	readln(r);
+	s:=0;
+	i:=1;
+	while i<=1000 do
 	begin
-		write('base: ');
-		readln(r);
-		s:=0;
-		i:=1;
-		while i<=1000 do
-		begin
-			s:=s+i;
-			i:=i*r;
-			write(s,' ');
-		end;
-	end.
+		s:=s+i;
+		i:=i*r;
+		write(s,' ');
+	end;
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
-	int main(){
-		int r,s,i;
-		printf("base: ");
-		scanf("%d",&r);
-		s=0;
-		for(i=1;i<=1000;i*=r){
-			s+=i;
-			printf("%d ",s);
-		}
-		return 0;
+#include<stdio.h>
+int main(){
+	int r,s,i;
+	printf("base: ");
+	scanf("%d",&r);
+	s=0;
+	for(i=1;i<=1000;i*=r){
+		s+=i;
+		printf("%d ",s);
 	}
+	return 0;
+}
 ```
 
 #### Exemplo 7
@@ -551,89 +551,89 @@ Programa que calcula a diferença entre o elemento máximo e o mínimo num conju
 
 **Pascal** :
 ``` pascal
-	program distancia;
+program distancia;
 
-	var v:array[1..10] of integer;
-	var i,x:integer;
+var v:array[1..10] of integer;
+var i,x:integer;
 
-	function dist():integer;
-	var
-		m:integer;
-		function max():integer;
-		begin
-			m:=0;
-			for i:=1 to 10 do
-			begin
-				if v[i]>m then
-				begin
-					m:=v[i];
-				end;	
-			end;
-			max:=m;
-		end;
-		function min():integer;
-		begin
-			m:=v[1];
-			for i:=2 to 10 do
-			begin
-				if v[i]<m then
-				begin
-					m:=v[i];
-				end;	
-			end;
-			min:=m;
-		end;
+function dist():integer;
+var
+	m:integer;
+	function max():integer;
 	begin
-		dist:=max()-min();
-	end;
-
-	begin
+		m:=0;
 		for i:=1 to 10 do
 		begin
-			write('v[',i,'] = ');
-			readln(v[i]);
+			if v[i]>m then
+			begin
+				m:=v[i];
+			end;	
 		end;
-		writeln(#10,#10,'distancia entre o maximo e o minimo: ',dist());
-	end.
+		max:=m;
+	end;
+	function min():integer;
+	begin
+		m:=v[1];
+		for i:=2 to 10 do
+		begin
+			if v[i]<m then
+			begin
+				m:=v[i];
+			end;	
+		end;
+		min:=m;
+	end;
+begin
+	dist:=max()-min();
+end;
+
+begin
+	for i:=1 to 10 do
+	begin
+		write('v[',i,'] = ');
+		readln(v[i]);
+	end;
+	writeln(#10,#10,'distancia entre o maximo e o minimo: ',dist());
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
+#include<stdio.h>
 
-	int v[10];
-	int i,x;
+int v[10];
+int i,x;
+	
+int max(){
+	int m=0;
+	for(i=0;i<10;i++){ 
+		if(v[i]>m){
+			m=v[i];
+		}	
+	}
+	return m;
+}
+int min(){
+	int m=v[0];
+	for(i=0;i<10;i++){ 
+		if(v[i]<m){
+			m=v[i];
+		}	
+	}
+return m;
+}
 
-	int max(){
-		int m=0;
-		for(i=0;i<10;i++){ 
-			if(v[i]>m){
-				m=v[i];
-			}	
-		}
-		return m;
+int dist(){
+	return max()-min();
+}
+int main(){
+	for(i=0;i<10;i++){
+		printf("v[%d] = ",i);
+		scanf("%d",&v[i]);
 	}
-	int min(){
-		int m=v[0];
-		for(i=0;i<10;i++){ 
-			if(v[i]<m){
-				m=v[i];
-			}	
-		}
-		return m;
-	}
-
-	int dist(){
-		return max()-min();
-	}
-	int main(){
-		for(i=0;i<10;i++){
-			printf("v[%d] = ",i);
-			scanf("%d",&v[i]);
-		}
-		printf("\n\ndistancia entre o maximo e o minimo: %d\n",dist());
-		return 0;
-	}
+	printf("\n\ndistancia entre o maximo e o minimo: %d\n",dist());
+	return 0;
+}
 ```
 
 #### Exemplo 8
@@ -642,71 +642,71 @@ Programa que calcula o número de euler de modo recursivo usando como auxilio um
 
 **Pascal** :
 ``` pascal
-	program euler;
+program euler;
 
-	var e:real;
-	var x:integer;
+var e:real;
+var x:integer;
 
-	procedure calc(i:integer);
-		function fat(x:integer):integer;
-		begin
-			if x=0 then
-			begin
-				fat:=1;
-			end
-			else
-			begin
-				fat:=x*fat(x-1);
-			end;
-		end;
+procedure calc(i:integer);
+	function fat(x:integer):integer;
 	begin
-		if i>=0 then
+		if x=0 then
 		begin
-			e:=e+(1/fat(i));
-			calc(i-1);
+			fat:=1;
+		end
+		else
+		begin
+			fat:=x*fat(x-1);
 		end;
 	end;
-
+begin
+	if i>=0 then
 	begin
-		e:=0;
-		write('Digite o numero de iteracoes: ');
-		readln(x);
-		calc(x);
-		writeln('e = ',e:0:20);
-	end.
+		e:=e+(1/fat(i));
+		calc(i-1);
+	end;
+end;
+
+begin
+	e:=0;
+	write('Digite o numero de iteracoes: ');
+	readln(x);
+	calc(x);
+	writeln('e = ',e:0:20);
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
+#include<stdio.h>
 
-	double e;
-	int x;
+double e;
+int x;
 
-	int fat(int x){
-		if(x==0){
-			return 1;
-		}
-		else{
-			return x*fat(x-1);
-		}
+int fat(int x){
+	if(x==0){
+		return 1;
 	}
-
-	void calc(int i){
-		if(i>=0){
-			e+=(1/((double)fat(i)));
-			calc(i-1);
-		}
+	else{
+		return x*fat(x-1);
 	}
+}
 
-	int main(){
-		e=0;
-		printf("Digite o numero de iteracoes: ");
-		scanf("%d",&x);
-		calc(x);
-		printf("e = %0.20lf\n",e);
-		return 0;
+void calc(int i){
+	if(i>=0){
+		e+=(1/((double)fat(i)));
+		calc(i-1);
 	}
+}
+
+int main(){
+	e=0;
+	printf("Digite o numero de iteracoes: ");
+	scanf("%d",&x);
+	calc(x);
+	printf("e = %0.20lf\n",e);
+	return 0;
+}
 ```
 
 #### Exemplo 9
@@ -715,73 +715,73 @@ Programa que obtem a fatoração de um número inteiro. Em **Pascal** se utiliza
 
 **Pascal** :
 ``` pascal
-	program fatoracao;
+program fatoracao;
 
-	var
-		a:integer;
-	procedure fat(n:integer);
-	var
-		i,x:integer;
-		function divsuc():integer;
-		var 
-			e:integer;
-		begin
-			e:=0;
-			while (n mod i)=0 do
-			begin
-				e:=e+1;
-				n:=n div i;
-			end;
-			divsuc:=e;
-		end;
+var
+	a:integer;
+procedure fat(n:integer);
+var
+	i,x:integer;
+	function divsuc():integer;
+	var 
+		e:integer;
 	begin
-		for i:=2 to n-1 do
+		e:=0;
+		while (n mod i)=0 do
 		begin
-			x:=divsuc();
-			if x<>0 then
-			begin
-				write(i,'^',x,' ');
-			end;
+			e:=e+1;
+			n:=n div i;
+		end;
+		divsuc:=e;
+	end;
+begin
+	for i:=2 to n-1 do
+	begin
+		x:=divsuc();
+		if x<>0 then
+		begin
+			write(i,'^',x,' ');
 		end;
 	end;
+end;
 
-	begin
-		write('a = ');
-		readln(a);
-		fat(a);
-	end.
+begin
+	write('a = ');
+	readln(a);
+	fat(a);
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
+#include<stdio.h>
 
-	int a;
+int a;
 
-	int divsuc(int * n,int i){
-		int e=0;
-		while(((*n)%i)==0){
-			e++;
-			*n=(int) (*n)/i;
+int divsuc(int * n,int i){
+	int e=0;
+	while(((*n)%i)==0){
+		e++;
+		*n=(int) (*n)/i;
+	}
+	return e;
+}
+
+void fat(int n){
+	int i,x;
+	for(i=2;i<=n;i++){
+		x=divsuc(&n,i);
+		if(x!=0){
+			printf("%d^%d ",i,x);
 		}
-		return e;
 	}
-
-	void fat(int n){
-		int i,x;
-		for(i=2;i<=n;i++){
-			x=divsuc(&n,i);
-			if(x!=0){
-				printf("%d^%d ",i,x);
-			}
-		}
-	}
-	int main(){
-		printf("a = ");
-		scanf("%d",&a);
-		fat(a);
-		return 0;
-	}
+}
+int main(){
+	printf("a = ");
+	scanf("%d",&a);
+	fat(a);
+	return 0;
+}
 ```
 
 #### Exemplo 10
@@ -790,55 +790,55 @@ Programa que printa a relação de ordem entre dois números inteiros. Tem como 
 
 **Pascal** :
 ``` pascal
-	program jump;
+program jump;
 
-	var a,b:integer;
+var a,b:integer;
 
+begin
+	write('a = ');
+	readln(a);
+	write('b = ');
+	readln(b);
+
+	if a<b then
 	begin
-		write('a = ');
-		readln(a);
-		write('b = ');
-		readln(b);
-
-		if a<b then
-		begin
-			writeln('a<b');
-		end
-		else if b<a then
-		begin
-			writeln('a>b');
-		end
-		else
-		begin
-			writeln('a=b');
-		end;
-	end.
+		writeln('a<b');
+	end
+	else if b<a then
+	begin
+		writeln('a>b');
+	end
+	else
+	begin
+		writeln('a=b');
+	end;
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
+#include<stdio.h>
 
-	int main(){
-		int a,b;
-		printf("a = ");
-		scanf("%d",&a);
-		printf("b = ");
-		scanf("%d",&b);
+int main(){
+	int a,b;
+	printf("a = ");
+	scanf("%d",&a);
+	printf("b = ");
+	scanf("%d",&b);
 
-		if(a<b) goto l1;
-		l1:
-			printf("a<b\n");
-			goto l4;
-		if(b<a) goto l2;
-		l2:
-			printf("a>b\n");
-			goto l4;
-		l3:
-			printf("a=b\n");
-		l4:
-		return 0;
-	}
+if(a<b) goto l1;
+	l1:
+		printf("a<b\n");
+		goto l4;
+	if(b<a) goto l2;
+	l2:
+		printf("a>b\n");
+		goto l4;
+	l3:
+		printf("a=b\n");
+	l4:
+	return 0;
+}
 ```
 
 #### Exemplo 11
@@ -847,76 +847,73 @@ Programa que printa varias potencias de um número inteiro. Tem como objetivo co
 
 **Pascal** :
 ``` pascal
-	program gotoc;
+program gotoc;
 
-	var 
-		i,n: integer;
-		ch:char;
-
-	begin	
-		while true do
+var 
+	i,n: integer;
+	ch:char;
+begin	
+	while true do
+	begin
+		write('n = ');
+		readln(n);
+		if n>=0 then
 		begin
-			write('n = ');
-			readln(n);
-			if n>=0 then
-			begin
-				break;
-			end;
+			break;
 		end;
+	end;
+	for i:=0 to 9 do
+	begin
+		write(n,' ');
+		n:=n*n;
+	end;
 
-		for i:=0 to 9 do
+	while true do
+	begin
+		writeln(#10,'Pressione o caracter s para sair.....');
+		readln(ch);
+		if ch='s' then
 		begin
-			write(n,' ');
-			n:=n*n;
+			break;
 		end;
-
-		while true do
-		begin
-			writeln(#10,'Pressione o caracter s para sair.....');
-			readln(ch);
-			if ch='s' then
-			begin
-				break;
-			end;
-		end;
-	end.
+	end;
+end.
 ```
 
 **C** :
 ``` C
-	#include<stdio.h>
+#include<stdio.h>
 
-	int main(){
-		int i,n;
-		char ch;
+int main(){
+	int i,n;
+	char ch;
+	goto l1;	
+	l1:
+		printf("n = ");
+		scanf("%d",&n);
+		if(n>=0) goto l2;
+		goto l1;
 
-		goto l1;	
-		l1:
-			printf("n = ");
-			scanf("%d",&n);
-			if(n>=0) goto l2;
-			goto l1;
-
-			i=0;
-		l2:
-			if(i<10) goto l3;
-			goto l4;
-			l3:
-				printf("%d ",n);
-				i++;
-				n*=n;
-				goto l2;
-			l4:
-				if(1) goto l5;
-				l5:
-					printf("\nPressione o caracter s para sair.....\n");
-					scanf("%c",&ch);
-					fflush(stdin);
-					if(ch=='s') goto l6;
-					goto l5;
-				l6:
-		return 0;
-	}
+		i=0;
+	l2:
+		if(i<10) goto l3;
+		goto l4;
+		l3:
+			printf("%d ",n);
+			i++;
+			n*=n;
+			goto l2;
+		l4:
+			if(1) goto l5;
+			l5:
+				printf("\nPressione o caracter s para sair.....\n");
+				scanf("%c",&ch);
+				fflush(stdin);
+				if(ch=='s') goto l6;
+				goto l5;
+			l6:
+	return 0;
+}
 ```
 
 ### Exemplos Interessantes
