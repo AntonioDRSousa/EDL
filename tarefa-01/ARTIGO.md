@@ -51,8 +51,7 @@
 
 ## Introdução
 
-**Pascal** é uma linguagem **imperativa**, puramente **procedural** e que tem como principio a **programação estruturada**. Criada em 1970 por **Niklaus Wirth**. Foi influênciada por **ALGOL 60** e mais especificamente **ALGOL W**, proposta de **Niklaus Wirth** para evoluir a linguagem **ALGOL**. É uma linguagem compilada e de proposito geral, criada como uma linguagem eficiente e que encoraja boas praticas de programação.
-
+**Pascal** é uma linguagem de programação **imperativa**, **procedural** e que tem como principio a **programação estruturada**. Seu nome é uma homenagem ao físico, matemático e filosofo francês Blaise Pascal. Foi criada em 1970 por **Niklaus Wirth**, para sua fábrica de software e para ensinar programação estruturada, como uma linguagem eficiênte e que encoraja boas práticas de programação. Tem  como origem a linguagem **ALGOL 60**, que tem como paradigma a **programação estruturada**, posteriormente sucedida por **ALGOL 68**, linguagem mais complexa que sua antecessora.
 
 ## Origens
 
