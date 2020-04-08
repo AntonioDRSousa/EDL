@@ -2,12 +2,12 @@
 
 ## INDICE
 
-+ [Introdução](#Introdução)
-+ [Origens](#Origens)
-+ [Influências](#Influências)
-+ [Linha do Tempo](#Linha-do-Tempo)
-+ [Classificação](#Classificação)
-+ [Programação Estruturada](#Programação-Estruturada)
+* [Introdução](#Introdução)
+* [Origens](#Origens)
+* [Influências](#Influências)
+* [Linha do Tempo](#Linha-do-Tempo)
+* [Classificação](#Classificação)
+* [Programação Estruturada](#Programação-Estruturada)
 	- [Algumas linguagens que têm como principio a programação estruturada](#Algumas-linguagens-que-têm-como-principio-a-programação-estruturada)
 		- [Pascal](#Pascal-1)
 		- [C](#C)
