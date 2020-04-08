@@ -2,18 +2,18 @@
 
 ## INDICE
 
-- [Introdução](#Introdução)
-- [Origens](#Origens)
-- [Influências](#Influências)
-- [Linha do Tempo](#Linha-do-Tempo)
-- [Classificação](#Classificação)
-- [Programação Estruturada](#Programação-Estruturada)
++ [Introdução](#Introdução)
++ [Origens](#Origens)
++ [Influências](#Influências)
++ [Linha do Tempo](#Linha-do-Tempo)
++ [Classificação](#Classificação)
++ [Programação Estruturada](#Programação-Estruturada)
 	- [Algumas linguagens que têm como principio a programação estruturada](#Algumas-linguagens-que-têm-como-principio-a-programação-estruturada)
 		- [Pascal](#Pascal-1)
 		- [C](#C)
 		- [ALGOL 60](#ALGOL-60)
 		- [ALGOL 68](#ALGOL-68)
-- [Comparação de Pascal com outras linguagens](#Comparação-de-Pascal-com-outras-linguagens)
++ [Comparação de Pascal com outras linguagens](#Comparação-de-Pascal-com-outras-linguagens)
 	- [C](#C-1)
 		- [Estruturas de Seleção](#Estruturas-de-Seleção)
 		- [Estruturas de Iteração](#Estruturas-de-Iteração)
@@ -30,7 +30,7 @@
 		- [Estruturas de Iteração](#Estruturas-de-Iteração-2)
 		- [Subrotinas](#Subrotinas-2)
 		- [Variaveis Locais](#Variáveis-Locais-2)
-- [Exemplos](#Exemplos)
++ [Exemplos](#Exemplos)
 	- [Exemplos Simples](#Exemplos-Simples)
 		- [Exemplo 1](#Exemplo-1)
 		- [Exemplo 2](#Exemplo-2)
@@ -48,7 +48,7 @@
 		- [Programa interessante 2](#Programa-interessante-2)
 		- [Programa interessante 3](#Programa-interessante-3)
 		- [Programa interessante 4](#Programa-interessante-4)
-- [Referências](#Referências)
++ [Referências](#Referências)
 
 <!-- toc -->
 
