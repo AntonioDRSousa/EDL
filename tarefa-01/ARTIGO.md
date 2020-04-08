@@ -9,7 +9,7 @@
 - [Classificação](#Classificação)
 - [Programação Estruturada](#Programação-Estruturada)
 	- [Algumas linguagens que têm como principio a programação estruturada](#Algumas-linguagens-que-têm-como-principio-a-programação-estruturada)
-		- [Pascal](#Pascal)
+		- [Pascal](#Pascal-1)
 		- [C](#C)
 		- [ALGOL 60](#ALGOL-60)
 		- [ALGOL 68](#ALGOL-68)
@@ -18,17 +18,17 @@
 		- [Estruturas de Seleção](#Estruturas-de-Seleção)
 		- [Estruturas de Iteração](#Estruturas-de-Iteração)
 		- [Subrotinas](#Subrotinas)
-		- [Variaveis Locais](#Variaveis-Locais)		
+		- [Variaveis Locais](#Variáveis-Locais)		
 	- [ALGOL 68](#ALGOL-68-1)
 		- [Estruturas de Seleção](#Estruturas-de-Seleção-1)
 		- [Estruturas de Iteração](#Estruturas-de-Iteração-1)
 		- [Subrotinas](#Subrotinas-1)
-		- [Variaveis Locais](#Variaveis-Locais-1)
+		- [Variaveis Locais](#Variáveis-Locais-1)
 	- [ALGOL 60](#ALGOL-60-1)
 		- [Estruturas de Seleção](#Estruturas-de-Seleção-2)
 		- [Estruturas de Iteração](#Estruturas-de-Iteração-2)
 		- [Subrotinas](#Subrotinas-2)
-		- [Variaveis Locais](#Variaveis-Locais-2)
+		- [Variaveis Locais](#Variáveis-Locais-2)
 - [Exemplos](#Exemplos)
 	- [Exemplos Simples](#Exemplos-Simples)
 		- [Exemplo 1](#Exemplo-1)
@@ -163,7 +163,7 @@ Em **ALGOL 68** combina o comando *for* e *while* em um único *comando*, já em
 
 No **ALGOL 68** *procedimentos* podem ser elementos de *arrays*, *campos de estruturas*, *retorno* de *funções* e etc. Além disso, pode existir *ponteiro para procedimentos* no **ALGOL 68**. Já no **Pascal**, *procedimentos* apenas podem ser chamados ou passados como *argumentos*. Todo *procedimento* em **ALGOL 68** retorna algum valor. Em **Pascal**, *procedimentos* por definição não retornam nada. *Funções* em **ALGOL 68** podem retornar qualquer tipo dado existente na linguagem. Em **Pascal** nem todos os tipos são permitidos como retorno de uma função. Arrays e structs não podem ser retorno de uma função. Desse modo, existe uma coleção de tipos restrita no **Pascal** que podem ser retorno de *funções*. Em **ALGOL 68** existe um único tipo de *parâmetro*, aquele que é chamado por valor. Já em **Pascal** existem três tipos de *parâmetros*: por *valor*, por *referência*, *procedure*(incluindo *function*).
 
-#### Variaveis Locais
+#### Variáveis Locais
 
 No **ALGOL 68** é possível declarar *variáveis locais* em qualquer *bloco* e em qualquer parte de um *bloco*. As *variáveis* passam a existir quando a execução entra no *bloco* e deixam de existir quando sai do *bloco*. Em **Pascal** só é permitida a declaração de *variáveis locais* dentro do *nível de procedimento*, ou seja, não é permitida a declaração de *variáveis locais* em outros tipos de *bloco* que não o de *procedimentos/funções* ou o do *programa "main"*. Além disso, **Pascal** só permite a declaração de *variáveis locais* antes do comando de *inicio bloco BEGIN*.
 
