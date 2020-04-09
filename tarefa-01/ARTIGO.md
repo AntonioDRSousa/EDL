@@ -13,6 +13,10 @@
 		- [C](#C)
 		- [ALGOL 60](#ALGOL-60)
 		- [ALGOL 68](#ALGOL-68)
+-[Pascal e a Programação Estruturada](#Pascal-e-a-Programação-Estruturada)
+	-[Sequência, Blocos, e Subrotinas em Pascal](#Sequência,-Blocos,-e-Subrotinas-em-Pascal)
+	-[Estruturas de Seleção em Pascal](#Estruturas-de-Seleção-em-Pascal)
+	-[Estruturas de Iteração em Pascal](#Estruturas-de-Iteração-em-Pascal)
 - [Comparação de Pascal com outras linguagens](#Comparação-de-Pascal-com-outras-linguagens)
 	- [C](#C-1)
 		- [Estruturas de Seleção](#Estruturas-de-Seleção)
@@ -30,6 +34,7 @@
 		- [Estruturas de Iteração](#Estruturas-de-Iteração-2)
 		- [Subrotinas](#Subrotinas-2)
 		- [Variaveis Locais](#Variáveis-Locais-2)
+	- [Conclusão](#Conclusão)
 - [Exemplos](#Exemplos)
 	- [Exemplos Simples](#Exemplos-Simples)
 		- [Exemplo 1](#Exemplo-1)
@@ -54,7 +59,7 @@
 
 ## Introdução
 
-**Pascal** é uma linguagem de programação **imperativa**, **procedural** e que tem como principio a **programação estruturada**. Seu nome é uma homenagem ao físico, matemático e filósofo francês Blaise Pascal. Foi criada em 1970 por **Niklaus Wirth**, para sua fábrica de software e para ensinar programação estruturada, como uma linguagem eficiênte e que encoraja boas práticas de programação. Tem  como origem a linguagem **ALGOL 60**, que tem como paradigma a **programação estruturada**, posteriormente sucedida por **ALGOL 68**, linguagem mais complexa que sua antecessora.
+**Pascal** é uma linguagem de programação **imperativa**, **procedural** e que tem como principio a **programação estruturada**. Seu nome é uma homenagem ao físico, matemático e filósofo francês Blaise Pascal. Foi criada em 1970 por **Niklaus Wirth**, para sua fábrica de software e para ensinar programação estruturada, como uma linguagem eficiênte e que encoraja boas práticas de programação. Tem  como origem a linguagem **ALGOL 60**, que tem como paradigma a **programação estruturada**, posteriormente sucedida por **ALGOL 68**, linguagem mais complexa que sua antecessora. Influênciou diversas linguagens de programação como por exemplo **Ada**, **Java**, **Modula-2** e **Oberon**. Além disso, influênciou **Object Pascal**, que é simplificadamente a linguagem **Pascal** com a adição do paradigma de programação orientado a objetos. é **linguagem compilada** de **proposito geral** que é muito usada para ensinar programação.
 
 ## Origens
 
@@ -63,7 +68,7 @@ principalmente a linguagem **ALGOL W**.
 
 ## Influências
 
-Várias foram as linguagens influênciadas por **Pascal**: Ada, Java, Oberon, Oberon-2, **Object Pascal**, Oxygene e etc. **Object Pascal**, extensao da linguagem pascal com orientacao a objetos. Além disso, **Pascal** deu origem a diversos dialetos. Academicamente seus sucessores são **Modula-2** e **Oberon**, linguagens criadas pelo mesmo criador de **Pascal**, **Niklaus Wirth**.
+Várias foram as linguagens influênciadas por **Pascal**: **Ada**, **Java**, **Oberon**, **Oberon-2**, **Object Pascal**, **Oxygene** e etc. **Object Pascal**, extensao da linguagem pascal com orientacao a objetos. Além disso, **Pascal** deu origem a diversos dialetos. Academicamente seus sucessores são **Modula-2** e **Oberon**, linguagens criadas pelo mesmo criador de **Pascal**, **Niklaus Wirth**.
 
 ## Linha do Tempo
 
@@ -73,23 +78,23 @@ Várias foram as linguagens influênciadas por **Pascal**: Ada, Java, Oberon, Ob
 
 * **Linguagem de Alto Nível**
 * **Linguagem Compilada**
-* **Linguagem Imperativa**: paradigma de programação que usa *comandos* para mudar o *estado* do programa.
-* **Linguagem Procedural**: tipo de programação **imperativa** que o programa é constituido de uma ou mais *subrotinas*.
+* **Linguagem Imperativa** : paradigma de programação que usa *comandos* para mudar o *estado*(*variáveis*) do programa.
+* **Linguagem Procedural** : tipo de programação **imperativa** em que o programa é constituido de uma ou mais *subrotinas*.
 * **Linguagem Estática**
 * **Tem como principio a programação estruturada**
-* **Tem tipagem forte**
-* **Não é case sensitive**: Diferentemente de linguagens como o **C**, **Pascal** não diferencia o uppercase do lowercase dos caracteres do nome de uma variavel, função ou comando. Desse modo o comando "write" é o mesmo que "Write" e não ocorre erro de compilação por isso, a variavel "letra" é o mesmo que "LETRA" e etc.
+* **Tem tipagem forte** : um tipo de dado não pode ser convertido a outro tipo sem conversões explícitas. Em **Pascal** 		          conversões entre tipos de dados é feito em geral de modo explícito pelo uso de *subrotinas* da               				 linguagem. 
+* **Não é case sensitive** : Diferentemente de linguagens como o **C**, **Pascal** não diferencia o uppercase do lowercase dos               				  caracteres do nome de uma *variável*, *função* ou comando. Desse modo o comando "write" é o mesmo 				 que "Write" e não ocorre erro de compilação por isso, a variavel "letra" é o mesmo que "LETRA" e 			       etc.
 
 ## Programação Estruturada
 
-**Programação Estruturada** é uma paradigma de programação com enfase em **decisão**, **iteração** e **sequência**. Surgiu no final da decada de 1950 com linguagens como **ALGOL 58** e **ALGOL 60**. Algumas linguagens que têm como principio a programação estruturada são o **ALGOL**, **Pascal**, **C** e etc. Se sustenta teoricamente pelo **teorema do programa estruturado** de 1966. Segundo o **teorema do programa estruturado**, qualquer *funcao computavel* pode ser expressa por 3 *estruturas de controle*: **sequência**, **seleção** e **iteração**. Em **Programação Estruturada**, programas são vistos como compostos de *estruras de controles*:
+**Programação Estruturada** é uma paradigma de programação com enfase em **decisão**, **iteração** e **sequência**. Surgiu no final da decada de 1950 com linguagens como **ALGOL 58** e **ALGOL 60**. Algumas linguagens que têm como principio a programação estruturada são o **ALGOL**, **Pascal**, **C** e etc. Se sustenta teoricamente pelo **teorema do programa estruturado** de 1966. Segundo o **teorema do programa estruturado**, qualquer *função computável* pode ser expressa por 3 *estruturas de controle*: **sequência**, **seleção** e **iteração**. Em **Programação Estruturada**, programas são vistos como compostos de *estruras de controles*:
 
 * **Sequência**: *comandos* e *subrotinas* são todos executados em sequência
-* **Seleção ou Decisão**: *comandos* são executados dependendo do *estado* do programa, a partir de um teste lógico
-* **Iteração**: um *comando* ou *bloco de comandos* é executado até o programa chegar a certo *estado*
+* **Seleção ou Decisão**: *comandos* são executados dependendo do *estado*(variáveis) do programa, a partir de um teste lógico
+* **Iteração**: um *comando* ou *bloco de comandos* é executado até o programa chegar a certo *estado*(variáveis)
 * **Recursão**: uma *função* que chama a si mesma. Essa estrutura já era usada em linguagens **funcionais**
 
-Além disso, possuem estruturas como *subrotinas*, também conhecidos como *funções* ou *procedimentos*, que dividem o código em *subprogramas* e evitam a repetição dos mesmos trechos de código. Existe também a estrutura de *bloco*, que basicamente trata um conjunto de *comandos* como se fosse um único *comando*. Estruturas como **sequência**, **seleção**, **iteração**, **recursão**, **subrotinas** e **blocos** tornam a programação muito mais organizada e eficiente, além de tornar o código mais manutenível. Antes da **programação estruturada**, os códigos eram muito mais desorganizados com muitos *jumps*, tornando a programação confusa.  De modo simplificado **programação estruturada** pode ser descrita como *programação sem goto*. Esse *comando* basicamente equivale a *jumps* nas linhas do código, ou seja, o *goto* está associado uma *label* que existe em uma parte do código e quando é executado a execução passa para o comando a seguir a essa *label* ao que o *goto* se refere. O uso de *goto* torna muitas vezes o código desorganizado e confuso. Foi fortemente atacado por muitos dos defensores da **programação estruturada** embora existem aqueles como **Donald Knuth** que defendem seu uso em certas situações. Muitas linguagens que seguem o principio da **programação estruturada** não possuem *goto*, de modo a impedir a programação não estruturada. A maioria das linguagens que seguem o paradigma da **programação estruturada** não o seguem totalmente. Muitas delas possuem o comando *goto*, como a linguagem **C** e o **Pascal**. Além disso, grande parte das linguagens que seguem esse paradigma possuem *comandos* como *break*, *continue*, *return* que exercem funcionadades similares ao *goto*.
+Além disso, possuem estruturas como *subrotinas*, também conhecidos como *funções* ou *procedimentos*, que dividem o código em *subprogramas* e evitam a repetição dos mesmos trechos de código. Existe também a estrutura de *bloco*, que basicamente trata um conjunto de *comandos* como se fosse um único *comando*. Estruturas como **sequência**, **seleção**, **iteração**, **recursão**, **subrotinas** e **blocos** tornam a programação muito mais organizada e eficiente, além de tornar o código mais manutenível. Antes da **programação estruturada**, os códigos eram muito mais desorganizados com muitos *jumps*, tornando a programação confusa.  De modo simplificado **programação estruturada** pode ser descrita como *programação sem goto*. Esse *comando* basicamente equivale a *jumps* nas linhas do código, ou seja, o *goto* está associado uma *label* que existe em uma linha do código e quando é executado a execução passa para o comando a seguir a essa *label* a que o *goto* se refere. O uso de *goto* torna muitas vezes o código desorganizado e confuso. Foi fortemente atacado por muitos dos defensores da **programação estruturada** embora existem aqueles como **Donald Knuth** defendem seu uso em certas situações. Muitas linguagens que seguem o principio da **programação estruturada** não possuem *goto*, de modo a impedir a programação não estruturada. A maioria das linguagens que seguem o paradigma da **programação estruturada** não o seguem totalmente. Muitas delas possuem o comando *goto*, como a linguagem **C** e o **Pascal**. Além disso, grande parte das linguagens que seguem esse paradigma possuem *comandos* como *break*, *continue*, *return* que exercem funcionadades similares ao *goto*.
 
 ### Algumas linguagens que têm como principio a programação estruturada
 
@@ -121,6 +126,26 @@ Além disso, possuem estruturas como *subrotinas*, também conhecidos como *fun�
 * **seleção**: **ALGOL 68** possui *comandos* como *if*, *else*, *then*, *case*, *fi* que são partes constituintes de **estruturas de seleção**
 * **iteração**: **ALGOL 68**  possui *comandos* como *for*, *while*, *by*,*from*, *to*, *do* que são partes constituintes de **estruturas de iteração**
 
+### Pascal e a Programação Estruturada
+
+### Sequência, Blocos, e Subrotinas em Pascal
+
+Todos os comandos em **Pascal** são executados de modo sequêncial, uma caracteristica fundamental da  **programação estruturada**. Além disso, um programa em **Pascal** é estruturado em *blocos*, que tratam um conjunto de comandos como se fossem um único comando. A *sintaxe* de *bloco* é *begin* e *end*, sendo o primeiro o que abre o *bloco* e o segundo o que fecha o *bloco*. **Pascal** também divide o programa em subrotinas, que são chamadas na linguagem de *funtion* ou *procedure*. A diferença entre esses dois é que enquanto uma *funtion* sempre retorna uma valor, um *procedure* não retorna nenhum valor. A *sintaxe* de *procedimento* é: *procedure..(..);begin...end;* . A seguir de *procedure* vem o nome identificador da *rotina*, entre parêntesis vem os argumentos que podem ser passados por valor, por referência ou podem ser outro *procedure*. Entre *begin* e *end;* existem os comandos que são executados na *rotina*. Já *functions* obedecem quase mesma sintaxe: *function..(..):..;begin..end;*. A seguir de dois pontos é informado o tipo de retorno da função. Variáveis locais devem ser declaradas antes do bloco iniciar, ou seja, antes de *begin*. *Variáveis locais* só podem ser acessadas dentro do bloco ao qual elas estão associadas. Nem todo o *bloco* são permite ser declaração de *variáveis*, apenas *blocos* associados a *procedure*, *function* e o *bloco* do "programa principal" podem ter declaração de variáveis anterior a eles. **Pascal** possui a possibilidade de recursão, ou seja, uma *função* ou *procedimento* chamar a si mesma.
+
+### Estruturas de Seleção em Pascal
+
+**Pascal** possui como **estrutura de seleção** o comando *if..then*, que possui uma expressão de tipo booleano a seguir do *if*. Se a expressão lógica for verdadeira então o comando a seguir de *then* é executado. Uma forma de executar mais que um comando é colocar os comandos dentro de um bloco ficando desse modo: *if..then begin..end*. O comando *else* é executado se a expressão lógica de *if* for falsa. Após o termino da estrutura formada de *if*, *then*, *else* é necessário acrescentar uma vírgula para informar o termino da estrutura. É possivel definir estruturas desse genêro aninhadas dentro de um comando *if*, *else*. Além disso, **Pascal** possui a **estrutura de decisão** *case..of* que analisa se a *variável* colocada entre *case* e *of* é igual ao valor de um dos seus casos,representados sintacticamente pelo valor e dois pontos, que seguem o comando. Se for igual, o comando ou *bloco* de comandos associado aquele *caso* é executado.
+
+### Estruturas de Iteração em Pascal
+
+**Pascal** possui as seguintes **estruturas de iteração**: 
+- *for..to..do* : Atribui uma valor inicial a uma variável que já tenha sido declarada e executa repetidadmente o *bloco* de 		       comandos ou o comando até que atinja o número definido após *to*. A *variável de controle* é incrementada
+		  em 1 sempre que termina o *bloco* de comandos ou comando.
+- *for..downto..do* : Executa o mesmo processo que o anterior, com a diferença que ao invés de incrementar a variável de 		       controle é decrementada em 1.
+- *while..do* : Verifica a expressão lógica depois do *while* e se ela for verdadeira executa o *bloco* de comandos ou comando.
+		Se for falsa não executa. Repete o processo sempre que a expressão lógica for verdadeira.
+- *repeat..until* : Similar ao anterior, com a excessão que primeiro executa o *bloco* de comandos ou comando e depois verifica 		    uma condição lógica a seguir do *until*. Se ela for verdadeira interrompe não repete a execução do *bloco* 			   de comandos ou comando, se for falsa repete.
+
 ## Comparação de Pascal com outras linguagens
 
 As duas linguagens possuem muitas semalhanças já que ambas foram influênciadas pela linguagem ALGOL e suas versões, além de possuirem como paradigma a programação estruturada. No entanto possuem diferenças.
@@ -129,23 +154,23 @@ As duas linguagens possuem muitas semalhanças já que ambas foram influênciada
 
 #### Estruturas de Seleção
 
-No *switch* do **C**, cada *case* do *switch* senão terminar com o *comando* *break* o próximo *case* é executado, ou seja, o *break* impede a execução de **blocos** de *comandos* de outros *case* que não eram para ser executados. Em **Pascal** a ausência de *comando* *break* em algum desses **blocos** não faz com que a execução do **bloco** de *comandos* do caso *case*(*switch* no **C**) seguinte seja executado.
+No *switch* do **C**, cada *case* do *switch* senão terminar com o *comando* *break* o próximo *case* é executado, ou seja, o *break* impede a execução de **blocos** de *comandos* de outros *case* que não eram para ser executados. Em **Pascal** a ausência de *comando* *break* em algum desses **blocos** não faz com que a execução do **bloco** de *comandos* do caso *case*(*switch* no **C**) seguinte seja executado. Em **C** o comando *if* é seguido de uma valor númerico podendo ser inteiro ou flutuante(raramente usado), algo que não acontece em **Pascal**. Isso ocorre porque em **C** não existe tipo *booleano*. Sendo assim, o verdadeiro é definido como qualquer valor diferente de 0 e o falso uma valor igual a 0.
 
 #### Estruturas de Iteração
 
 **Pascal** apenas permite que um *laço for* tenha dois tipos de comportamento:
 * percorre um valor inicial até um valor final incrementando 1 na *variavel de controle* de *laço for*
 * percorre um valor inicial até um valor final decrementando 1 na *variavel de controle* de *laço for* 
-Já em **C**, temos a possibilidade de criar varios tipos de *laço for* além desses. Podemos criamos um *laço* com valor inicial para a *variavel de controle*, um teste lógico e a mudança de valor da *variavel de controle* com qualquer expressão aritemética. Além disso, o *laço for* pode possuir mais que uma *variavel de controle* em **C**, existindo portanto vários tipos de *laços for* na linguagem. Em **Pascal** o *laço for* tem um comportamento mais limitado que em **C**, tornando por vezes necessario a utilização de outras **estruturas de iteração**, como *while..do* e *repeat..until*, para executar a mesma tarefa que seria utilizada em **C** utilizando um *laço for*. A condição logica presente no *comando until* do **Pascal** é a condição de parada do *loop*, enquanto em **C** a condição lógica presente no *while* é a condição para continuar o *loop*.
+Já em **C**, temos a possibilidade de criar varios tipos de *laço for* além desses. Podemos criamos um *laço* com valor inicial para a *variavel de controle*; um teste lógico definido definido por qualquer expressão lógica; e a mudança de valor da *variavel de controle* com a atribuição de qualquer expressão aritemética à *variável de controle*. Além disso, o *laço for* pode possuir mais que uma *variavel de controle* em **C**, existindo portanto vários tipos de *laços for* na linguagem. Em **Pascal** o *laço for* tem um comportamento mais limitado que em **C**, tornando por vezes necessario a utilização de outras **estruturas de iteração**, como *while..do* e *repeat..until*, para executar a mesma tarefa que seria utilizada em **C** utilizando um *laço for*. No comando *repeat..until* do **Pascal**, a condição logica a seguir do *until* é a condição de parada do *loop*, enquanto em **C** a condição lógica presente no *while* é a condição a seguir do *while* para continuar o *loop*.
 
 #### Subrotinas
 
-**Pascal** possui *procedimentos* e *funções*, enquanto **C** possui apenas *funções*. Isso ocorre porque a linguagem **C** tem o tipo *void* e **Pascal** não tem. Desse modo o que seria um *procedimento* em **Pascal** é uma *função void* no **C**. **Pascal** possui duas formas de passar *argumentos* para uma *função*: *por referência*(usa-se *var*) ou *por valor*(usa-se *const*). **C** apenas possui passagem de *argumentos por valor*, mas com o uso de *ponteiros* pode-se emular uma passagem de argumentos por *referência*. Esse é um dos motivos porque a utilização de *ponteiros* é tão necessaria em **C**. Em **C** é possivel ter *ponteiros de funções*, emquanto em **Pascal** isso não é possivel. **C** permite retorno de *struct* nas *funções*. Em **Pascal** isso não é permitido.
+**Pascal** possui *procedimentos* e *funções*, enquanto **C** possui apenas *funções*. Isso ocorre porque a linguagem **C** tem o tipo *void* e **Pascal** não tem. Desse modo o que seria um *procedimento* em **Pascal** é uma *função void* no **C**. **Pascal** possui duas formas de passar *argumentos* para uma *função*: *por referência*(usa-se *var*) ou *por valor*(usa-se *const*). **C** apenas possui passagem de *argumentos por valor*, mas com o uso de *ponteiros* pode-se emular uma passagem de argumentos por *referência*. Esse é um dos motivos porque a utilização de *ponteiros* é tão necessaria em **C**. Em **C** é possivel ter *ponteiros de funções*, enquanto em **Pascal** isso não é possivel. **C** permite retorno de *struct* nas *funções*, algo que não é permitido em **Pascal**.
 
 ##### Funções/procedimentos aninhados <a name="nested"></a>
 
-Uma *função/procedimento aninhado* é uma *função/procedimento* definida dentro de uma *função*, ou seja, a *função/procedimento aninhada* é encapsulada dentro da *função* de nível superior. Fora do *escopo da função* de nível superior a *função aninhada não é detectada. Além disso, a *função aninhada* usa as *variaveis locais* da *função* de nível superior. Uma das razões de sua utilização, é a utilidade de dividir *subrotinas* em outras *subrotinas* e encapsular-las. *Funções/procedimentos aninhadas* são usadas tipicamente como *funções* auxiliares ou *funções recursivas* dentro de outra *função*. Têm como vantagem organizar melhor o código, evitando poluir o *escopo*, e compartilham *variaveis* dentro do *escopo* facilmente sem o uso de *parametros* ou usar uma *variavel global*. **ALGOL**, **Pascal**, **Simula 67** são algumas das linguagens que possuem *funções/procedimentos aninhados*. **C** e sua familia de linguagens não possuem *funções/procedimentos aninhados*, sendo essa uma das diferenças entre **C** e **Pascal**. Um dos motivos é que **C** não possui *escopo lexico*. *Funções aninhadas* são tratadas como *escopo lexico*, que não é valido em **C** porque o *compilador* não consegue acessar a localização na *memoria* da *função* interna a outra *função*. Em **C** existem apenas dois *escopos*: o *local* e o *global*. **C** tem como alternativas às *funções aninhadas* o uso de *variaveis static*, além de poder passar a *referência(endereço)* de *variaveis* de um certo *escopo* às *funções que deveriam ser aninhadas*, algo que aumenta a complexidade da *chamada de funções*.
-				 
+Uma *função/procedimento aninhado* é uma *função/procedimento* definida dentro de uma *função*, ou seja, a *função/procedimento aninhada* é encapsulada dentro da *função* de nível superior. Fora do *escopo da função* de nível superior a *função aninhada não é detectada. Além disso, a *função aninhada* usa as *variaveis locais* da *função* de nível superior. Uma das razões de sua utilização, é a utilidade de dividir *subrotinas* em outras *subrotinas* e encapsular-las. *Funções/procedimentos aninhadas* são usadas tipicamente como *funções* auxiliares ou *funções recursivas* dentro de outra *função*. Têm como vantagem organizar melhor o código, evitando poluir o *escopo*, e compartilham *variaveis* dentro do *escopo* facilmente sem o uso de *parametros* ou usar uma *variavel global*. **ALGOL**, **Pascal**, **Simula 67** são algumas das linguagens que possuem *funções/procedimentos aninhados*. **C** e sua familia de linguagens não possuem *funções/procedimentos aninhados*, sendo essa uma das diferenças entre **C** e **Pascal**. Um dos motivos é que **C** não possui *escopo lexico*. *Funções aninhadas* são tratadas como *escopo lexico*, que não é valido em **C** porque o *compilador* não consegue acessar a localização na *memoria* da *função* interna a outra *função*. Nomes de *funções* em **C** sempre são globais, a menos que sejam declaradas como *static*, e estão disponíveis para outras *funções*. Escopo de *variáveis* em **C** é muito mais simples do que em **Pascal**. Em **C** existem apenas dois *escopos*: o *local* e o *global*. **C** tem como alternativas às *funções aninhadas* o uso de *variaveis static*, além de poder passar a *referência(endereço)* de *variaveis* de um certo *escopo* às *funções que deveriam ser aninhadas*, algo que aumenta a complexidade da *chamada de funções*. *Variáveis static* retêm seus valores após sucessivas chamadas de função mas só são visiveis na rotina correspondente onde são declaradas. **C** não permite *funções aninhadas* mas permite declaração de variáveis dentro de um bloco. **Pascal** pode simular um pouco essa funcionalidade com o uso de *funções/procedimentos aninhadas*.
+			 
 #### Variáveis Locais
 
 Em **C** *variaveis locais* podem ser alocadas em qualquer *bloco* e em qualquer parte de um *bloco de comandos*. Em **Pascal** não é possivel realizar esse tipo de declaração, sendo só permitida a declaração de *variaveis* antes do começo de um bloco de *comandos* de *procedimentos/funções* ou antes do *bloco "main"(programa principal)*.
@@ -154,28 +179,40 @@ Em **C** *variaveis locais* podem ser alocadas em qualquer *bloco* e em qualquer
 
 #### Estruturas de Seleção
 
-Em **ALGOL 68** o *case* deve ter um indice inteiro não negativo e a ordem dos casos é essencial. O índice de valor inteiro i seleciona o i-ésimo caso do *case*. Além disso, o comando *if..then* retorna um valor booleano. Desse modo em **ALGOL 68**:
-``` ALGOL 68
-int p= IF c="a" THEN
-		1
-	ELIF c="h" THEN
-		2
-	ELSE
-		3
-	fi
-```
+Em **ALGOL 68** o *case* deve ter um indice inteiro não negativo e a ordem dos casos é essencial. O índice de valor inteiro i seleciona o i-ésimo caso do *case*. Em **Pascal** o índice do *case* tem mais tipos dados como possibilidade. Além disso, em **Pascal** a seleção dos casos não tem haver com a ordem, mas com a igualdade do índice com relação ao caso. Se o índice for i então o caso tem que ser i. Isso torna a estrutura *case* em **Pascal** menos limitada que em **ALGOL 68**. Além disso, o comando *if..then..fi* retorna um valor booleano podendo ser usado dentro de um outro comando *if..then..fi*. Temos também a possibilidade do comando *if..then..fi* retornar um inteiro, caracter ou outro tipo de dado colocando o valor de retorno após *then*. Para essas funcionalidades podemos utilizar as estruturas maiores como *if..then..else if..then..else..fi* que retornam também um valor seja booleano ou outro tipo de dado. Além disso, o comando *fi* encerra a estrutura *if..then*. Em **Pascal** a estrutura *if..then* não retorna nenhum valor e não pode ser colocada como uma parâmetro dentro de uma *função/procedimento*, sendo assim uma estrutura mais limitada. Além disso, em **Pascal** se os comandos depois de *if..then* possuirem mais que um comando, é necessário colocar esses comandos dentro de um *bloco*. Isso acontece devido a problemas de ambiguidadade na linguagem. Já em **ALGOL 68**, não existe essa necessidade porque o comando *then* e *fi* delimitam essa estrutura.
 
 #### Estruturas de Iteração
 
-Em **ALGOL 68** combina o comando *for* e *while* em um único *comando*, já em **Pascal** eles são comandos distintos. Os *comandos for*, *from*, *by*, *to* e *while* são individualmente opcionais, exceto que se o *comando for* é omitido não há nenhuma *variável de controle*, e consequentemente o *loop* pode não funcionar como o esperado. Em **ALGOL 68** o *laço for* possui mais possibilidades que o *for..do* do **Pascal**, como por exemplo pode-se definir o número de passos a incrementar variavel de controle. A *variável de controle* no **ALGOL 68** é implicitamente declarada pelo *comando for* e atribuições a ela são ilegais. O *escopo* da *variável de controle* está no *loop*, tornando ela inacessível fora do *laço*. Desse modo, se uma *variável* fora do *loop for* declarada com o mesmo nome, ela não afeta a *variável de controle*. Além disso, a *variável de controle* é declarada como um inteiro. Já em **Pascal** a *variável de controle* deve ser declarada, e o seu tipo não precisa ser necessariamente um inteiro, pode ser um real também. A *variável de controle* em **Pascal** é acessível fora do *loop*. Em **ALGOL 68** as expressões depois de *by* e *to* são avaliadas antes do começo do *loop*, permitindo desse modo a alteração das *variáveis* que compoem esse comando. **Pascal** tem o *comando repeat*, enquanto **ALGOL 68** utiliza apenas o *while*, também existente no **Pascal**. 
+Podemos definir a **estrutura de iteração** de **ALGOL 68** de modo genérico como *for..from..by..to..while..do..od* , sendo que cada comando é opcional com a excessão de *do* e *od*. Existem 7 comandos utilizados nas **estruturas de iteração** em **ALGOL 68**:
+- **for** : Inicializa a *variável de controle*. É seguido do nome que identifica essa *variável*.
+- **from** : Atribui valor inicial à *variável de controle*. É seguido de uma valor inteiro, que indica esse valor.
+- **by** : Indica o incremento ou decremento que recebe a variável de *controle* após cada execução do *loop*. 
+	   É seguido de uma valor inteiro com ou sem sinal, que indica se é para incrementar ou decrementar.
+- **to** : Indica o valor termino da *variável de controle* para terminar o *loop*. É seguido de um valor inteiro.
+- **while** : Checa uma expressão lógica e se for verdadeira executa o *loop*, senão não executa. 
+	      É seguido de um valor booleano.
+- **do** : abre a sequência de comandos de iteração de um *loop*. 
+- **od** : fecha o sequências de comandos de iteração de um *loop*. 
+           Desse modo, todos os comandos executados no *loop* estão entre o *do* e o *od*.
+
+Se um comando não é usado no *loop* temos o seguinte comportamento:
+- Se *for* não está escrito, então a *variável de controle* não é declarada.
+- Se *from* não está escrito. então a *variável de *controle* inicia com valor 1.
+- Se *by* não está escrito, então existe incremento de 1 na *variável de controle*.
+- Se *to* não está escrito, então é assumido como valor final o infinito.
+- Se *while* não está escrito, então é assumido como um comando *while true*.
+
+Em **ALGOL 68** o comando *for* e *while* podem ser combinados em um único *comando*, já em **Pascal** eles são comandos distintos.  Em **ALGOL 68** o *laço for* possui mais possibilidades que o *for..do* do **Pascal** que só possui a possibilidade de definir o valor inicial e o termino do *loop*, ou seja, o laço *for* em **Pascal** equivale similarmente ao comando *for..from..to..do..od*, no caso de *for..to..begin..end;*, ou *for..from..by --1 to..do..od*, no caso de *for..downto..begin..end;*.
+A *variável de controle* no **ALGOL 68** é implicitamente declarada pelo *comando for* e atribuições a ela são ilegais. O *escopo* da *variável de controle* está no *loop*, tornando ela inacessível fora do *laço*. Desse modo, se uma *variável* fora do *loop for* declarada com o mesmo nome, ela não afeta a *variável de controle*. Além disso, a *variável de controle* é declarada como um inteiro. Já em **Pascal** a *variável de controle* deve ser declarada, e o seu tipo não precisa ser necessariamente um inteiro, pode ser um real também. A *variável de controle* em **Pascal** é acessível fora do *loop*. Em **ALGOL 68** as expressões depois de *by* e *to* são avaliadas antes do começo do *loop*, permitindo desse modo a alteração das *variáveis* que compoem esse comando. 
+**Pascal** tem o *comando repeat..until*, enquanto **ALGOL 68** necessita usar o comando *while*, também existente no **Pascal**.
 
 #### Subrotinas
 
-No **ALGOL 68** *procedimentos* podem ser elementos de *arrays*, *campos de estruturas*, *retorno* de *funções* e etc. Além disso, pode existir *ponteiro para procedimentos* no **ALGOL 68**. Já no **Pascal**, *procedimentos* apenas podem ser chamados ou passados como *argumentos*. Todo *procedimento* em **ALGOL 68** retorna algum valor. Em **Pascal**, *procedimentos* por definição não retornam nada. *Funções* em **ALGOL 68** podem retornar qualquer tipo dado existente na linguagem. Em **Pascal** nem todos os tipos são permitidos como retorno de uma função. Arrays e structs não podem ser retorno de uma função. Desse modo, existe uma coleção de tipos restrita no **Pascal** que podem ser retorno de *funções*. Em **ALGOL 68** existe um único tipo de *parâmetro*, aquele que é chamado por valor. Já em **Pascal** existem três tipos de *parâmetros*: por *valor*, por *referência*, *procedure*(incluindo *function*).
+No **ALGOL 68** *procedimentos* podem ser elementos de *arrays*, *campos de estruturas*, *retorno* de *funções* e etc. Além disso, pode existir *ponteiros para procedimentos* no **ALGOL 68**. Já no **Pascal**, *procedimentos* apenas podem ser chamados ou passados como *argumentos*. Todo *procedimento* em **ALGOL 68** retorna algum valor. Em **Pascal**, *procedimentos* por definição não retornam nada. *Procedimentos* em **Pascal** seriam equivalentes a *Procedimentos* que retornam *void* em **ALGOL 68** .*Funções* em **ALGOL 68** podem retornar qualquer tipo dado existente na linguagem. Em **Pascal** nem todos os tipos são permitidos como retorno de uma função. Arrays e structs não podem ser retorno de uma função. Desse modo, existe uma coleção de tipos restrita no **Pascal** que podem ser retorno de *funções*. Em **ALGOL 68** existe um único tipo de *parâmetro*, aquele que é chamado por valor. Para que em **ALGOL 68** emule a passagem por referência é necessário passar o endereço da variável com o comando *ref* nos parâmetros. Já em **Pascal** existem três tipos de *parâmetros*: por *valor*, por *referência*, *procedure*(incluindo *function*).
 
 #### Variáveis Locais
 
-No **ALGOL 68** é possível declarar *variáveis locais* em qualquer *bloco* e em qualquer parte de um *bloco*. As *variáveis* passam a existir quando a execução entra no *bloco* e deixam de existir quando sai do *bloco*. Em **Pascal** só é permitida a declaração de *variáveis locais* dentro do *nível de procedimento*, ou seja, não é permitida a declaração de *variáveis locais* em outros tipos de *bloco* que não o de *procedimentos/funções* ou o do *programa "main"*. Além disso, **Pascal** só permite a declaração de *variáveis locais* antes do comando de *inicio bloco BEGIN*.
+No **ALGOL 68** é possível declarar *variáveis locais* em qualquer *bloco* e em qualquer parte de um *bloco*. As *variáveis* passam a existir quando a execução entra no *bloco* e deixam de existir quando sai do *bloco*. Em **Pascal** só é permitida a declaração de *variáveis locais* dentro do *nível de procedimento*, ou seja, não é permitida a declaração de *variáveis locais* em outros tipos de *bloco* que não o de *procedimentos/funções* ou o do *programa "main"*. Além disso, **Pascal** só permite a declaração de *variáveis locais* antes do comando de inicio de bloco *BEGIN*.
 
 ### ALGOL 60 
 
@@ -185,11 +222,19 @@ Em **ALGOL 60** o *SWITCH* deve ter um índice inteiro não negativo e a ordem d
 
 #### Estruturas de Iteração
 
-**ALGOL 60** usa como **estrutura de iteração** o *for*, que combinado com *step..until..do* ou *while..do* possibilita criar mais tipos de *laço* que em **Pascal**. No caso de *for..step..until..do*, *step* são os passos que podem ser um numero inteiro a escolha e o *until* a condição de parada do *loop*. Sendo assim, *for..step..until* tem muito mais possibilidades do que o *laço for* no **Pascal**. Já no caso de *for..while..do*, *while* é seguido de uma expressão lógica que faz com que o *bloco de comandos* do *loop* seja repetido se a expressão for verdadeira e e não é repetido quando a expressão for falsa. O comando *for..while..do* equivale quase ao *while* do **Pascal**, com a diferença que *for..while..do* inicializa uma *variável*, enquanto o *while* não.
+**ALGOL 60** usa como **estrutura de iteração** o *for*, enquanto **Pascal** possui 3 estruturas de iteração: *for..to..do*, *while..do* e *repeat..until*. O *for* de **ALGOL 60** combinado com *step..until..do* ou *while..do* possibilita criar mais tipos de *laço* que em **Pascal**. No caso de *for..step..until..do*, *step* do valor de incremento ou decremento da *variável de controle* e o *until* a condição de parada do *loop*. Sendo assim, *for..step..until* tem muito mais possibilidades do que o *laço for* no **Pascal**. Já no caso de *for..while..do*, *while* é seguido de uma expressão lógica que faz com que o *bloco de comandos* do *loop* seja repetido se a expressão for verdadeira e quando for falsa é executado. O comando *for..while..do* equivale quase ao *while* do **Pascal**, com a diferença que *for..while..do* inicializa uma *variável*, enquanto o *while* do **Pascal** não. **ALGOL 60** não possui estrutura equivalente ao *repeat..until* do **Pascal**. Laços desse gênero devem ser criados com o *for..while..do*, com o incoveniente de que nesse caso é primeiro analisada a expressão lógica e depois executado ou não o bloco de comandos do *loop*, já no caso do comando *repeat..until* é primeiro executado o bloco de comandos do *loop* e posteriormente é analisada a expressão lógica a seguir do *until*, sendo repetido o *loop* ou não.
 
 #### Subrotinas
 
+Em **ALGOL 60** existem apenas *procedimentos* enquanto em **Pascal** existem *funções* e *procedimentos*. Os *procedimentos* em **ALGOL 60** podem retornar uma valor ou não retornar nada. Qualquer tipo de dado de **ALGOL 60** pode ser usado como parâmetro de *pocedimento*, já em **Pascal** nem todos os dados da linguagem são permitidos.
+
 #### Variáveis Locais
+
+Em **ALGOL 60** *variáveis locais* podem ser declaradas em qualquer bloco e a declaração de *variáveis* deve ser no inicio do bloco. Enquanto em **Pascal** não permitido declarar variáveis locais em qualquer bloco e a sua declaração deve ser anterior ao bloco.
+
+### Conclusão
+
+Do ponto de vista de sintaxe as linguagens **ALGOL** são mais próximas de **Pascal** do que de **C**. **Pascal** preservou grande parte da sintaxe de **ALGOL** com o uso de palavras em inglês ao invés de símbolos para expressar comandos. Um exemplo disso é o comando de *bloco* que enquanto em **C** se representa com os caracteres *{* e *}*, em **Pascal** se representa como *begin* e *end*, existentes em **ALGOL**. Podemos ver que em termos de proximidade semântica, **Pascal** é mais próximo de **ALGOL 60** do que de **ALGOL 68** ou de **C**. **ALGOL 68** é uma linguagem sucessora de **ALGOL 60** assim como **Pascal**, mas contrasta com este último com relação a complexidade. **ALGOL 60** era menos complexo que **ALGOL 68**. **C** é uma linguagem muito mais próxima do nível baixo do que **Pascal**, principalmente as primeiras versões da linguagem. Sendo assim, **C** apresenta uma maior flexibilidade como linguagem mas perde muito em segurança com relação a **Pascal**. Muitas das funcionalidades de **C** que não existiam em **Pascal**, foram sendo acrescentadas em versões posteriores mais recentes da linguagem, perdendo mais a sua segurança. Em termos de **estruturas de controle de iteração**, **Pascal** é a linguagem mais limitada. O *loop* *for* tem poucas possibilidades perante as outras linguagens. Em termos de **estruturas de seleção**, **Pascal** também é mais limitado, já que linguagens como **C** e **ALGOL 68** possuem mais utilidades de uso dessas estruturas. Em termos de *subrotinas* **Pascal**, **ALGOL 60**, **ALGOL 68** possuem *funções aninhadas*, enquanto **C** não possui. Embora **C**, **ALGOL 60**, **ALGOL 68** e **Pascal** possuam as mesmas origens e o mesmo paradigma, em termos semânticos elas possuem diferenças significativas. 
 
 ## Exemplos
 
@@ -556,7 +601,7 @@ int main(){
 
 #### Exemplo 7
 
-Programa que calcula a diferença entre o elemento máximo e o mínimo num conjunto de valores inteiros. Tem a presença de *função aninhada* no código **Pascal**, onde se observa como o código fica mais organizado e o escopo global menos poluido perante o código em **C**.
+Programa que calcula a diferença entre o elemento máximo e o mínimo num conjunto de valores inteiros. Tem a presença de *função aninhada* no código **Pascal**, onde se observa como o código fica mais organizado e o escopo global menos "poluído" perante o código em **C**.
 
 **Pascal** :
 ``` pascal
@@ -720,7 +765,7 @@ int main(){
 
 #### Exemplo 9
 
-Programa que obtem a fatoração de um número inteiro. Em **Pascal** se utiliza de *função aninhada*. É importante observar o contraste com a mesma versão do programa em **C**, que não possui o recurso de *funções aninhadas*. No código em **C**, a *função* divsuc tem dois *parâmetros* sendo um deles um *ponteiro*. 
+Programa que obtem a fatoração de um número inteiro. O código em **Pascal** utiliza de *função aninhada*. É importante observar o contraste com a mesma versão do programa em **C**, que não possui o recurso de *funções aninhadas*. No código em **C**, a *função* divsuc tem dois *parâmetros* sendo um deles um *ponteiro*. 
 
 **Pascal** :
 ``` pascal
@@ -795,7 +840,7 @@ int main(){
 
 #### Exemplo 10
 
-Programa que printa a relação de ordem entre dois números inteiros. Tem como objetivo comparar a programação estruturada com a não estruturada. O código em **C** que usa muito comando goto e poucas estruturas de controle é menos legível que o código em **Pascal** que utiliza **programação estruturada**.
+Programa que printa a relação de ordem entre dois números inteiros. Tem como objetivo comparar a programação estruturada com a não estruturada, onde se usa a linguagem **C** embora ela seja estruturada, mas apenas pra constrastar os dois tipos de programação. O código em **C** que usa muito comando goto e poucas estruturas de controle é menos legível que o código em **Pascal** que utiliza **programação estruturada**.
 
 **Pascal** :
 ``` pascal
@@ -929,7 +974,7 @@ int main(){
 
 #### Programa interessante 1
 
-Implementação de uma pilha em **Pascal**, comparando com a mesma implementação em **C**.
+Implementação de uma pilha em **Pascal**, comparando com a mesma implementação em **C**. É importante observar a vantagem que **Pascal** fornece com a passagem de argumentos por referência ao contrário de **C**. Desse modo se evita o uso de *ponteiros* em **Pascal** algo impossível no código em **C**.
 
 **Pascal** :
 ``` pascal
@@ -1673,7 +1718,7 @@ begin
 	begin
 		b:=true;
 		j:=1;
-		while p[j]<=sqrt(i) and p[j]>=2 do//p[j]>=2 verifica se o valor foi inicializado ou nao; percorre-se todos os primos menores que a raiz quadrada do numero i
+		while (p[j]<=sqrt(i)) and (p[j]>=2) do//p[j]>=2 verifica se o valor foi inicializado ou nao; percorre-se todos os primos menores que a raiz quadrada do numero i
 		begin
 			if i mod p[j] = 0 then//verifica se o numero i e' divisivel pelo primo p[j]
 			begin
@@ -1780,3 +1825,5 @@ https://en.wikipedia.org/wiki/Structured_programming
 https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_estruturada
 <p>A comparison of Pascal and ALGOL 68 - A.S.Tanenbaum</p>
 SOS ALGOL 60 REFERENCE MANUAL
+Programming Algol 68 Made Easy Sian Leitch
+INFORMAL INTRODUCTION to ALGOL 68 c. H. LINDSEY S. G. van der MEULEN
