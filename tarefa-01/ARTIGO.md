@@ -14,7 +14,7 @@
 		- [ALGOL 60](#ALGOL-60)
 		- [ALGOL 68](#ALGOL-68)
 - [Pascal e a Programação Estruturada](#Pascal-e-a-Programação-Estruturada)
-	- [Sequência, Blocos, e Subrotinas em Pascal](#Sequência,-Blocos,-e-Subrotinas-em-Pascal)
+	- [Sequência, Blocos, e Subrotinas em Pascal](#sequência-blocos-e-subrotinas-em-pascal)
 	- [Estruturas de Seleção em Pascal](#Estruturas-de-Seleção-em-Pascal)
 	- [Estruturas de Iteração em Pascal](#Estruturas-de-Iteração-em-Pascal)
 - [Comparação de Pascal com outras linguagens](#Comparação-de-Pascal-com-outras-linguagens)
