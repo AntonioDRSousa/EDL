@@ -159,8 +159,10 @@ No *switch* do **C**, cada *case* do *switch* senão terminar com o *comando* *b
 #### Estruturas de Iteração
 
 **Pascal** apenas permite que um *laço for* tenha dois tipos de comportamento:
+
 * percorre um valor inicial até um valor final incrementando 1 na *variavel de controle* de *laço for*
 * percorre um valor inicial até um valor final decrementando 1 na *variavel de controle* de *laço for* 
+
 Já em **C**, temos a possibilidade de criar varios tipos de *laço for* além desses. Podemos criamos um *laço* com valor inicial para a *variavel de controle*; um teste lógico definido definido por qualquer expressão lógica; e a mudança de valor da *variavel de controle* com a atribuição de qualquer expressão aritemética à *variável de controle*. Além disso, o *laço for* pode possuir mais que uma *variavel de controle* em **C**, existindo portanto vários tipos de *laços for* na linguagem. Em **Pascal** o *laço for* tem um comportamento mais limitado que em **C**, tornando por vezes necessario a utilização de outras **estruturas de iteração**, como *while..do* e *repeat..until*, para executar a mesma tarefa que seria utilizada em **C** utilizando um *laço for*. No comando *repeat..until* do **Pascal**, a condição logica a seguir do *until* é a condição de parada do *loop*, enquanto em **C** a condição lógica presente no *while* é a condição a seguir do *while* para continuar o *loop*.
 
 #### Subrotinas
