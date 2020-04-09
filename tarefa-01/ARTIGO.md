@@ -154,7 +154,16 @@ Em **C** *variaveis locais* podem ser alocadas em qualquer *bloco* e em qualquer
 
 #### Estruturas de Seleção
 
-Em **ALGOL 68** o *case* deve ter um indice inteiro não negativo e a ordem dos casos é essencial. O índice de valor inteiro i seleciona o i-ésimo caso do *case*.
+Em **ALGOL 68** o *case* deve ter um indice inteiro não negativo e a ordem dos casos é essencial. O índice de valor inteiro i seleciona o i-ésimo caso do *case*. Além disso, o comando *if..then* retorna um valor booleano. Desse modo em **ALGOL 68**:
+```ALGOL 68
+int p= IF c="a" THEN
+		1
+	ELIF c="h" THEN
+		2
+	ELSE
+		3
+	fi
+```
 
 #### Estruturas de Iteração
 
