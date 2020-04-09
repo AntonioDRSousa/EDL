@@ -59,7 +59,7 @@
 
 ## Introdução
 
-**Pascal** é uma linguagem de programação **imperativa**, **procedural** e que tem como principio a **programação estruturada**. Seu nome é uma homenagem ao físico, matemático e filósofo francês Blaise Pascal. Foi criada em 1970 por **Niklaus Wirth**, para sua fábrica de software e para ensinar programação estruturada, como uma linguagem eficiênte e que encoraja boas práticas de programação. Tem  como origem a linguagem **ALGOL 60**, que tem como paradigma a **programação estruturada**, posteriormente sucedida por **ALGOL 68**, linguagem mais complexa que sua antecessora. Influênciou diversas linguagens de programação como por exemplo **Ada**, **Java**, **Modula-2** e **Oberon**. Além disso, influênciou **Object Pascal**, que é simplificadamente a linguagem **Pascal** com a adição do paradigma de programação orientado a objetos. é **linguagem compilada** de **proposito geral** que é muito usada para ensinar programação.
+**Pascal** é uma linguagem de programação **imperativa**, **procedural** e que tem como principio a **programação estruturada**. Seu nome é uma homenagem ao físico, matemático e filósofo francês Blaise Pascal. Foi criada em 1970 por **Niklaus Wirth**, para sua fábrica de software e para ensinar programação estruturada, como uma linguagem eficiênte e que encoraja boas práticas de programação. Tem  como origem a linguagem **ALGOL 60**, que tem como paradigma a **programação estruturada**, posteriormente sucedida por **ALGOL 68**, linguagem mais complexa que sua antecessora. Influênciou diversas linguagens de programação como por exemplo **Ada**, **Java**, **Modula-2** e **Oberon**. Além disso, influênciou **Object Pascal**, que é simplificadamente a linguagem **Pascal** com a adição do paradigma de programação orientado a objetos. É **linguagem compilada** de **proposito geral** que é muito usada para ensinar programação.
 
 ## Origens
 
@@ -68,7 +68,7 @@ principalmente a linguagem **ALGOL W**.
 
 ## Influências
 
-Várias foram as linguagens influênciadas por **Pascal**: **Ada**, **Java**, **Oberon**, **Oberon-2**, **Object Pascal**, **Oxygene** e etc. **Object Pascal**, extensao da linguagem pascal com orientacao a objetos. Além disso, **Pascal** deu origem a diversos dialetos. Academicamente seus sucessores são **Modula-2** e **Oberon**, linguagens criadas pelo mesmo criador de **Pascal**, **Niklaus Wirth**.
+Várias foram as linguagens influênciadas por **Pascal**: **Ada**, **Java**, **Oberon**, **Oberon-2**, **Object Pascal**, **Oxygene** e etc. **Object Pascal** é a extensão da linguagem **Pascal** com orientação a objetos. Além disso, **Pascal** deu origem a diversos dialetos. Academicamente seus sucessores são **Modula-2** e **Oberon**, linguagens criadas pelo mesmo criador de **Pascal**, **Niklaus Wirth**.
 
 ## Linha do Tempo
 
