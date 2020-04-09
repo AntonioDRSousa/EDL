@@ -1823,6 +1823,8 @@ https://pt.wikipedia.org/wiki/Pascal_(linguagem_de_programa%C3%A7%C3%A3o)
 https://en.wikipedia.org/wiki/Pascal_(programming_language)
 https://en.wikipedia.org/wiki/Structured_programming
 https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_estruturada
+https://code.fandom.com/wiki/Algol_60
+https://eev.ee/blog/2016/09/18/the-curious-case-of-the-switch-statement/
 <p>A comparison of Pascal and ALGOL 68 - A.S.Tanenbaum</p>
 SOS ALGOL 60 REFERENCE MANUAL
 Programming Algol 68 Made Easy Sian Leitch
