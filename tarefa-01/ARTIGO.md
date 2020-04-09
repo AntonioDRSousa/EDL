@@ -218,7 +218,7 @@ No **ALGOL 68** é possível declarar *variáveis locais* em qualquer *bloco* e 
 
 #### Estruturas de Seleção
 
-Em **ALGOL 60** o *SWITCH* deve ter um índice inteiro não negativo e a ordem dos casos é essencial. O índice de valor inteiro i seleciona o i-ésimo caso do case. Em **Pascal** o índice pode ser char, integer ou boolean.
+Em **ALGOL 60** o *SWITCH* deve ter um índice inteiro não negativo e a ordem dos casos é essencial. O índice de valor inteiro i seleciona o i-ésimo caso do case. Em **Pascal** o índice pode ser char, integer ou boolean. Em **ALGOL 60** o *switch* é um tipo de array que contêm *jump labels*. Desse modo, **Pascal** apresenta maior simplicidade nesse comando. Com relação aos comandos *if*, *then* e *else* **Pascal** e **ALGOL 60** são similares.
 
 #### Estruturas de Iteração
 
