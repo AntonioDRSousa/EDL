@@ -1826,7 +1826,11 @@ https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_estruturada
 https://code.fandom.com/wiki/Algol_60
 https://eev.ee/blog/2016/09/18/the-curious-case-of-the-switch-statement/
 https://www.geeksforgeeks.org/nested-functions-c/
-<p>A comparison of Pascal and ALGOL 68 - A.S.Tanenbaum</p>
+
+
+&nbsp;
+
+A comparison of Pascal and ALGOL 68 - A.S.Tanenbaum<
 SOS ALGOL 60 REFERENCE MANUAL
 Programming Algol 68 Made Easy Sian Leitch
 INFORMAL INTRODUCTION to ALGOL 68 c. H. LINDSEY S. G. van der MEULEN
