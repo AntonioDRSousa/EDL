@@ -34,7 +34,7 @@ begin
 		b:=true;
 			
 		j:=1;
-		while p[j]<=sqrt(i) and p[j]>=2 do//p[j]>=2 verifica se o valor foi inicializado ou nao; percorre-se todos os primos menores que a raiz quadrada do numero i
+		while (p[j]<=sqrt(i)) and (p[j]>=2) do//p[j]>=2 verifica se o valor foi inicializado ou nao; percorre-se todos os primos menores que a raiz quadrada do numero i
 		begin
 			if i mod p[j] = 0 then//verifica se o numero i e' divisivel pelo primo p[j]
 			begin

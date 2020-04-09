@@ -37,7 +37,7 @@ void impr(){
 	long i;
 	for(i=0;i<n;i++){//imprime os primos
 		printf("%ld ",p[i]);
-		if(i%10==0){//pula de linha a cada 10 primos
+		if(i%10==9 && i!=0){//pula de linha a cada 10 primos
 			printf("\n");
 		}
 	}
