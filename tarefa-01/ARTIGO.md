@@ -175,6 +175,8 @@ Uma *função/procedimento aninhado* é uma *função/procedimento* definida den
 
 **Alguns Exemplos do uso de funções aninhadas**
 
+**MergeSort**
+
 Código que implementa o Mergesort em **Pascal** usando funções aninhadas comparado com o código **C** que não possui esse recurso.  É interessante notar como o código **C** possui funções que dependem de muito mais argumentos, inclusive alguns dos argumentos sendo ponteiros, o que dificulta a programação. Além disso, o código em **Pascal** possui mais organização do que o código em **C**. Para evitar esses problemas do **C** poderiamos criar um modulo novo, ou seja, escrever essas funções num novo arquivo e com isso compartilhar certas variáveis globais importantes de modo a ter um menor número de argumentos e evitar o uso de ponteiros.
 
 **Pascal**
@@ -369,6 +371,8 @@ int main(){
 	return 0;
 }
 ```
+
+**QuickSort**
 
 Código que implementa o Quicksort em **Pascal** usando funções aninhadas comparado com o código **C** que não possui. As conclusões são as mesmas obtidas no Mergesort: o código em **C**, as funções depende de um maior número de argumentos, é mais desorganizado e tem que fazer uso de ponteiros.
 
@@ -565,7 +569,9 @@ int main(){
 }
 ```
 
-Programa que implementa o bublesort usando de funções aninhadas e recursão.
+**BubbleSort**
+
+Programa que implementa o bubblesort usando de funções aninhadas e recursão.
 
 **Pascal**
 
