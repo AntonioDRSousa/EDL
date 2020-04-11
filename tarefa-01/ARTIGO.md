@@ -2393,3 +2393,6 @@ int main(){
 - SOS ALGOL 60 REFERENCE MANUAL<br />
 - Programming Algol 68 Made Easy Sian Leitch<br />
 - INFORMAL INTRODUCTION to ALGOL 68 c. H. LINDSEY S. G. van der MEULEN
+- https://en.wikipedia.org/wiki/Scope_(computer_science)
+- https://www.geeksforgeeks.org/scope-rules-in-c/
+- Essential Pascal - Marco Cantù
