@@ -171,7 +171,562 @@ Já em **C**, temos a possibilidade de criar varios tipos de *laço for* além d
 
 ##### Funções/procedimentos aninhados <a name="nested"></a>
 
-Uma *função/procedimento aninhado* é uma *função/procedimento* definida dentro de uma *função*, ou seja, a *função/procedimento aninhada* é encapsulada dentro da *função* de nível superior. Fora do *escopo da função* de nível superior a *função aninhada não é detectada. Além disso, a *função aninhada* usa as *variaveis locais* da *função* de nível superior. Uma das razões de sua utilização, é a utilidade de dividir *subrotinas* em outras *subrotinas* e encapsular-las. *Funções/procedimentos aninhadas* são usadas tipicamente como *funções* auxiliares ou *funções recursivas* dentro de outra *função*. Têm como vantagem organizar melhor o código, evitando poluir o *escopo*, e compartilham *variaveis* dentro do *escopo* facilmente sem o uso de *parametros* ou usar uma *variavel global*. **ALGOL**, **Pascal**, **Simula 67** são algumas das linguagens que possuem *funções/procedimentos aninhados*. **C** e sua familia de linguagens não possuem *funções/procedimentos aninhados*, sendo essa uma das diferenças entre **C** e **Pascal**. Um dos motivos é que **C** não possui *escopo lexico*. *Funções aninhadas* são tratadas como *escopo lexico*, que não é valido em **C** porque o *compilador* não consegue acessar a localização na *memoria* da *função* interna a outra *função*. Nomes de *funções* em **C** sempre são globais, a menos que sejam declaradas como *static*, e estão disponíveis para outras *funções*. Escopo de *variáveis* em **C** é muito mais simples do que em **Pascal**. Em **C** existem apenas dois *escopos*: o *local* e o *global*. **C** tem como alternativas às *funções aninhadas* o uso de *variaveis static*, além de poder passar a *referência(endereço)* de *variaveis* de um certo *escopo* às *funções que deveriam ser aninhadas*, algo que aumenta a complexidade da *chamada de funções*. *Variáveis static* retêm seus valores após sucessivas chamadas de função mas só são visiveis na rotina correspondente onde são declaradas. **C** não permite *funções aninhadas* mas permite declaração de variáveis dentro de um bloco. **Pascal** pode simular um pouco essa funcionalidade com o uso de *funções/procedimentos aninhadas*.
+Uma *função/procedimento aninhado* é uma *função/procedimento* definida dentro de uma *função*, ou seja, a *função/procedimento aninhada* é encapsulada dentro da *função* de nível superior. Fora do *escopo da função* de nível superior a *função aninhada não é detectada. Além disso, a *função aninhada* usa as *variaveis locais* da *função* de nível superior. Uma das razões de sua utilização, é a utilidade de dividir *subrotinas* em outras *subrotinas* e encapsular-las. *Funções/procedimentos aninhadas* são usadas tipicamente como *funções* auxiliares ou *funções recursivas* dentro de outra *função*. Têm como vantagem organizar melhor o código, evitando poluir o *escopo*, e compartilham *variaveis* dentro do *escopo* facilmente sem o uso de *parametros* ou usar uma *variavel global*. **ALGOL**, **Pascal**, **Simula 67** são algumas das linguagens que possuem *funções/procedimentos aninhados*. **C** e sua familia de linguagens não possuem *funções/procedimentos aninhados*, sendo essa uma das diferenças entre **C** e **Pascal**. Um dos motivos é que **C** possui um *escopo lexico* mais limitado. **Pascal** consegue tem um *escopo* mais complexo. Nomes de *funções* em **C** sempre são globais, a menos que sejam declaradas como *static*, e estão disponíveis para outras *funções*. Em **C** existem os seguintes *escopos*:  escopo global(external linkage), escopo de arquivo ou modulo(internal linkage) e o escopo local. O escopo local temos variáveis locais declaradas no escopo de uma função, variáveis locais declaradas num bloco ou variáveis que são parametros de função. **C** permite aninhamento de blocos dentro de funções. Escopo lexico é o tipo de escopo onde as variáveis e nomes de funções são analisados de acordo com sua posição no código e do contexto lexico. Isso contrasta com o escopo dinamico que isso ocorre em tempo de execução.Escopo lexico é feito independente do runtime(tempo de execução) de chamada de pilha. Devido a que só precisa de analise do código do programa estático, é chamado também de escopo estático. Apesar de **C** possuir *escopo* lexico, assim como **Pascal** e **ALGOL**, não é possível utilizar *funções aninhadas* em **C**. O *escopo* em **C** é mais simples que em linquagens como **Pascal** e **ALGOL**. **C** tem como alternativas às *funções aninhadas* o uso de *variaveis static*, além de poder passar a *referência(endereço)* de *variaveis* de um certo *escopo* às *funções que deveriam ser aninhadas*, algo que aumenta a complexidade da *chamada de funções*. *Variáveis static* retêm seus valores após sucessivas chamadas de função mas só são visiveis na rotina correspondente onde são declaradas. **C** não permite *funções aninhadas* mas permite declaração de variáveis dentro de um bloco. **Pascal** pode simular um pouco essa funcionalidade com o uso de *funções/procedimentos aninhadas*.Suponha por exemplo que se queira criar uma função que além do seu trecho de código chama outras funções para operações somente dentro dessa função. Essas funções no caso receberiam parametros. Se o objetivo dessas subfunções é o retornar apenas um número temos que em **C** existe a desvantagem de que se necessita passar parametros para a essa subfunção que em **Pascal** usando o recurso de *função aninhada* não é necessário, já que os parametros poderiam ser acessados por essa *subfunção* se ela estivesse aninhada à função principal. Por outro lado, imagine o caso em que é necessário não só um retorno com essa *subfunção* mas também é necessario modificação dos seus parametros. Em **Pascal** usando *funções aninhadas* é relativamente simples, e em muitos casos não se precisa declarar nenhum parametro nessa *subfunção*. Porém, como **C** não possui essa funcionalidade, é necessário não só declarar mais argumentos, como também declarar-los em formato de ponteiro, o que dificulta a compreensão do código. Além disso, cada *subfunção* em **C** deve estar declarada no escopo global, tornando o código menos compreensivel. Dessa situação temos como opção em **C** declarar as *subfunções* assumimos o código nelas presente como o código extra da função principal, nesse caso, o programa fica menos modularizado e de mais dificil compreensão. Uma outra opção seria assumir as variáveis como globais, algo que não é aconselhavel. Por outro lado, suponha uma função recursiva que é chamada várias vezes e precisa armazenar um valor numa variável de modo permanente. Uma opção em **C** seria declarar a variável como *static*, no caso do **Pascal** se definir-mos a função recursiva aninhada a uma funçõa principal com a variável necessária, então não é necessário esse processo. Desse modo, é comum ver códigos em **Pascal**, que uma função recursiva é implementada com uma função aninhada recursiva dentro de uma função principal não recursiva. Uma das vantagens disso é que se reduz o número de parametros necessário e a dificuldade de passar-los. Suponha por exemplo que a função recursiva opere sobre um vetor mas sua recursão tem haver apenas com um certo número inteiro. Se declarar-mos essa função de modo aninhado a uma função principal não recursiva podemos colocar como argumentos da principal o vetor e outros argumentos necessários mas que não são a base do processo de recursão. Um outro detalhe, é que na recursão, a chamada de funções é armazenada num pilha, que armazena os argumentos dessa função também. Evitando de criar funções muito longas em argumentos tem como vantagem não sobrecarregar essa pilha, que no caso de recursão pode ser muito usada, e também torna mais compreensível o código.
+
+**Alguns Exemplos do uso de funções aninhadas**
+
+Código que implementa o Mergesort em **Pascal** usando funções aninhadas comparado com o código **C** que não possui esse recurso.  É interessante notar como o código **C** possui funções que dependem de muito mais argumentos, inclusive alguns dos argumentos sendo ponteiros, o que dificulta a programação. Além disso, o código em **Pascal** possui mais organização do que o código em **C**. Para evitar esses problemas do **C** poderiamos criar um modulo novo, ou seja, escrever essas funções num novo arquivo e com isso compartilhar certas variáveis globais importantes de modo a ter um menor número de argumentos e evitar o uso de ponteiros.
+
+**Pascal**
+
+``` pascal
+program msort;
+
+var
+	ch:char;
+
+procedure sort(var v:array of integer;n:integer);
+	procedure MergeSort(const i,f:integer);
+	var
+		m:integer;
+		procedure Merge();
+		var
+			t:array[1..10000] of integer;
+			r,s,k:integer;
+
+			procedure cpArray();
+			var
+				j:integer;
+			begin
+				for j:=i to f do
+					v[j]:=t[j];
+			end;
+		begin
+			r:=i;
+			s:=m+1;
+			for k:=i to f do
+			begin
+				if (s>f) or ((r<=m) and (v[r]<v[s])) then
+				begin
+					t[k]:=v[r];
+					r:=r+1;
+				end
+				else
+				begin
+					t[k]:=v[s];
+					s:=s+1;
+				end;
+			end;
+			cpArray();
+		end;
+	begin
+		if ((f-i)>0) then
+		begin
+			m:=((f+i) div 2);
+			MergeSort(i,m);
+			MergeSort(m+1,f);
+			Merge();
+		end;
+	end;
+begin
+	MergeSort(0,n-1);
+end;
+
+procedure prog();
+var 
+	n:integer;
+	v:array[1..10000] of integer;
+	
+	procedure leVetor();
+	var
+		x:integer;
+	begin
+		n:=0;
+		while true do
+		begin
+			write('v[',n+1,'] = ');
+			readln(x);
+			if x<0 then
+			begin
+				break;
+			end;
+			n:=n+1;
+			v[n]:=x;
+		end;
+	end;
+
+	procedure imprVetor();
+	var
+		i:integer;
+	begin
+		writeln();
+		for i:=1 to n do
+		begin
+			write(v[i],' ');
+		end;
+		writeln();
+	end;
+begin
+	leVetor();
+	imprVetor();
+	sort(v,n);
+	imprVetor();
+end;
+
+begin
+	repeat
+	begin
+		prog();
+		write(#10,'Deseja continuar(caracter s)? ');
+		readln(ch);
+	end;
+	until ch<>'s';
+end.
+```
+
+
+**C**
+
+``` C
+#include<stdio.h>
+
+char ch;
+
+void cpArray(int * v,int * t,int i,int f){
+	int j;
+	for(j=i;j<=f;j++){
+		v[j]=t[j];
+	}
+}
+
+void Merge(int * v,int i,int f,int m){
+	int t[10001];
+	int r,s,k;
+	r=i;
+	s=m+1;
+	for(k=i;k<=f;k++){
+		if((s>f) || ((r<=m) && (v[r]<v[s]))){
+			t[k]=v[r];
+			r++;
+		}
+		else{
+			t[k]=v[s];
+			s++;
+		}
+	}
+	cpArray(v,t,i,f);
+}
+
+void MergeSort(int * v,int i,int f){
+	int m;
+	if((f-i)>0){
+		m=(int)((f+i)/2);
+		MergeSort(v,i,m);
+		MergeSort(v,m+1,f);
+		Merge(v,i,f,m);
+	}			
+}
+
+void leVetor(int * v,int * n){
+	int x;
+	*n=0;
+	for(;;){
+		printf("v[%d] = ",(*n)+1);
+		scanf("%d",&x);
+		if(x<0){
+			break;
+		}
+		(*n)++;
+		v[(*n)]=x;
+	}
+}
+
+void imprVetor(int * v,int n){
+	int i;
+	printf("\n");
+	for(i=1;i<=n;i++){
+		printf("%d ",v[i]);
+	}
+	printf("\n");
+}
+	
+void prog(){
+	int n;
+	int v[10001];	
+	leVetor(v,&n);
+	imprVetor(v,n);
+	MergeSort(v,0,n-1);
+	imprVetor(v,n);
+}
+
+int main(){
+	do{
+		prog();
+		printf("\nDeseja continuar(caracter s)? ");
+		fflush(stdin);
+		scanf("%c",&ch);
+	}while(ch=='s');
+	return 0;
+}
+```
+
+Código que implementa o Quicksort em **Pascal** usando funções aninhadas comparado com o código **C** que não possui. As conclusões são as mesmas obtidas no Mergesort: o código em **C**, as funções depende de um maior número de argumentos, é mais desorganizado e tem que fazer uso de ponteiros.
+
+**Pascal**
+
+``` pascal
+program qsort;
+
+var
+	ch:char;
+
+procedure sort(var v:array of integer;n:integer);
+	procedure quicksort(e,d:integer);
+	var
+		i,j:integer;
+		procedure particao();
+		var
+			t:integer;
+			procedure swap(var x,y:integer);
+			var
+				tmp:integer;
+			begin
+				tmp:=x;
+				x:=y;
+				y:=tmp;
+			end;
+		begin
+			i:=e;
+			j:=d;
+			t:=v[(e+d) div 2];
+			while i<=j do
+			begin
+				while v[i]<t do
+					i:=i+1;
+				while v[j]>t do
+					j:=j-1;
+				if i<=j then
+				begin
+					swap(v[i],v[j]);
+					i:=i+1;
+					j:=j-1;
+				end;
+			end;
+		end;
+	begin
+		if d>e then
+		begin
+			particao();
+			quicksort(e,j);
+			quicksort(i,d);
+		end;
+	end;
+begin
+	quicksort(0,n-1);
+end;
+
+procedure prog();
+var 
+	n:integer;
+	v:array[1..10000] of integer;
+	procedure leVetor();
+	var
+		x:integer;
+	begin
+		n:=0;
+		while true do
+		begin
+			write('v[',n+1,'] = ');
+			readln(x);
+			if x<0 then
+			begin
+				break;
+			end;
+			n:=n+1;
+			v[n]:=x;
+		end;
+	end;
+
+	procedure imprVetor();
+	var
+		i:integer;
+	begin
+		writeln();
+		for i:=1 to n do
+		begin
+			write(v[i],' ');
+		end;
+		writeln();
+	end;
+begin
+	leVetor();
+	imprVetor();
+	sort(v,n);
+	imprVetor();
+end;
+
+begin
+	repeat
+	begin
+		prog();
+		write(#10,'Deseja continuar(caracter s)? ');
+		readln(ch);
+	end;
+	until ch<>'s';
+end.
+```
+
+**C**
+
+``` C
+#include<stdio.h>
+
+char ch;
+
+void swap(int * x,int * y){
+		int tmp=*x;
+		*x=*y;
+		*y=tmp;
+}
+
+
+void particao(int * v,int * i,int * j,int e,int d){
+	int t;
+	*i=e;
+	*j=d;
+	t=v[(int)((e+d)/2)];
+	while((*i)<=(*j)){
+		while(v[(*i)]<t){
+			(*i)++;
+		}
+		while(v[(*j)]>t){
+			(*j)--;
+		}
+		if((*i)<=(*j)){
+			swap(&v[(*i)],&v[(*j)]);
+			(*i)++;
+			(*j)--;
+		}
+	}
+}
+
+void quicksort(int * v,int e,int d){
+	int i;
+	int j;
+	if(d>e){
+		particao(v,&i,&j,e,d);
+		quicksort(v,e,j);
+		quicksort(v,i,d);
+	}
+
+}
+
+void leVetor(int * v,int * n){
+	int x;
+	*n=0;
+	for(;;){
+		printf("v[%d] = ",(*n)+1);
+		scanf("%d",&x);
+		if(x<0){
+			break;
+		}
+		(*n)++;
+		v[(*n)]=x;
+	}
+}
+
+void imprVetor(int * v,int n){
+	int i;
+	printf("\n");
+	for(i=1;i<=n;i++){
+		printf("%d ",v[i]);
+	}
+	printf("\n");
+}
+	
+void prog(){
+	int n;
+	int v[10001];
+	leVetor(v,&n);
+	imprVetor(v,n);
+	quicksort(v,0,n);
+	imprVetor(v,n);
+}
+
+int main(){
+	do{
+		prog();
+		printf("\nDeseja continuar(caracter s)? ");
+		fflush(stdin);
+		scanf("%c",&ch);
+	}while(ch=='s');
+	return 0;
+
+}
+```
+
+Programa que implementa o bublesort usando de funções aninhadas e recursão.
+
+**Pascal**
+
+``` pascal
+program bsort;
+
+var
+	ch:char;
+
+procedure sort(var v:array of integer;n:integer);
+	procedure buble(n:integer);
+		procedure troca(i:integer);
+			procedure swap(var x,y:integer);
+			var 
+				tmp:integer;
+			begin
+				tmp:=x;
+				x:=y;
+				y:=tmp;
+			end;
+		begin
+			if i>=0 then
+			begin
+				troca(i-1);
+				if v[i]>v[i+1] then
+					swap(v[i],v[i+1]);
+			end;
+		end;
+	begin
+		if n>=0 then
+		begin
+			troca(n-1);
+			buble(n-1);
+		end;
+	end;
+begin
+	buble(n-1);
+end;
+
+procedure prog();
+var 
+	n:integer;
+	v:array[1..10000] of integer;
+	procedure leVetor();
+	var
+		x:integer;
+	begin
+		n:=0;
+		while true do
+		begin
+			write('v[',n+1,'] = ');
+			readln(x);
+			if x<0 then
+			begin
+				break;
+			end;
+			n:=n+1;
+			v[n]:=x;
+		end;
+	end;
+
+	procedure imprVetor();
+	var
+		i:integer;
+	begin
+		writeln();
+		for i:=1 to n do
+		begin
+			write(v[i],' ');
+		end;
+		writeln();
+	end;
+begin
+	leVetor();
+	imprVetor();
+	sort(v,n);
+	imprVetor();
+end;
+
+begin
+	repeat
+	begin
+		prog();
+		write(#10,'Deseja continuar(caracter s)? ');
+		readln(ch);
+	end;
+	until ch<>'s';
+end.
+```
+
+**C**
+
+``` C
+#include<stdio.h>
+
+char ch;
+
+void swap(int * x,int * y){
+		int tmp=*x;
+		*x=*y;
+		*y=tmp;
+}
+
+void troca(int * v,int i){
+	if(i>=0){
+		troca(v,i-1);
+		if(v[i]>v[i+1]){
+			swap(&v[i],&v[i+1]);
+		}
+	}
+}
+
+void buble(int * v,int n){
+	if(n>=0){
+		troca(v,n-1);
+		buble(v,n-1);
+	}
+}
+
+void leVetor(int * v,int * n){
+	int x;
+	*n=0;
+	for(;;){
+		printf("v[%d] = ",(*n)+1);
+		scanf("%d",&x);
+		if(x<0){
+			break;
+		}
+		(*n)++;
+		v[(*n)]=x;
+	}
+}
+
+void imprVetor(int * v,int n){
+	int i;
+	printf("\n");
+	for(i=1;i<=n;i++){
+		printf("%d ",v[i]);
+	}
+	printf("\n");
+}
+	
+void prog(){
+	int n;
+	int v[10001];
+	leVetor(v,&n);
+	imprVetor(v,n);
+	buble(v,n);
+	imprVetor(v,n);
+}
+
+int main(){
+	do{
+		prog();
+		printf("\nDeseja continuar(caracter s)? ");
+		fflush(stdin);
+		scanf("%c",&ch);
+	}while(ch=='s');
+	return 0;
+}
+```
 			 
 #### Variáveis Locais
 
