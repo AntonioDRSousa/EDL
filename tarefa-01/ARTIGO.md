@@ -171,7 +171,77 @@ Já em **C**, temos a possibilidade de criar varios tipos de *laço for* além d
 
 ##### Funções/procedimentos aninhados <a name="nested"></a>
 
-Uma *função/procedimento aninhado* é uma *função/procedimento* definida dentro de uma *função*, ou seja, a *função/procedimento aninhada* é encapsulada dentro da *função* de nível superior. Fora do *escopo da função* de nível superior a *função aninhada não é detectada. Além disso, a *função aninhada* usa as *variaveis locais* da *função* de nível superior. Uma das razões de sua utilização, é a utilidade de dividir *subrotinas* em outras *subrotinas* e encapsular-las. *Funções/procedimentos aninhadas* são usadas tipicamente como *funções* auxiliares ou *funções recursivas* dentro de outra *função*. Têm como vantagem organizar melhor o código, evitando poluir o *escopo*, e compartilham *variaveis* dentro do *escopo* facilmente sem o uso de *parametros* ou usar uma *variavel global*. **ALGOL**, **Pascal**, **Simula 67** são algumas das linguagens que possuem *funções/procedimentos aninhados*. **C** e sua familia de linguagens não possuem *funções/procedimentos aninhados*, sendo essa uma das diferenças entre **C** e **Pascal**. Nomes de *funções* em **C** sempre são globais, a menos que sejam declaradas como *static*, e estão disponíveis para outras *funções*. Em **C** existem os seguintes *escopos*:  escopo global(external linkage), escopo de arquivo ou modulo(internal linkage) e o escopo local.  No escopo local temos variáveis locais declaradas no escopo de uma função, variáveis locais declaradas num bloco ou variáveis que são parametros de função. **C** permite aninhamento de blocos dentro de funções. Escopo lexico é o tipo de escopo onde as variáveis e nomes de funções são analisados de acordo com sua posição no código e do contexto lexico. Isso contrasta com o escopo dinamico que isso ocorre em tempo de execução. Escopo lexico é feito modo independente da execução. Devido a que só precisa de analise do código do programa estático, é chamado também de escopo estático. Apesar de **C** possuir *escopo* lexico, assim como **Pascal** e **ALGOL**, não é possível utilizar *funções aninhadas* em **C**. O *escopo* em **C** é mais simples que em linguagens como **Pascal** e **ALGOL**. **C** tem como alternativas às *funções aninhadas* o uso de *variaveis static*, além de poder passar a *referência(endereço)* de *variaveis* de um certo *escopo* às *funções que deveriam ser aninhadas*, algo que aumenta a complexidade da *chamada de funções*. *Variáveis static* retêm seus valores após sucessivas chamadas de função mas só são visiveis na rotina correspondente onde são declaradas. **C** não permite *funções aninhadas* mas permite declaração de variáveis dentro de um bloco. **Pascal** pode simular um pouco essa funcionalidade com o uso de *funções/procedimentos aninhadas*.Suponha por exemplo que se queira criar uma função que além do seu trecho de código chama outras funções para operações somente dentro dessa função. Essas funções no caso receberiam parametros. Se o objetivo dessas subfunções é retornar apenas um número a partir de uma certa quantidade de variaveis temos que em **C** existe a desvantagem de que se necessita passar parametros para a essa subfunção que em **Pascal**, usando o recurso de *função aninhada*, não é necessário, já que os parametros poderiam ser acessados por essa *subfunção* se ela estivesse aninhada à função principal. Por outro lado, imagine o caso em que é necessário não só um retorno com essa *subfunção* mas também é necessario a modificação dos seus parametros. Em **Pascal** usando *funções aninhadas* é relativamente simples, e em muitos casos não precisa declarar nenhum parametro nessa *subfunção*. Porém, como **C** não possui essa funcionalidade, é necessário não só declarar mais argumentos, como também em alguns casos declarar-los em formato de ponteiro, o que dificulta a compreensão do código. Além disso, cada *subfunção* em **C** deve estar declarada no escopo global, tornando o código menos compreensivel. Dessa situação temos como opção em **C** declarar as *subfunções* assumindo o código nelas presente como o código extra da função principal, nesse caso, o programa fica menos modularizado e de mais dificil compreensão. Uma outra opção seria assumir as variáveis como globais, algo que não é aconselhavel. Por outro lado, suponha uma função recursiva que é chamada várias vezes e precisa armazenar um valor numa variável de modo permanente. Uma opção em **C** seria declarar a variável como *static*, no caso do **Pascal** podemos definir-mos a função recursiva aninhada a uma função principal com essa variável na função principal. Desse modo, é comum ver códigos em **Pascal**, que uma função recursiva é implementada como uma função aninhada recursiva dentro de uma função principal não recursiva. Uma das vantagens disso é que se reduz o número de parametros necessários e a dificuldade de passar-los. Suponha por exemplo que a função recursiva opere sobre um vetor mas sua recursão tem haver apenas com um certo número inteiro. Se declarar-mos essa função de modo aninhado a uma função principal não recursiva podemos colocar como argumentos da principal o vetor e outros argumentos necessários mas que não são a base do processo de recursão. Um outro detalhe, é que na recursão, a chamada de funções é armazenada numa pilha, que armazena os argumentos dessa função também. Evitar de criar funções muito longas em argumentos tem como vantagem não sobrecarregar essa pilha, que no caso de recursão pode ser sobrecarregada, e também torna mais compreensível o código.
+Uma *função/procedimento aninhado* é uma *função/procedimento* definida dentro de uma *função*, ou seja, a *função/procedimento aninhada* é encapsulada dentro da *função* de nível superior. Fora do *escopo da função* de nível superior a *função aninhada não é detectada. Além disso, a *função aninhada* usa as *variaveis locais* da *função* de nível superior, ou seja, tem acesso ao escopo da função de nível superior. Uma das razões de sua utilização, é a utilidade de dividir *subrotinas* em outras *subrotinas* e encapsular-las. Podemos então dividir problemas mais complexos em problemas mais simples. *Funções/procedimentos aninhadas* são usadas tipicamente como *funções* auxiliares ou *funções recursivas* dentro de outra *função*. Têm como vantagem organizar melhor o código, evitando poluir o *escopo*, e compartilham *variaveis* dentro do *escopo* facilmente sem o uso de *parametros* adicionais ou usar uma *variavel global*.
+
+O escopo de uma variável é a parte do programa onde a variável é visível. Um escopo é uma parte do programa que pode "escopar" um conjunto de nomes de entidades como variáveis ou funções. Por exemplo, se o escopo de uma variável é dentro dentro de uma função, então fora dessa função o nome dessa variável não é visível. Um escopo é a parte de programa que tem associado a ele um conjunto de nomes de variáveis. Existem dois tipos principais de escopo: escopo lexico e escopo dinâmico. Escopo lexico é o tipo de escopo onde as variáveis e nomes de funções são analisados de acordo com sua posição no código e do contexto lexico. Isso contrasta com o escopo dinamico que isso ocorre em tempo de execução. Escopo lexico é feito modo independente da execução.
+
+
+**ALGOL**, **Pascal**, **Simula 67** são algumas das linguagens que possuem *funções/procedimentos aninhados*. **C** e sua familia de linguagens não possuem *funções/procedimentos aninhados*, sendo essa uma das diferenças entre **C** e **Pascal**. Nomes de *funções* em **C** sempre são globais, a menos que sejam declaradas como *static*, e estão disponíveis para outras *funções*. 
+
+Em **C** existem os seguintes *escopos*:  escopo global(external linkage), escopo de arquivo ou modulo(internal linkage) e o escopo local. No escopo global(external linkage) temos as variáveis acessiveis dentro de um ou mais arquivos, ou seja, a variável é visível, além do arquivo em que está escrita, em outro arquivo. No escopo de arquivo(internal linkage) a variável é visível no arquivo onde ela está escrita.  No escopo local temos variáveis locais declaradas no escopo de uma função, variáveis locais declaradas num bloco ou variáveis que são parametros de função. Variáveis locais após o termino de chamada de uma função  não têm em geral seus valores persistidos na memoria. Às vezes é necessário que o valor de uma variável local persista na memória, um exemplo para isso seria contar o número de chamadas de uma função recursiva. Para isso poderiamos usar em **C** uma variável global, no entanto isso não é uma boa prática de programação em **C**. Deve-se evitar sempre o uso de variáveis globais, usando ao invés disso variáveis de escopo local. O motivo para isso é que além de poluir o escopo global, ocorre mais erros quando uma variável é global, devido a que ela é visivel em todo código. Além disso, variáveis globais persistem constantemente na memória, ou seja, quando elas não são mais necessárias continuam ocupando espaço na memória o que pode ser um problema. Uma alternativa para esse problema em **C** são as variáveis static locais. Variáveis static locais são variáveis que só são visíveis dentro de um escopo de uma função ou bloco, mas que após a execução desse bloco ou função o seu valor é persistido na memoria. Esse tipo de variáveis é muito util para evitar o uso de variáveis globais adicionais. **C** permite aninhamento de blocos dentro de funções. Devido a que só precisa de analise do código do programa estático, é chamado também de escopo estático. Apesar de **C** possuir *escopo* lexico, assim como **Pascal** e **ALGOL**, não é possível utilizar *funções aninhadas* em **C**. Apesar de **C** não ter acesso à funcionalidade de funções aninhadas, ele consegue ter um tipo de escopos mais simples que em **Pascal** e **ALGOL** por exemplo. 
+
+**C** tem como alternativas às *funções aninhadas* o uso de *variaveis static*, além de poder passar a *referência(endereço)* de *variaveis* de um certo *escopo* às *funções que deveriam ser aninhadas*, algo que aumenta a complexidade da *chamada de funções*. *Variáveis static* retêm seus valores após sucessivas chamadas de função mas só são visiveis na rotina correspondente onde são declaradas. **C** não permite *funções aninhadas* mas permite declaração de variáveis dentro de um bloco. **Pascal** pode simular um pouco essa funcionalidade com o uso de *funções/procedimentos aninhadas*. Desse modo temos que **C** para que se consiga simular as funções aninhadas ele necessita usar mais parametros.
+
+Suponha por exemplo que se queira criar uma função que além do seu trecho de código chama outras funções para operações somente dentro dessa função. Essas funções no caso receberiam parametros. Se o objetivo dessas subfunções é retornar apenas um número a partir de uma certa quantidade de variaveis temos que em **C** existe a desvantagem de que se necessita passar parametros para a essa subfunção que em **Pascal**, usando o recurso de *função aninhada*, não é necessário, já que os parametros poderiam ser acessados por essa *subfunção* se ela estivesse aninhada à função principal. Por outro lado, imagine o caso em que é necessário não só um retorno com essa *subfunção* mas também é necessario a modificação dos seus parametros. Em **Pascal** usando *funções aninhadas* é relativamente simples, e em muitos casos não precisa declarar nenhum parametro nessa *subfunção*. Porém, como **C** não possui essa funcionalidade, é necessário não só declarar mais argumentos, como também em alguns casos declarar-los em formato de ponteiro, o que dificulta a compreensão do código. Além disso, cada *subfunção* em **C** deve estar declarada no escopo global, tornando o código menos compreensivel. Dessa situação temos como opção em **C** declarar as *subfunções* assumindo o código nelas presente como o código extra da função principal, nesse caso, o programa fica menos modularizado e de mais dificil compreensão. Uma outra opção seria assumir as variáveis como globais, algo que não é aconselhavel. Por outro lado, suponha uma função recursiva que é chamada várias vezes e precisa armazenar um valor numa variável de modo permanente. Uma opção em **C** seria declarar a variável como *static*, no caso do **Pascal** podemos definir-mos a função recursiva aninhada a uma função principal com essa variável na função principal. Desse modo, é comum ver códigos em **Pascal**, que uma função recursiva é implementada como uma função aninhada recursiva dentro de uma função principal não recursiva. Uma das vantagens disso é que se reduz o número de parametros necessários e a dificuldade de passar-los. Suponha por exemplo que a função recursiva opere sobre um vetor mas sua recursão tem haver apenas com um certo número inteiro. Se declarar-mos essa função de modo aninhado a uma função principal não recursiva podemos colocar como argumentos da principal o vetor e outros argumentos necessários mas que não são a base do processo de recursão. Um outro detalhe, é que na recursão, a chamada de funções é armazenada numa pilha, que armazena os argumentos dessa função também. Evitar de criar funções muito longas em argumentos tem como vantagem não sobrecarregar essa pilha, que no caso de recursão pode ser sobrecarregada, e também torna mais compreensível o código.
+
+
+Tome como exemplo o pseudocódigo que simula a linguagem Pascal:
+
+procedure F();
+var
+	x:integer;
+	procedure G();
+	var
+		y,z:integer;
+		procedure H();
+		var
+			z:integer;
+		begin
+			x:=x+2;
+			y:=y+2;
+			z:=2;
+			writeln(x,' ',y,' ',z);
+		end;
+	begin
+		x:=2;
+		y:=2;
+		z:=5;
+		writeln(x,' ',y,' ',z);
+		H();
+	end;
+	procedure I();
+	var
+		a,z:integer;
+	begin
+		x:=x+1;
+		a:=1;
+		z:=1;
+		writeln(x,' ',a,' ',z);
+	end;
+begin
+	x:=1;
+	writeln(x);
+	G();
+	writeln(x);
+	I();
+	writeln(x);
+end;
+
+O procedimento F tem apenas acesso à variável x e variáveis que são globais. O procedimento G tem acesso às variáveis y,z e a x, que é a variável do procedimento F que é de nível superior. O procedimento H tem acesso às variáveis x,y e z, só que a variável z definida em H não é a mesma que a variável z definida em G. Isso ocorre porque possuem o mesmo nome e se o nome de uma variável definida localmente na função é o mesmo de uma variável definida numa função de nível acima ou é global, então o nome corresponde à variável definida localmente na função. Já no caso de I, temos acesso a x,a,z sendo que z não corresponde nem a variável G e nem a variável H.
+Um mesmo código que tem a mesma funcionalidade só que em C seria:
+
+void I(int x){
+	int a,z;
+}
+void H(int x,int y){
+	int z;
+}
+void G(int x);
+	int y,z;
+}
+void F();
+	int x;
+}
 
 **Alguns Exemplos do uso de funções aninhadas**
 
