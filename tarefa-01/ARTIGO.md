@@ -167,30 +167,96 @@ Já em **C**, temos a possibilidade de criar varios tipos de *laço for* além d
 
 #### Subrotinas
 
-**Pascal** possui *procedimentos* e *funções*, enquanto **C** possui apenas *funções*. Isso ocorre porque a linguagem **C** tem o tipo *void* e **Pascal** não tem. Desse modo o que seria um *procedimento* em **Pascal** é uma *função void* no **C**. **Pascal** possui duas formas de passar *argumentos* para uma *função*: *por referência*(usa-se *var*) ou *por valor*(usa-se *const*). **C** apenas possui passagem de *argumentos por valor*, mas com o uso de *ponteiros* pode-se emular uma passagem de argumentos por *referência*. Esse é um dos motivos porque a utilização de *ponteiros* é tão necessaria em **C**. Em **C** é possivel ter *ponteiros de funções*, enquanto em **Pascal** isso não é possivel. **C** permite retorno de *struct* nas *funções*, algo que não é permitido em **Pascal**.
+**Pascal** possui *procedimentos* e *funções*, enquanto **C** possui apenas *funções*. Isso ocorre porque a linguagem **C** tem o tipo *void* e **Pascal** não tem. Desse modo o que seria um *procedimento* em **Pascal** é uma *função void* no **C**. **Pascal** possui duas formas de passar *argumentos* para uma *função*: *por referência*(usa-se *var*) ou *por valor*(usa-se *const*). **C** apenas possui passagem de *argumentos por valor*, mas com o uso de *ponteiros* pode-se emular uma passagem de argumentos por *referência*. Esse é um dos motivos porque a utilização de *ponteiros* é tão necessaria em **C**. Em **C** é possivel ter *ponteiros de funções*, enquanto em **Pascal** isso não é possivel. **C** permite retorno de *struct* nas *funções*, algo que não é permitido em **Pascal**. Além disso, **C** não permite funções aninhadas, enquanto **Pascal** permite.
+			 
+#### Variáveis Locais
 
-##### Funções/procedimentos aninhados <a name="nested"></a>
+Em **C** *variaveis locais* podem ser alocadas em qualquer *bloco* e em qualquer parte de um *bloco de comandos*. Em **Pascal** não é possivel realizar esse tipo de declaração, sendo só permitida a declaração de *variaveis* antes do começo de um bloco de *comandos* de *procedimentos/funções* ou antes do *bloco "main"(programa principal)*.
+
+### ALGOL 68
+
+#### Estruturas de Seleção
+
+Em **ALGOL 68** o *case* deve ter um indice inteiro não negativo e a ordem dos casos é essencial. O índice de valor inteiro i seleciona o i-ésimo caso do *case*. Em **Pascal** o índice do *case* tem mais tipos dados como possibilidade. Além disso, em **Pascal** a seleção dos casos não tem haver com a ordem, mas com a igualdade do índice com relação ao caso. Se o índice for i então o caso tem que ser i. Isso torna a estrutura *case* em **Pascal** menos limitada que em **ALGOL 68**. Além disso, o comando *if..then..fi* retorna um valor booleano podendo ser usado dentro de um outro comando *if..then..fi*. Temos também a possibilidade do comando *if..then..fi* retornar um inteiro, caracter ou outro tipo de dado colocando o valor de retorno após *then*. Para essas funcionalidades podemos utilizar as estruturas maiores como *if..then..else if..then..else..fi* que retornam também um valor seja booleano ou outro tipo de dado. Além disso, o comando *fi* encerra a estrutura *if..then*. Em **Pascal** a estrutura *if..then* não retorna nenhum valor e não pode ser colocada como uma parâmetro dentro de uma *função/procedimento*, sendo assim uma estrutura mais limitada. Além disso, em **Pascal** se os comandos depois de *if..then* possuirem mais que um comando, é necessário colocar esses comandos dentro de um *bloco*. Isso acontece devido a problemas de ambiguidadade na linguagem. Já em **ALGOL 68**, não existe essa necessidade porque o comando *then* e *fi* delimitam essa estrutura.
+
+#### Estruturas de Iteração
+
+Podemos definir a **estrutura de iteração** de **ALGOL 68** de modo genérico como *for..from..by..to..while..do..od* , sendo que cada comando é opcional com a excessão de *do* e *od*. Existem 7 comandos utilizados nas **estruturas de iteração** em **ALGOL 68**:
+- **for** : Inicializa a *variável de controle*. É seguido do nome que identifica essa *variável*.
+- **from** : Atribui valor inicial à *variável de controle*. É seguido de uma valor inteiro, que indica esse valor.
+- **by** : Indica o incremento ou decremento que recebe a variável de *controle* após cada execução do *loop*. 
+	   É seguido de uma valor inteiro com ou sem sinal, que indica se é para incrementar ou decrementar.
+- **to** : Indica o valor termino da *variável de controle* para terminar o *loop*. É seguido de um valor inteiro.
+- **while** : Checa uma expressão lógica e se for verdadeira executa o *loop*, senão não executa. 
+	      É seguido de um valor booleano.
+- **do** : abre a sequência de comandos de iteração de um *loop*. 
+- **od** : fecha o sequências de comandos de iteração de um *loop*. 
+           Desse modo, todos os comandos executados no *loop* estão entre o *do* e o *od*.
+
+Se um comando não é usado no *loop* temos o seguinte comportamento:
+- Se *for* não está escrito, então a *variável de controle* não é declarada.
+- Se *from* não está escrito. então a *variável de *controle* inicia com valor 1.
+- Se *by* não está escrito, então existe incremento de 1 na *variável de controle*.
+- Se *to* não está escrito, então é assumido como valor final o infinito.
+- Se *while* não está escrito, então é assumido como um comando *while true*.
+
+Em **ALGOL 68** o comando *for* e *while* podem ser combinados em um único *comando*, já em **Pascal** eles são comandos distintos.  Em **ALGOL 68** o *laço for* possui mais possibilidades que o *for..do* do **Pascal** que só possui a possibilidade de definir o valor inicial e o termino do *loop*, ou seja, o laço *for* em **Pascal** equivale similarmente ao comando *for..from..to..do..od*, no caso de *for..to..begin..end;*, ou *for..from..by --1 to..do..od*, no caso de *for..downto..begin..end;*.
+A *variável de controle* no **ALGOL 68** é implicitamente declarada pelo *comando for* e atribuições a ela são ilegais. O *escopo* da *variável de controle* está no *loop*, tornando ela inacessível fora do *laço*. Desse modo, se uma *variável* fora do *loop for* declarada com o mesmo nome, ela não afeta a *variável de controle*. Além disso, a *variável de controle* é declarada como um inteiro. Já em **Pascal** a *variável de controle* deve ser declarada, e o seu tipo não precisa ser necessariamente um inteiro, pode ser um real também. A *variável de controle* em **Pascal** é acessível fora do *loop*. Em **ALGOL 68** as expressões depois de *by* e *to* são avaliadas antes do começo do *loop*, permitindo desse modo a alteração das *variáveis* que compoem esse comando. 
+**Pascal** tem o *comando repeat..until*, enquanto **ALGOL 68** necessita usar o comando *while*, também existente no **Pascal**.
+
+#### Subrotinas
+
+No **ALGOL 68** *procedimentos* podem ser elementos de *arrays*, *campos de estruturas*, *retorno* de *funções* e etc. Além disso, pode existir *ponteiros para procedimentos* no **ALGOL 68**. Já no **Pascal**, *procedimentos* apenas podem ser chamados ou passados como *argumentos*. Todo *procedimento* em **ALGOL 68** retorna algum valor. Em **Pascal**, *procedimentos* por definição não retornam nada. *Procedimentos* em **Pascal** seriam equivalentes a *Procedimentos* que retornam *void* em **ALGOL 68** .*Funções* em **ALGOL 68** podem retornar qualquer tipo dado existente na linguagem. Em **Pascal** nem todos os tipos são permitidos como retorno de uma função. Arrays e structs não podem ser retorno de uma função. Desse modo, existe uma coleção de tipos restrita no **Pascal** que podem ser retorno de *funções*. Em **ALGOL 68** existe um único tipo de *parâmetro*, aquele que é chamado por valor. Para que em **ALGOL 68** emule a passagem por referência é necessário passar o endereço da variável com o comando *ref* nos parâmetros. Já em **Pascal** existem três tipos de *parâmetros*: por *valor*, por *referência*, *procedure*(incluindo *function*).
+
+#### Variáveis Locais
+
+No **ALGOL 68** é possível declarar *variáveis locais* em qualquer *bloco* e em qualquer parte de um *bloco*. As *variáveis* passam a existir quando a execução entra no *bloco* e deixam de existir quando sai do *bloco*. Em **Pascal** só é permitida a declaração de *variáveis locais* dentro do *nível de procedimento*, ou seja, não é permitida a declaração de *variáveis locais* em outros tipos de *bloco* que não o de *procedimentos/funções* ou o do *programa "main"*. Além disso, **Pascal** só permite a declaração de *variáveis locais* antes do comando de inicio de bloco *BEGIN*.
+
+### ALGOL 60 
+
+#### Estruturas de Seleção
+
+Em **ALGOL 60** o *SWITCH* deve ter um índice inteiro não negativo e a ordem dos casos é essencial. O índice de valor inteiro i seleciona o i-ésimo caso do case. Em **Pascal** o índice pode ser char, integer ou boolean. Em **ALGOL 60** o *switch* é um tipo de array que contêm *jump labels*. Desse modo, **Pascal** apresenta maior simplicidade nesse comando. Com relação aos comandos *if*, *then* e *else* **Pascal** e **ALGOL 60** são similares.
+
+#### Estruturas de Iteração
+
+**ALGOL 60** usa como **estrutura de iteração** o *for*, enquanto **Pascal** possui 3 estruturas de iteração: *for..to..do*, *while..do* e *repeat..until*. O *for* de **ALGOL 60** combinado com *step..until..do* ou *while..do* possibilita criar mais tipos de *laço* que em **Pascal**. No caso de *for..step..until..do*, *step* do valor de incremento ou decremento da *variável de controle* e o *until* a condição de parada do *loop*. Sendo assim, *for..step..until* tem muito mais possibilidades do que o *laço for* no **Pascal**. Já no caso de *for..while..do*, *while* é seguido de uma expressão lógica que faz com que o *bloco de comandos* do *loop* seja repetido se a expressão for verdadeira e quando for falsa é executado. O comando *for..while..do* equivale quase ao *while* do **Pascal**, com a diferença que *for..while..do* inicializa uma *variável*, enquanto o *while* do **Pascal** não. **ALGOL 60** não possui estrutura equivalente ao *repeat..until* do **Pascal**. Laços desse gênero devem ser criados com o *for..while..do*, com o incoveniente de que nesse caso é primeiro analisada a expressão lógica e depois executado ou não o bloco de comandos do *loop*, já no caso do comando *repeat..until* é primeiro executado o bloco de comandos do *loop* e posteriormente é analisada a expressão lógica a seguir do *until*, sendo repetido o *loop* ou não.
+
+#### Subrotinas
+
+Em **ALGOL 60** existem apenas *procedimentos* enquanto em **Pascal** existem *funções* e *procedimentos*. Os *procedimentos* em **ALGOL 60** podem retornar uma valor ou não retornar nada. Qualquer tipo de dado de **ALGOL 60** pode ser usado como parâmetro de *pocedimento*, já em **Pascal** nem todos os dados da linguagem são permitidos.
+
+#### Variáveis Locais
+
+Em **ALGOL 60** *variáveis locais* podem ser declaradas em qualquer bloco e a declaração de *variáveis* deve ser no inicio do bloco. Enquanto em **Pascal** não permitido declarar variáveis locais em qualquer bloco e a sua declaração deve ser anterior ao bloco.
+
+### Conclusão
+
+Do ponto de vista de sintaxe as linguagens **ALGOL** são mais próximas de **Pascal** do que de **C**. **Pascal** preservou grande parte da sintaxe de **ALGOL** com o uso de palavras em inglês ao invés de símbolos para expressar comandos. Um exemplo disso é o comando de *bloco* que enquanto em **C** se representa com os caracteres *{* e *}*, em **Pascal** se representa como *begin* e *end*, existentes em **ALGOL**. Podemos ver que em termos de proximidade semântica, **Pascal** é mais próximo de **ALGOL 60** do que de **ALGOL 68** ou de **C**. **ALGOL 68** é uma linguagem sucessora de **ALGOL 60** assim como **Pascal**, mas contrasta com este último com relação a complexidade. **ALGOL 60** era menos complexo que **ALGOL 68**. **C** é uma linguagem muito mais próxima do nível baixo do que **Pascal**, principalmente as primeiras versões da linguagem. Sendo assim, **C** apresenta uma maior flexibilidade como linguagem mas perde muito em segurança com relação a **Pascal**. Muitas das funcionalidades de **C** que não existiam em **Pascal**, foram sendo acrescentadas em versões posteriores mais recentes da linguagem, perdendo mais a sua segurança. Em termos de **estruturas de controle de iteração**, **Pascal** é a linguagem mais limitada. O *loop* *for* tem poucas possibilidades perante as outras linguagens. Em termos de **estruturas de seleção**, **Pascal** também é mais limitado, já que linguagens como **C** e **ALGOL 68** possuem mais utilidades de uso dessas estruturas. Em termos de *subrotinas* **Pascal**, **ALGOL 60**, **ALGOL 68** possuem *funções aninhadas*, enquanto **C** não possui. Embora **C**, **ALGOL 60**, **ALGOL 68** e **Pascal** possuam as mesmas origens e o mesmo paradigma, em termos semânticos elas possuem diferenças significativas. 
+
+## Funções/procedimentos aninhados <a name="nested"></a>
+
+### Definição e Explicação de Funções Aninhadas
 
 Uma *função/procedimento aninhado* é uma *função/procedimento* definida dentro de uma *função*, ou seja, a *função/procedimento aninhada* é encapsulada dentro da *função* de nível superior. Fora do *escopo da função* de nível superior a *função aninhada não é detectada. Além disso, a *função aninhada* usa as *variaveis locais* da *função* de nível superior, ou seja, tem acesso ao escopo da função de nível superior. Uma das razões de sua utilização, é a utilidade de dividir *subrotinas* em outras *subrotinas* e encapsular-las. Podemos então dividir problemas mais complexos em problemas mais simples. *Funções/procedimentos aninhadas* são usadas tipicamente como *funções* auxiliares ou *funções recursivas* dentro de outra *função*. Têm como vantagem organizar melhor o código, evitando poluir o *escopo*, e compartilham *variaveis* dentro do *escopo* facilmente sem o uso de *parametros* adicionais ou usar uma *variavel global*.
 
-O escopo de uma variável é a parte do programa onde a variável é visível. Um escopo é uma parte do programa que pode "escopar" um conjunto de nomes de entidades como variáveis ou funções. Por exemplo, se o escopo de uma variável é dentro dentro de uma função, então fora dessa função o nome dessa variável não é visível. Um escopo é a parte de programa que tem associado a ele um conjunto de nomes de variáveis. Existem dois tipos principais de escopo: escopo lexico e escopo dinâmico. Escopo lexico é o tipo de escopo onde as variáveis e nomes de funções são analisados de acordo com sua posição no código e do contexto lexico. Escopo lexico é feito modo independente da execução. Isso contrasta com o escopo dinamico que isso ocorre em tempo de execução. 
-
-
-**ALGOL**, **Pascal**, **Simula 67** são algumas das linguagens que possuem *funções/procedimentos aninhados*. **C** e sua familia de linguagens não possuem *funções/procedimentos aninhados*, sendo essa uma das diferenças entre **C** e **Pascal**. Nomes de *funções* em **C** sempre são globais, a menos que sejam declaradas como *static*, e estão disponíveis para outras *funções*. 
-
-Em **C** existem os seguintes *escopos*:  escopo global(external linkage), escopo de arquivo ou modulo(internal linkage) e o escopo local. No escopo global(external linkage) temos as variáveis acessiveis dentro de um ou mais arquivos, ou seja, a variável é visível, além do arquivo em que está escrita, em outro arquivo. No escopo de arquivo(internal linkage) a variável é visível no arquivo onde ela está escrita.  No escopo local temos variáveis locais declaradas no escopo de uma função, variáveis locais declaradas num bloco ou variáveis que são parametros de função. Variáveis locais após o termino de chamada de uma função  não têm em geral seus valores persistidos na memoria. Às vezes é necessário que o valor de uma variável local persista na memória, um exemplo para isso seria contar o número de chamadas de uma função recursiva. Para isso poderiamos usar em **C** uma variável global, no entanto isso não é uma boa prática de programação em **C**. Deve-se evitar sempre o uso de variáveis globais, usando ao invés disso variáveis de escopo local. O motivo para isso é que além de poluir o escopo global, ocorre mais erros quando uma variável é global, devido a que ela é visivel em todo código. Além disso, variáveis globais persistem constantemente na memória, ou seja, quando elas não são mais necessárias continuam ocupando espaço na memória o que pode ser um problema. Uma alternativa para esse problema em **C** são as variáveis static locais. Variáveis static locais são variáveis que só são visíveis dentro de um escopo de uma função ou bloco, mas que após a execução desse bloco ou função o seu valor é persistido na memoria. Esse tipo de variáveis é muito util para evitar o uso de variáveis globais adicionais. **C** permite aninhamento de blocos dentro de funções. Devido a que só precisa de analise do código do programa estático, é chamado também de escopo estático. Apesar de **C** possuir *escopo* lexico, assim como **Pascal** e **ALGOL**, não é possível utilizar *funções aninhadas* em **C**. Apesar de **C** não ter acesso à funcionalidade de funções aninhadas, ele consegue ter um tipo de escopos mais simples que em **Pascal** e **ALGOL** por exemplo. 
+O escopo de uma variável é a parte do programa onde a variável é visível. Um escopo é uma parte do programa que pode "escopar" um conjunto de nomes de entidades como variáveis ou funções. Por exemplo, se o escopo de uma variável é dentro dentro de uma função, então fora dessa função o nome dessa variável não é visível. Um escopo é a parte de programa que tem associado a ele um conjunto de nomes de variáveis. Existem dois tipos principais de escopo: escopo lexico e escopo dinâmico. Escopo lexico é o tipo de escopo onde as variáveis e nomes de funções são analisados de acordo com sua posição no código e do contexto lexico. Escopo lexico é feito modo independente da execução. Isso contrasta com o escopo dinamico que isso ocorre em tempo de execução.
 
 Funções aninhadas têm a presença de modo oculto de um ponteiro chamado "access link". As ativações das funções ocorre o armezanamento das mesmas numa pilha onde se inclui também os dados locais dessa função. Desse modo em linguagens que não têm o recurso de funções aninhadas só têm acesso(por ser uma pilha) aos seus parametros e suas variavéis locais. No entanto linguagens com funções aninhadas têm a presença internamente de um ponteiro chamado "acess link". Esse ponteiro basicamente aponta para o "access link" da função ao qual a função está aninhada. Desse modo, é possível à função aninhada ter acesso aos dados não locais da função de nível superior sem precisar que esses dados fossem passados por parametros, e isso independe do nível de aninhamento que tem no código, ou seja, tendo uma f1 função aninhada a outra f2 função aninhada na função f3, temos que o "access link" de f1 aponta para o "access link" de f2 e o "access link" de f2 aponta para o de f3. Desse modo, a função aninhada sempre tem acesso ao escopo da função nível. Suponha basicamente que tenha-se os procedimentos q,p,r e s; onde p e s estão aninhados ao procedimento q e r está aninhado a q. Cada um desses procedimentos possui seu ponteiro "access link". O ponteiro de p aponta para o ponteiro de q, tendo desse modo acesso ao escopo de q. Já o de r, aponta para o ponteiro de p que por sua vez aponta ao ponteiro de q. Desse modo, r tem acesso ao escopo de q e de p. Por último, o ponteiro de s tem acesso ao ponteiro de q e desse modo tem acesso ao escopo de q. 
 
-Esse tipo de funcionalidade é útil, pois diminui a necessidade de se usar parametros adicionais com ou sem ponteiros para se ter acesso a variáveis não locais. A utilização de muitos parametros em funções torna a legibilidade e compreensão do código pior, além de que consome mais memoria da pilha onde ficam armazenadas as chamadas de funções. No entanto, aninhamento de funções mais profundos tornam a execução mais lenta, já que é necessário o ponteiro "access link" percorrer um caminho maior para conseguir acessar todas as variáveis do seu escopo. Além disso, construir compiladores para linguagens com essa funcionalidade é mais complexo. 
+Esse tipo de funcionalidade é útil, pois diminui a necessidade de se usar parametros adicionais com ou sem ponteiros para se ter acesso a variáveis não locais. A utilização de muitos parametros em funções torna a legibilidade e compreensão do código pior, além de que consome mais memoria da pilha onde ficam armazenadas as chamadas de funções. No entanto, aninhamento de funções mais profundos tornam a execução mais lenta, já que é necessário o ponteiro "access link" percorrer um caminho maior para conseguir acessar todas as variáveis do seu escopo. Além disso, construir compiladores para linguagens com essa funcionalidade é mais complexo. **ALGOL**, **Pascal**, **Simula 67** são algumas das linguagens que possuem *funções/procedimentos aninhados*. **C** e sua familia de linguagens não possuem *funções/procedimentos aninhados*, sendo essa uma das diferenças entre **C** e **Pascal**. 
+
+Nomes de *funções* em **C** sempre são globais, a menos que sejam declaradas como *static*, e estão disponíveis para outras *funções*. Em **C** existem os seguintes *escopos*:  escopo global(external linkage), escopo de arquivo ou modulo(internal linkage) e o escopo local. No escopo global(external linkage) temos as variáveis acessiveis dentro de um ou mais arquivos, ou seja, a variável é visível, além do arquivo em que está escrita, em outro arquivo. No escopo de arquivo(internal linkage) a variável é visível no arquivo onde ela está escrita.  No escopo local temos variáveis locais declaradas no escopo de uma função, variáveis locais declaradas num bloco ou variáveis que são parametros de função. Variáveis locais após o termino de chamada de uma função  não têm em geral seus valores persistidos na memoria. Às vezes é necessário que o valor de uma variável local persista na memória, um exemplo para isso seria contar o número de chamadas de uma função recursiva. Para isso poderiamos usar em **C** uma variável global, no entanto isso não é uma boa prática de programação em **C**. Deve-se evitar sempre o uso de variáveis globais, usando ao invés disso variáveis de escopo local. O motivo para isso é que além de poluir o escopo global, ocorre mais erros quando uma variável é global, devido a que ela é visivel em todo código. Além disso, variáveis globais persistem constantemente na memória, ou seja, quando elas não são mais necessárias continuam ocupando espaço na memória o que pode ser um problema. Uma alternativa para esse problema em **C** são as variáveis static locais. Variáveis static locais são variáveis que só são visíveis dentro de um escopo de uma função ou bloco, mas que após a execução desse bloco ou função o seu valor é persistido na memoria. Esse tipo de variáveis é muito util para evitar o uso de variáveis globais adicionais. **C** permite aninhamento de blocos dentro de funções. Devido a que só precisa de analise do código do programa estático, é chamado também de escopo estático. Apesar de **C** possuir *escopo* lexico, assim como **Pascal** e **ALGOL**, não é possível utilizar *funções aninhadas* em **C**. Apesar de **C** não ter acesso à funcionalidade de funções aninhadas, ele consegue ter um tipo de escopos mais simples que em **Pascal** e **ALGOL** por exemplo. 
 
 **C** tem como alternativas às *funções aninhadas* o uso de *variaveis static*, além de poder passar a *referência(endereço)* de *variaveis* de um certo *escopo* às *funções que deveriam ser aninhadas*, algo que aumenta a complexidade da *chamada de funções*. *Variáveis static* retêm seus valores após sucessivas chamadas de função mas só são visiveis na rotina correspondente onde são declaradas. **C** não permite *funções aninhadas* mas permite declaração de variáveis dentro de um bloco. **Pascal** pode simular um pouco essa funcionalidade com o uso de *funções/procedimentos aninhadas*. Desse modo temos que **C** para que se consiga simular as funções aninhadas ele necessita usar mais parametros.
 
 Suponha por exemplo que se queira criar uma função que além do seu trecho de código chama outras funções para operações somente dentro dessa função. Essas funções no caso receberiam parametros. Se o objetivo dessas subfunções é retornar apenas um número a partir de uma certa quantidade de variaveis temos que em **C** existe a desvantagem de que se necessita passar parametros para a essa subfunção que em **Pascal**, usando o recurso de *função aninhada*, não é necessário, já que os parametros poderiam ser acessados por essa *subfunção* se ela estivesse aninhada à função principal. Por outro lado, imagine o caso em que é necessário não só um retorno com essa *subfunção* mas também é necessario a modificação dos seus parametros. Em **Pascal** usando *funções aninhadas* é relativamente simples, e em muitos casos não precisa declarar nenhum parametro nessa *subfunção*. Porém, como **C** não possui essa funcionalidade, é necessário não só declarar mais argumentos, como também em alguns casos declarar-los em formato de ponteiro, o que dificulta a compreensão do código. Além disso, cada *subfunção* em **C** deve estar declarada no escopo global, tornando o código menos compreensivel. Dessa situação temos como opção em **C** declarar as *subfunções* assumindo o código nelas presente como o código extra da função principal, nesse caso, o programa fica menos modularizado e de mais dificil compreensão. Uma outra opção seria assumir as variáveis como globais, algo que não é aconselhavel. Por outro lado, suponha uma função recursiva que é chamada várias vezes e precisa armazenar um valor numa variável de modo permanente. Uma opção em **C** seria declarar a variável como *static*, no caso do **Pascal** podemos definir-mos a função recursiva aninhada a uma função principal com essa variável na função principal. Desse modo, é comum ver códigos em **Pascal**, que uma função recursiva é implementada como uma função aninhada recursiva dentro de uma função principal não recursiva. Uma das vantagens disso é que se reduz o número de parametros necessários e a dificuldade de passar-los. Suponha por exemplo que a função recursiva opere sobre um vetor mas sua recursão tem haver apenas com um certo número inteiro. Se declarar-mos essa função de modo aninhado a uma função principal não recursiva podemos colocar como argumentos da principal o vetor e outros argumentos necessários mas que não são a base do processo de recursão. Um outro detalhe, é que na recursão, a chamada de funções é armazenada numa pilha, que armazena os argumentos dessa função também. Evitar de criar funções muito longas em argumentos tem como vantagem não sobrecarregar essa pilha, que no caso de recursão pode ser sobrecarregada, e também torna mais compreensível o código.
 
+#### Código Simples
 
 Tome como exemplo o código em **Pascal**:
 
+``` pascal
 procedure F();
 var
 	x:integer;
@@ -230,10 +296,12 @@ begin
 	I();
 	writeln(x);
 end;
+```
 
 O procedimento F tem apenas acesso à variável x e variáveis que são globais. O procedimento G tem acesso às variáveis y,z e a x, que é a variável do procedimento F que é de nível superior. O procedimento H tem acesso às variáveis x,y e z, só que a variável z definida em H não é a mesma que a variável z definida em G. Isso ocorre porque possuem o mesmo nome e se o nome de uma variável definida localmente na função é o mesmo de uma variável definida numa função de nível acima ou é global, então o nome corresponde à variável definida localmente na função. Já no caso de I, temos acesso a x,a,z sendo que z não corresponde nem a variável G e nem a variável H.
-Um mesmo código que tem a mesma funcionalidade só que em C seria:
+Um mesmo código que tem a mesma funcionalidade só que em **C** seria:
 
+``` C
 void I(int * x){
 	int a,z;
 	(*x)++;
@@ -265,17 +333,16 @@ void F();
 	I(&x);
 	printf("%d\n",x);
 }
-
+```
 O código em **C** possui funções com maior número de parametros, dificultando sua legibilidade e entendimento, além de alguns parametros são ponteiros, dificultando a elaboração das funções e tornando o código menos seguro. Por outro lado, **Pascal** consegue organizar melhor o seu código, dividindo e encapsulando rotinas que são partes de uma rotina principal. Uma outras alternativa de código em **C** seria escrever todas essas funções como se fosse uma única rotina. No caso deste exemplo, é algo plausível, mas dependendo do tamanho das funções, este fica menos modularizado e portanto menos compreensivel. Por outro lado, pode ocorrer de haver repetição de trechos de código nessa única função, sendo portanto aconselhavel o uso de uma função. Uma outra alternativa a isso, seria usar variáveis globais. Essa prática não é aconselhavel, deve-se evitar ao máximo uso de variáveis globais.
 
-**Alguns Exemplos do uso de funções aninhadas**
+### Alguns Exemplos do uso de funções aninhadas
 
-**MergeSort**
+#### MergeSort
 
-Código que implementa o Mergesort em **Pascal** usando funções aninhadas comparado com o código **C** que não possui esse recurso.  É interessante notar como o código **C** possui funções que dependem de muito mais argumentos, inclusive alguns dos argumentos sendo ponteiros, o que dificulta a programação. Além disso, o código em **Pascal** possui mais organização do que o código em **C**. Para evitar esses problemas do **C** poderiamos criar um modulo novo, ou seja, escrever essas funções num novo arquivo e com isso compartilhar certas variáveis globais importantes de modo a ter um menor número de argumentos e evitar o uso de ponteiros.
+Código que implementa o Mergesort em **Pascal** usando funções aninhadas comparado com o código **C** que não possui esse recurso.  É interessante notar como o código **C** possui funções que dependem de muito mais argumentos, inclusive alguns dos argumentos sendo ponteiros, o que dificulta a programação. Além disso, o código em **Pascal** possui mais organização do que o código em **C**. Para evitar esses problemas do **C** poderia-se criar escrever essas funções num novo arquivo e com isso compartilhar certas variáveis globais importantes de modo a ter um menor número de argumentos e evitar o uso de ponteiros.
 
 **Pascal**
-
 ``` pascal
 program msort;
 
@@ -381,9 +448,7 @@ begin
 end.
 ```
 
-
 **C**
-
 ``` C
 #include<stdio.h>
 
@@ -467,12 +532,11 @@ int main(){
 }
 ```
 
-**QuickSort**
+#### QuickSort
 
 Código que implementa o Quicksort em **Pascal** usando funções aninhadas comparado com o código **C** que não possui. As conclusões são as mesmas obtidas no Mergesort: no código em **C**, as funções dependem de um maior número de argumentos, é mais desorganizado e tem que fazer uso de ponteiros em casos que não seria necessário em **Pascal**.
 
 **Pascal**
-
 ``` pascal
 program qsort;
 
@@ -576,7 +640,6 @@ end.
 ```
 
 **C**
-
 ``` C
 #include<stdio.h>
 
@@ -664,12 +727,11 @@ int main(){
 }
 ```
 
-**BubbleSort**
+#### BubbleSort
 
 Programa que implementa o bubblesort usando de funções aninhadas e recursão.
 
 **Pascal**
-
 ``` pascal
 program bsort;
 
@@ -829,7 +891,10 @@ int main(){
 }
 ```
 
-**Selection Sort**
+#### Selection Sort
+
+Programa que implementa o selection sort usando de funções aninhadas e recursão.
+
 **Pascal**
 ``` pascal
 program ssort;
@@ -990,8 +1055,11 @@ int main(){
 }
 ```
 
-**Subconjuntos**
-**Pascal**
+#### Subconjuntos
+
+Obtem os subconjuntos de um conjunto a partir de backtracking, ou seja, força bruta. Para isso é necessário usar de recrusão e persistir certas variáveis na memória. Uma alternativa seria colocar essas variáveis como globais, algo que não é recomendável. Desse modo, em **C** dividimos a função em outras subfunções e passamos parametros que é necessário persistir como parametros seja em formato de ponteiros ou sem ponteiros. Com o uso de funções aninhadas em **Pascal** é possivel persistir essas variáveis dividindo a função em subfunções sem necessidade de passar tantos parametros às funções.
+
+ **Pascal**
 ``` pascal
 program subconjuntos;
 
@@ -1249,7 +1317,10 @@ void leConjunto(int * c,int * n){
 }
 ```
 
-**Permutação**
+#### Permutação
+
+Obtem as permutações de um conjunto a partir de backtracking.
+
 **Pascal**
 ``` pascal
 program permutacao;
@@ -1436,7 +1507,10 @@ int main(){
 }
 ```
 
-**Busca Binaria**
+#### Busca Binaria
+
+Programa que realiza a busca binária de um vetor a partir de recursão. O uso de funções aninhadas evita a necessidade de sempre passar como parametro o vetor onde se realiza a busca.
+
 **Pascal**
 ``` pascal
 program busca;
@@ -1586,6 +1660,7 @@ begin
 	until ch<>'s';
 end.
 ```
+
 **C**
 ``` C
 #include<stdio.h>
@@ -1710,7 +1785,10 @@ int main(){
 }
 ```
 
-**Quadrado Magico**
+#### Quadrado Magico
+
+Verifica se um conjunto de 9 números pode formar um quadrado mágico, ou seja,  um quadrado em que a soma dos elementos das linhas, colunas e diagonais são iguais. Para isso se gera permutações com backtracking até que tenha uma permutação que forme um quadrado mágico.
+
 **Pascal**
 ``` pascal
 program qmagico;
@@ -2001,11 +2079,17 @@ int main(){
 	return 0;
 }
 ```
-**Cenário**
-O programa resolve alguns problemas NP dado um grafo informado pelo usuario. Problemas NP são problemas que não necessariamente têm um algoritmo polinomial P, ou seja, uma complexidade polinomial de acordo com o tamanho da entrada. Como esses problemas não têm um algoritemo P para resolver-los temos que gerar todas as combinações, permutações ou arranjos com os elementos analisados para resolvermos esses problema, ou seja, devemos usar o processo de força bruta. Para isso utiliza-se da tecnica do backtracking que é basicamente uma força bruta sistematizada e organizada. Os problemas NP resolvidos pelo programa são: verificar se um grafo é hamiltoniano, verificar se um grafo possui uma k-coloração, calcular o número cromático do grafo, verificar se um grafo possui uma clique de tamanho k, calcular o número de clique de um grafo, verificar se um grafo possui um conjunto independente de tamanho k, calcular o número de independencia, verificar se dois grafos são isomorfos, verificar se um grafo é autocomplementar. A representação dos grafos nesse programa é a partir de matriz de adjacencias. Quando se cria um grafo nesse programa existem duas possibilidades: criar um grafo do zero ou criar um grafo especial, que é basicamente uma lista de grafos especiais ou tipos de grafos especiais. O programa possui como limite grafos com 10 vertices, o motivo para isso é devido a que algoritmos em backtracking podem ser lentos já que é necessario todas as possiveis combinações ou permutações ou arranjos entre outros.
 
-Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses vertices. Definimos uma aresta como um par ordenado e=(v,w) onde v,w pertencem a V. Grafos podem ser digrafos(arestas possuem direção), multigrafos(pode existir mais que uma aresta entre dois vertices), permitir laço(aresta que possui como extremos apenas um vertice), simples e etc. No caso deste programa são analisados apenas grafos simples, ou seja, grafos não direcionados sem laços e que não são multigrafos. A matriz de adjacencia de um grafo é uma forma de representar um grafo. São utilizadas principalmente para representar-los computacionalmente. Tanto as linhas quanto as colunas representam um vertice. Desse modo, se um vertice 2 tem uma aresta com o vertice 4 colocamos 1 na posição da coluna 4 e linha 2. Como o grafo é simples, então colocamos 1 na linha 4 e coluna 2. Assim, 1 representa a presença de aresta entre o vertice da coluna com o vertice da linha, já 0 representa a ausencia de aresta entre o vertice da coluna e o vertice da linha. Como não é permitidos laços qualquer posição da diagonal tem sempre o valor 0.
+### Cenário Realista
 
+O programa resolve alguns problemas NP de grafos dado um grafo informado pelo usuario. Problemas NP são problemas que não necessariamente têm um algoritmo polinomial P, ou seja, uma complexidade polinomial de acordo com o tamanho da entrada. Como esses problemas não têm um algoritemo P para resolver-los temos que gerar todas as combinações, permutações ou arranjos com os elementos analisados para resolvermos esses problema, ou seja, devemos usar o processo de força bruta. Para isso utiliza-se da tecnica do backtracking que é basicamente uma força bruta sistematizada e organizada. Os problemas NP resolvidos pelo programa são: verificar se um grafo é hamiltoniano, verificar se um grafo possui uma k-coloração, calcular o número cromático do grafo, verificar se um grafo possui uma clique de tamanho k, calcular o número de clique de um grafo, verificar se um grafo possui um conjunto independente de tamanho k, calcular o número de independencia, verificar se dois grafos são isomorfos, verificar se um grafo é autocomplementar. A representação dos grafos nesse programa é a partir de matriz de adjacencias. Quando se cria um grafo nesse programa existem duas possibilidades: criar um grafo do zero ou criar um grafo especial, que é basicamente uma lista de grafos especiais ou tipos de grafos especiais. O programa possui como limite grafos com 10 vertices, o motivo para isso é devido a que algoritmos em backtracking podem ser lentos já que é necessario todas as possiveis combinações ou permutações ou arranjos entre outros. O código em **Pascal** utiliza de funções aninhadas.
+
+#### Sintese de Teoria dos Grafos
+
+Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses vertices. Definimos uma aresta como um par ordenado e=(v,w) onde v,w pertencem a V. Grafos podem ser digrafos(arestas possuem direção), multigrafos(pode existir mais que uma aresta entre dois vertices), permitir laço(aresta que possui como extremos apenas um vertice), simples e etc. No caso deste programa são analisados apenas grafos simples, ou seja, grafos não direcionados sem laços e que não são multigrafos. A matriz de adjacencia de um grafo é uma forma de representar um grafo. São utilizadas principalmente para representar-los computacionalmente. Tanto as linhas quanto as colunas representam um vertice. Desse modo, se um vertice 2 tem uma aresta com o vertice 4 colocamos 1 na posição da coluna 4 e linha 2. Como o grafo é simples, então colocamos 1 na linha 4 e coluna 2. Assim, 1 representa a presença de aresta entre o vertice da coluna com o vertice da linha, já 0 representa a ausencia de aresta entre o vertice da coluna e o vertice da linha. Como não é permitidos laços qualquer posição da diagonal tem sempre o valor 0. Uma clique é um subconjunto de vértices do grafo tal que cada par de vertices possui uma aresta. Um conjunto independente é um subconjunto de vertices tal que não existe um par de vertices que que possuam uma aresta entre esses vertices. Uma coloração do grafo é uma associação de alguma cor a cada vertices, de tal modo que cada vertice não possua um vertice adjacente da mesma cor. Dois grafos são isomorfos se existe uma função bijetiva que  leva o vertice de um grafo ao outro, de tal modo que as arestas do primeiro grafo quando têm o uso dessa função, são arestas do segundo grafo. Por exemplo, seja G1 e G2 isomorfos. Então existe f: V(G1) -> V(G2) tal que para todo a aresta pertencente a E(G1) e1=(v,w) temos e2=(f(v),f(w)) pertencente a E(G2). Um complementar de um grafo é um grafo que possui o mesmo conjunto de vertices só que se o primeiro grafo possui aresta entre dois vertices então o segundo não possui aresta, e se o primeiro não possui aresta então o segundo possui aresta. Um grafo é autocomplementar se é isomorfo ao seu complementar. Um caminho é um grafo com um conjunto de vertices V={v1,v2,...,vn} tal que E={(v,w) tal que v possui um indice igual ao indice de w menos 1}. Um ciclo é um caminho que os seus extremos, o inicial e o final, têm uma aresta entre si. Uma roda é um grafo possui um ciclo e um vertice adicional que é adjacente a todos os vertices desse ciclo. Um grafo completo é um grafo que cada vertice é adjacente a todos os outros vertices do grafo. Um grafo nulo é um grafo que não existe nenhuma aresta entre os seus vertices, ou seja, o conjunto de arestas é vazio. Uma estrela é um grafo que possui um vertice que tem adjacencia a todos os outros vertices, sendo que os outros vertices só possuem adjacencia a esse ultimo vertice. Um grafo bipartido completo é um grafo que possui dois grupos de vertices de tal modo que cada vertice de um grupo possui adjacencia com todos os vertices do outro grupo mas não possui nenhuma aresta com os vertices do seu próprio grupo. Além disso, é incluido no programa grafos especiais tais como butterfly, petersen, diamond e 3-cubo. Um ciclo hamiltoniano é um ciclo que possui todos os vertices do grafo de tal modo que nenhum vertice é repetido nesse caminho. Um grafo é hamiltoniano se possui ciclo hamiltoniano.
+
+#### Código do Programa
+**Pascal**
 ``` pascal
 program grafo;
 
@@ -2913,7 +2997,7 @@ begin
 	prog();
 end.	
 ```
-
+**C**
 ``` C
 #include<stdio.h>
 #include<stdlib.h>
@@ -3665,71 +3749,1138 @@ int main(){
 	return 0;
 }
 ```
-			 
-#### Variáveis Locais
 
-Em **C** *variaveis locais* podem ser alocadas em qualquer *bloco* e em qualquer parte de um *bloco de comandos*. Em **Pascal** não é possivel realizar esse tipo de declaração, sendo só permitida a declaração de *variaveis* antes do começo de um bloco de *comandos* de *procedimentos/funções* ou antes do *bloco "main"(programa principal)*.
+#### Explicação de partes do código
 
-### ALGOL 68
+##### Grafos Especiais
 
-#### Estruturas de Seleção
+**Pascal**
+``` pascal
+procedure gEspecial(var n:integer;c:char);
+var
+	k1,k2,i,j:integer;
+	op:string;
+	
+	procedure caminho(k:integer);
+	var
+		i:integer;
+	begin
+		for i:=1 to k-1 do
+		begin
+			if(c='2')then
+			begin
+				g2[i,i+1]:=1;
+				g2[i+1,i]:=1;
+			end
+			else
+			begin
+				g1[i,i+1]:=1;
+				g1[i+1,i]:=1;
+			end;
+		end;
+		n:=k;
+	end;
+	procedure ciclo(k:integer);
+	begin
+		caminho(k);
+		if(c='2')then
+		begin
+			g2[1,k]:=1;
+			g2[k,1]:=1;
+		end
+		else
+		begin
+			g1[1,k]:=1;
+			g1[k,1]:=1;
+		end;
+		n:=k;
+	end;
+	procedure roda(k:integer);
+	var
+		i:integer;
+	begin
+		ciclo(k);
+		for i:=1 to k do
+		begin
+			if(c='2')then
+			begin
+				g2[i,k+1]:=1;
+				g2[k+1,i]:=1;
+			end
+			else
+			begin
+				g1[i,k+1]:=1;
+				g1[k+1,i]:=1;
+			end;
+		end;
+		n:=k+1;
+	end;
 
-Em **ALGOL 68** o *case* deve ter um indice inteiro não negativo e a ordem dos casos é essencial. O índice de valor inteiro i seleciona o i-ésimo caso do *case*. Em **Pascal** o índice do *case* tem mais tipos dados como possibilidade. Além disso, em **Pascal** a seleção dos casos não tem haver com a ordem, mas com a igualdade do índice com relação ao caso. Se o índice for i então o caso tem que ser i. Isso torna a estrutura *case* em **Pascal** menos limitada que em **ALGOL 68**. Além disso, o comando *if..then..fi* retorna um valor booleano podendo ser usado dentro de um outro comando *if..then..fi*. Temos também a possibilidade do comando *if..then..fi* retornar um inteiro, caracter ou outro tipo de dado colocando o valor de retorno após *then*. Para essas funcionalidades podemos utilizar as estruturas maiores como *if..then..else if..then..else..fi* que retornam também um valor seja booleano ou outro tipo de dado. Além disso, o comando *fi* encerra a estrutura *if..then*. Em **Pascal** a estrutura *if..then* não retorna nenhum valor e não pode ser colocada como uma parâmetro dentro de uma *função/procedimento*, sendo assim uma estrutura mais limitada. Além disso, em **Pascal** se os comandos depois de *if..then* possuirem mais que um comando, é necessário colocar esses comandos dentro de um *bloco*. Isso acontece devido a problemas de ambiguidadade na linguagem. Já em **ALGOL 68**, não existe essa necessidade porque o comando *then* e *fi* delimitam essa estrutura.
+	procedure completo(k:integer);
+	var
+		i,j:integer;
+	begin
+		for i:=1 to k do
+		begin
+			for j:=1 to k do
+			begin
+				if(i<>j)then
+				begin
+					if(c='2')then
+					begin
+						g2[i,j]:=1;
+						g2[j,i]:=1;
+					end
+					else
+					begin
+						g1[i,j]:=1;
+						g1[j,i]:=1;
+					end;
+				end;
+			end;
+		end;
+		n:=k;
+	end;
+	procedure bipcomp(k1,k2:integer);
+	var
+		i,j:integer;
+	begin
+		for i:=1 to k1 do
+		begin
+			for j:=(k1+1) to (k1+k2) do
+			begin
+				if(c='2')then
+				begin
+					g2[i,j]:=1;
+					g2[j,i]:=1;
+				end
+				else
+				begin
+					g1[i,j]:=1;
+					g1[j,i]:=1;
+				end;
+			end;
+		end;
+		n:=k1+k2;
+	end;
+	procedure estrela(k:integer);
+	var
+		i:integer;
+	begin
+		for i:=2 to k do
+		begin
+			if(c='2')then
+			begin
+				g2[1,j]:=1;
+				g2[j,1]:=1;
+			end
+			else
+			begin
+				g1[1,j]:=1;
+				g1[j,1]:=1;
+			end;
+		end;
+		n:=k+1;
+	end;			
 
-#### Estruturas de Iteração
+begin
+	while true do
+	begin
+		writeln(#10,'-------------------------------------------------------------');
+		writeln('Digite uma opcao(string numerica inicial da opcao):');
+		writeln('1 - Caminho(Pk)');
+		writeln('2 - Ciclo(Ck)');
+		writeln('3 - Roda(Wk)');
+		writeln('4 - Completo(Kn)');
+		writeln('5 - Bipartido Completo(Kn1,n2)');
+		writeln('6 - Estrela(Sn)');
+		writeln('7 - Grafo Nulo');
+		writeln('8 - Petersen');
+		writeln('9 - Diamond');
+		writeln('10 - Butterfly');
+		writeln('11 - 3-Cubo');
+		writeln('12 - Sair');
+		writeln('-------------------------------------------------------------');
+		readln(op);
+		writeln();
+		case op of
+			'1':
+			begin
+				write('k = ');
+				readln(k1);
+				caminho(k1);
+			end;
+			'2':
+			begin
+				write('k = ');
+				readln(k1);
+				ciclo(k1);
+			end;
+			'3':
+			begin
+				write('k = ');
+				readln(k1);
+				roda(k1);
+			end;
+			'4':
+			begin
+				write('k = ');
+				readln(k1);
+				completo(k1);
+			end;
+			'5':
+			begin
+				write('k1 = ');
+				readln(k1);
+				write('k2 = ');
+				readln(k2);
+				bipcomp(k1,k2);
+			end;
+			'6':
+			begin
+				write('k = ');
+				readln(k1);
+				estrela(k1);
+			end;
+			'7':
+			begin
+				write('k = ');
+				readln(k1);
+				initG(c);
+				n:=k1;
+			end;
+			'8'://petersen
+			begin
+				ciclo(5);
+				for i:=1 to 5 do
+				begin
+					if c='2' then
+					begin
+						g2[i,i+5]:=1;
+						g2[i+5,i]:=1;
+						g2[i+5,i+7]:=1;
+						g2[i+7,i+5]:=1;
+						g2[i+5,i+8]:=1;
+						g2[i+8,i+5]:=1;
+					end
+					else
+					begin
+						g1[i,i+5]:=1;
+						g1[i+5,i]:=1;
+						g1[i+5,i+7]:=1;
+						g1[i+7,i+5]:=1;
+						g1[i+5,i+8]:=1;
+						g1[i+8,i+5]:=1;
+					end;
+				end;
+				n:=10;
+			end;
+			'9'://diamond
+			begin
+				ciclo(4);
+				if c='2' then
+				begin
+					g2[1,4]:=1;
+					g2[4,1]:=1;
+				end
+				else
+				begin
+					g1[1,4]:=1;
+					g1[4,1]:=1;
+				end;
+				n:=4;
+			end;
+			'10'://butterfly
+			begin
+				ciclo(3);
+				if c='2' then
+				begin
+					g2[3,4]:=1;
+					g2[4,3]:=1;
+					g2[3,5]:=1;
+					g2[5,3]:=1;
+					g2[4,5]:=1;
+					g2[5,4]:=1;
+				end
+				else
+				begin
+					g1[3,4]:=1;
+					g1[4,3]:=1;
+					g1[3,5]:=1;
+					g1[5,3]:=1;
+					g1[4,5]:=1;
+					g1[5,4]:=1;
+				end;
+			end;
+			'11'://3-cubo
+			begin
+				ciclo(4);
+				for i:=5 to 7 do
+				begin
+					if c='2' then
+					begin
+						g2[i,i+1]:=1;
+						g2[i+1,i]:=1;
+						g2[i-4,i]:=1;
+						g2[i,i-4]:=1;
+					end
+					else
+					begin
+						g1[i,i+1]:=1;
+						g1[i+1,i]:=1;
+						g1[i-4,i]:=1;
+						g1[i,i-4]:=1;
+					end;
+				end;
 
-Podemos definir a **estrutura de iteração** de **ALGOL 68** de modo genérico como *for..from..by..to..while..do..od* , sendo que cada comando é opcional com a excessão de *do* e *od*. Existem 7 comandos utilizados nas **estruturas de iteração** em **ALGOL 68**:
-- **for** : Inicializa a *variável de controle*. É seguido do nome que identifica essa *variável*.
-- **from** : Atribui valor inicial à *variável de controle*. É seguido de uma valor inteiro, que indica esse valor.
-- **by** : Indica o incremento ou decremento que recebe a variável de *controle* após cada execução do *loop*. 
-	   É seguido de uma valor inteiro com ou sem sinal, que indica se é para incrementar ou decrementar.
-- **to** : Indica o valor termino da *variável de controle* para terminar o *loop*. É seguido de um valor inteiro.
-- **while** : Checa uma expressão lógica e se for verdadeira executa o *loop*, senão não executa. 
-	      É seguido de um valor booleano.
-- **do** : abre a sequência de comandos de iteração de um *loop*. 
-- **od** : fecha o sequências de comandos de iteração de um *loop*. 
-           Desse modo, todos os comandos executados no *loop* estão entre o *do* e o *od*.
+				if c='2' then
+					begin
+						g2[5,8]:=1;
+						g2[8,5]:=1;
+						g2[4,8]:=1;
+						g2[8,4]:=1;
+					end
+					else
+					begin
+						g2[5,8]:=1;
+						g2[8,5]:=1;
+						g2[4,8]:=1;
+						g2[8,4]:=1;
+					end;
+					n:=8;
+			end;
+			'12':
+			begin
+				break;
+			end;
+		end;
+	end;
+end;
+```
 
-Se um comando não é usado no *loop* temos o seguinte comportamento:
-- Se *for* não está escrito, então a *variável de controle* não é declarada.
-- Se *from* não está escrito. então a *variável de *controle* inicia com valor 1.
-- Se *by* não está escrito, então existe incremento de 1 na *variável de controle*.
-- Se *to* não está escrito, então é assumido como valor final o infinito.
-- Se *while* não está escrito, então é assumido como um comando *while true*.
+**C**
+``` C
+void caminho(int k,int * n,char c){
+	int i;
+	for(i=1;i<=(k-1);i++){
+		if(c=='2'){
+			g2[i][i+1]=1;
+			g2[i+1][i]=1;
+		}
+		else{
+			g1[i][i+1]=1;
+			g1[i+1][i]=1;
+		}
+	}
+	(*n)=k;
+}
 
-Em **ALGOL 68** o comando *for* e *while* podem ser combinados em um único *comando*, já em **Pascal** eles são comandos distintos.  Em **ALGOL 68** o *laço for* possui mais possibilidades que o *for..do* do **Pascal** que só possui a possibilidade de definir o valor inicial e o termino do *loop*, ou seja, o laço *for* em **Pascal** equivale similarmente ao comando *for..from..to..do..od*, no caso de *for..to..begin..end;*, ou *for..from..by --1 to..do..od*, no caso de *for..downto..begin..end;*.
-A *variável de controle* no **ALGOL 68** é implicitamente declarada pelo *comando for* e atribuições a ela são ilegais. O *escopo* da *variável de controle* está no *loop*, tornando ela inacessível fora do *laço*. Desse modo, se uma *variável* fora do *loop for* declarada com o mesmo nome, ela não afeta a *variável de controle*. Além disso, a *variável de controle* é declarada como um inteiro. Já em **Pascal** a *variável de controle* deve ser declarada, e o seu tipo não precisa ser necessariamente um inteiro, pode ser um real também. A *variável de controle* em **Pascal** é acessível fora do *loop*. Em **ALGOL 68** as expressões depois de *by* e *to* são avaliadas antes do começo do *loop*, permitindo desse modo a alteração das *variáveis* que compoem esse comando. 
-**Pascal** tem o *comando repeat..until*, enquanto **ALGOL 68** necessita usar o comando *while*, também existente no **Pascal**.
+void ciclo(int k,int * n,char c){
+	caminho(k,n,c);
+	if(c=='2'){
+		g2[1][k]=1;
+		g2[k][1]=1;
+	}
+	else{
+		g1[1][k]=1;
+		g1[k][1]=1;
+	}
+	(*n)=k;
+}
 
-#### Subrotinas
+void roda(int k,int * n,char c){
+	int i;
+	ciclo(k,n,c);
+	for(i=1;i<=k;i++){
+		if(c=='2'){
+			g2[i][k+1]=1;
+			g2[k+1][i]=1;
+		}
+		else{
+			g1[i][k+1]=1;
+			g1[k+1][i]=1;
+		}
+	}
+	(*n)=k+1;
+}
 
-No **ALGOL 68** *procedimentos* podem ser elementos de *arrays*, *campos de estruturas*, *retorno* de *funções* e etc. Além disso, pode existir *ponteiros para procedimentos* no **ALGOL 68**. Já no **Pascal**, *procedimentos* apenas podem ser chamados ou passados como *argumentos*. Todo *procedimento* em **ALGOL 68** retorna algum valor. Em **Pascal**, *procedimentos* por definição não retornam nada. *Procedimentos* em **Pascal** seriam equivalentes a *Procedimentos* que retornam *void* em **ALGOL 68** .*Funções* em **ALGOL 68** podem retornar qualquer tipo dado existente na linguagem. Em **Pascal** nem todos os tipos são permitidos como retorno de uma função. Arrays e structs não podem ser retorno de uma função. Desse modo, existe uma coleção de tipos restrita no **Pascal** que podem ser retorno de *funções*. Em **ALGOL 68** existe um único tipo de *parâmetro*, aquele que é chamado por valor. Para que em **ALGOL 68** emule a passagem por referência é necessário passar o endereço da variável com o comando *ref* nos parâmetros. Já em **Pascal** existem três tipos de *parâmetros*: por *valor*, por *referência*, *procedure*(incluindo *function*).
+void completo(int k,int * n,char c){
+	int i,j;
+	for(i=1;i<=k;i++){
+		for(j=1;j<=k;j++){
+			if(i!=j){
+				if(c=='2'){
+					g2[i][j]=1;
+					g2[j][i]=1;
+				}
+				else{
+					g1[i][j]=1;
+					g1[j][i]=1;
+				}
+			}
+		}
+	}
+	(*n)=k;
+}
 
-#### Variáveis Locais
+void bipcomp(int k1,int k2,int * n,char c){
+	int i,j;
+	for(i=1;i<=k1;i++){
+		for(j=(k1+1);j<=(k1+k2);j++){
+			if(c=='2'){
+				g2[i][j]=1;
+				g2[j][i]=1;
+			}
+			else{
+				g1[i][j]=1;
+				g1[j][i]=1;
+			}
+		}
+	}
+	(*n)=k1+k2;
+}
 
-No **ALGOL 68** é possível declarar *variáveis locais* em qualquer *bloco* e em qualquer parte de um *bloco*. As *variáveis* passam a existir quando a execução entra no *bloco* e deixam de existir quando sai do *bloco*. Em **Pascal** só é permitida a declaração de *variáveis locais* dentro do *nível de procedimento*, ou seja, não é permitida a declaração de *variáveis locais* em outros tipos de *bloco* que não o de *procedimentos/funções* ou o do *programa "main"*. Além disso, **Pascal** só permite a declaração de *variáveis locais* antes do comando de inicio de bloco *BEGIN*.
+void estrela(int k,int * n,char c){
+	int i;
+	for(i=2;i<=k;i++){
+		if(c=='2'){
+			g2[1][i]=1;
+			g2[i][1]=1;
+		}
+		else{
+			g1[1][i]=1;
+			g1[i][1]=1;
+		}
+	}
+	(*n)=k+1;
+}	
+		
+void gEspecial(int * n,char c){
+	int k1,k2,b,i,j;
+	int op;
+	for(;;){
+		printf("\n-------------------------------------------------------------\n");
+		printf("Digite uma opcao(string numerica inicial da opcao):\n");
+		printf("1 - Caminho(Pk)\n");
+		printf("2 - Ciclo(Ck)\n");
+		printf("3 - Roda(Wk)\n");
+		printf("4 - Completo(Kn)\n");
+		printf("5 - Bipartido Completo(Kn1,n2)\n");
+		printf("6 - Estrela(Sn)\n");
+		printf("7 - Grafo Nulo\n");
+		printf("8 - Petersen\n");
+		printf("9 - Diamond\n");
+		printf("10 - Butterfly\n");
+		printf("11 - 3-Cubo\n");
+		printf("12 - Sair\n");
+		printf("-------------------------------------------------------------\n");
+		scanf("%d",&op);
+		printf("\n");
+		switch(op){
+			case 1:
+				printf("k = ");
+				scanf("%d",&k1);
+				caminho(k1,n,c);
+				break;
+			case 2:
+				printf("k = ");
+				scanf("%d",&k1);
+				ciclo(k1,n,c);
+				break;
+			case 3:
+				printf("k = ");
+				scanf("%d",&k1);
+				roda(k1,n,c);
+			case 4:
+				printf("k = ");
+				scanf("%d",&k1);
+				completo(k1,n,c);
+				break;
+			case 5:
+				printf("k1 = ");
+				scanf("%d",&k1);
+				printf("k2 = ");
+				scanf("%d",&k2);
+				bipcomp(k1,k2,n,c);
+				break;
+			case 6:
+				printf("k = ");
+				scanf("%d",&k1);
+				estrela(k1,n,c);
+				break;
+			case 7:
+				printf("k = ");
+				scanf("%d",&k1);
+				initG(c);
+				(*n)=k1;
+				break;
+			case 8://petersen
+				ciclo(5,n,c);
+				for(i=1;i<=5;i++){
+					if(c=='2'){
+						g2[i][i+5]=1;
+						g2[i+5][i]=1;
+						g2[i+5][i+7]=1;
+						g2[i+7][i+5]=1;
+						g2[i+5][i+8]=1;
+						g2[i+8][i+5]=1;
+					}
+					else{
+						g1[i][i+5]=1;
+						g1[i+5][i]=1;
+						g1[i+5][i+7]=1;
+						g1[i+7][i+5]=1;
+						g1[i+5][i+8]=1;
+						g1[i+8][i+5]=1;
+					}
+				}
+				(*n)=10;
+				break;
+			case 9://diamond
+				ciclo(4,n,c);
+				if(c=='2'){
+					g2[1][4]=1;
+					g2[4][1]=1;
+				}
+				else{
+					g1[1][4]=1;
+					g1[4][1]=1;
+				}
+				(*n)=4;
+				break;
+			case 10://butterfly
+				ciclo(3,n,c);
+				if(c=='2'){
+					g2[3][4]=1;
+					g2[4][3]=1;
+					g2[3][5]=1;
+					g2[5][3]=1;
+					g2[4][5]=1;
+					g2[5][4]=1;
+				}
+				else{
+					g1[3][4]=1;
+					g1[4][3]=1;
+					g1[3][5]=1;
+					g1[5][3]=1;
+					g1[4][5]=1;
+					g1[5][4]=1;
+				}
+				break;
+			case 11://3-cubo
+				ciclo(4,n,c);
+				for(i=5;i<=7;i++){
+					if(c=='2'){
+						g2[i][i+1]=1;
+						g2[i+1][i]=1;
+						g2[i-4][i]=1;
+						g2[i][i-4]=1;
+					}
+					else{
+						g1[i][i+1]=1;
+						g1[i+1][i]=1;
+						g1[i-4][i]=1;
+						g1[i][i-4]=1;
+					}
+				}
+				if(c=='2'){
+						g2[5][8]=1;
+						g2[8][5]=1;
+						g2[4][8]=1;
+						g2[8][4]=1;
+				}
+				else{
+					g2[5][8]=1;
+					g2[8][5]=1;
+					g2[4][8]=1;
+					g2[8][4]=1;
+				}
+				(*n)=8;
+			case 12:
+				b=1;
+				break;
+		}
+		if(b==1){
+			break;
+		}
+	}
+}
+```
+Essa parte do programa gera os grafos especiais, como por exemplo ciclos, caminhos, grafo de petersen e etc. Observe como o código em **Pascal** além de estar mais organizado com funções só utilizadas nessa parte encapsuladas, evita o uso parametros adicionais nas funções, além do uso de ponteiros. Isso além de tornar o código mais compreensível, torna o código mais seguro, porque evita o uso de manipulação de ponteiros.
 
-### ALGOL 60 
+##### Clique e Conjunto Independente
 
-#### Estruturas de Seleção
+**Pascal**
+``` Pascal
+function clique(k,n:integer;c:char):boolean;//caracter 1 obtem clique de tamanho k, caracter 2 obtem conjunto independente de tamanho k
+var
+	np:integer=0;
+	p:array[1..10] of integer;
 
-Em **ALGOL 60** o *SWITCH* deve ter um índice inteiro não negativo e a ordem dos casos é essencial. O índice de valor inteiro i seleciona o i-ésimo caso do case. Em **Pascal** o índice pode ser char, integer ou boolean. Em **ALGOL 60** o *switch* é um tipo de array que contêm *jump labels*. Desse modo, **Pascal** apresenta maior simplicidade nesse comando. Com relação aos comandos *if*, *then* e *else* **Pascal** e **ALGOL 60** são similares.
+	procedure geraclique(t:integer);
+	var
+		i:integer;
+		b:boolean;
 
-#### Estruturas de Iteração
+		procedure impr();
+		var
+			j:integer;
+		begin
+			write('{ ',p[1]);
+			for j:=2 to k do
+				write(' , ',p[j]);
+			writeln(' }');
+		end;
+		function verifica():boolean;
+		var 
+			i,j:integer;
+		begin
+			verifica:=true;
+			for i:=1 to k do
+			begin
+				for j:=1 to k do
+				begin
+					if(i<>j) then
+					begin
+						if(((g1[p[i],p[j]])=0) and (c='1')) then
+							verifica:=false;
+						if(((g1[p[i],p[j]])=1) and (c='2')) then
+							verifica:=false;
+					end;
+				end;
+			end;
+		end;
+	begin
+		for i:=t to n do
+		begin
+				np:=np+1;
+				p[np]:=i;
+				
+				if((np=k)) then
+				begin
+					b:=verifica();
+					if b then
+					begin
+						clique:=true;
+						impr();
+					end;
+				end
+				else
+				begin
+					geraclique(i+1);
+				end;
+				np:=np-1;
+		end;
+	end;
+begin
+	clique:=false;
+	geraclique(1);
+end;
+```
 
-**ALGOL 60** usa como **estrutura de iteração** o *for*, enquanto **Pascal** possui 3 estruturas de iteração: *for..to..do*, *while..do* e *repeat..until*. O *for* de **ALGOL 60** combinado com *step..until..do* ou *while..do* possibilita criar mais tipos de *laço* que em **Pascal**. No caso de *for..step..until..do*, *step* do valor de incremento ou decremento da *variável de controle* e o *until* a condição de parada do *loop*. Sendo assim, *for..step..until* tem muito mais possibilidades do que o *laço for* no **Pascal**. Já no caso de *for..while..do*, *while* é seguido de uma expressão lógica que faz com que o *bloco de comandos* do *loop* seja repetido se a expressão for verdadeira e quando for falsa é executado. O comando *for..while..do* equivale quase ao *while* do **Pascal**, com a diferença que *for..while..do* inicializa uma *variável*, enquanto o *while* do **Pascal** não. **ALGOL 60** não possui estrutura equivalente ao *repeat..until* do **Pascal**. Laços desse gênero devem ser criados com o *for..while..do*, com o incoveniente de que nesse caso é primeiro analisada a expressão lógica e depois executado ou não o bloco de comandos do *loop*, já no caso do comando *repeat..until* é primeiro executado o bloco de comandos do *loop* e posteriormente é analisada a expressão lógica a seguir do *until*, sendo repetido o *loop* ou não.
+**C**
+``` C
+void impr(int * p,int k){
+	int j;
+	printf("{ %d",p[1]);
+	for(j=2;j<=k;j++){
+		printf(" , %d",p[j]);
+	}
+	printf(" }\n");
+}
 
-#### Subrotinas
+int verifica(int * p,int k,char c){
+	int i,j; 
+	for(i=1;i<=k;i++){
+		for(j=1;j<=k;j++){
+			if(i!=j){
+				if(((g1[p[i]][p[j]])==0)&&(c=='1')){
+					return 0;
+				}
+				if(((g1[p[i]][p[j]])==1)&&(c=='2')){
+					return 0;
+				}
+			}
+		}
+	}
+	return 1;
+}
 
-Em **ALGOL 60** existem apenas *procedimentos* enquanto em **Pascal** existem *funções* e *procedimentos*. Os *procedimentos* em **ALGOL 60** podem retornar uma valor ou não retornar nada. Qualquer tipo de dado de **ALGOL 60** pode ser usado como parâmetro de *pocedimento*, já em **Pascal** nem todos os dados da linguagem são permitidos.
+void geraclique(int t,int * p,int k,char c,int * clq,int * np,int n){
+	int i,b;
+	for(i=t;i<=n;i++){
+		(*np)++;
+		p[(*np)]=i;
+		if((*np)==k){
+			b=verifica(p,k,c);
+			if(b){
+				(*clq)=1;
+				impr(p,k);
+			}
+		}
+		else{
+			geraclique(i+1,p,k,c,clq,np,n);
+		}
+		(*np)--;
+	}
+}
 
-#### Variáveis Locais
+int clique(int k, int n, char c){//caracter 1 obtem clique de tamanho k, caracter 2 obtem conjunto independente de tamanho k
+	int np=0;
+	int p[11];
+	int clq=0;
+	geraclique(1,p,k,c,&clq,&np,n);
+	return clq;
+}
+```
+Essa parte do programa obtem por backtracking as cliques de tamanho k de um grafo. Também resolve o mesmo problema para conjuntos independentes, já que o problema de clique e de conjunto independente seguem o mesmo padrão. Utiliza-se para isso a geração dos subconjuntos de vertices do grafo e se verifica se esse subconjunto é uma clique. Backtracking faz o uso extensivo de recursão, ou seja, a função chamar a si mesma, mas além disso é necessário persistir na memoria o valor de certas variáveis. Por outro lado, os códigos de backtracking dependendo do que se queira realizar podem ser extensos e alguns casos repetir trechos de códigos, de tal modo que é essencial dividir o código em mais de uma função, de modo a torna-lo mais comprensivel. Nesse caso não é possível utilizar variáveis static para persistir seus valores na memoria em **C**, sendo necessário a utilização de uma maior passagem de parametros para as subfunções, muitos deles sendo ponteiros, já que é necessário alterar esses valores em outras subfunções e na própria função principal. Desse modo, é necessário o uso de funções com uma lista de parametros mais extensa e a manipulação extensiva de ponteiros torna o código mais inseguro e sujeito a erros de programação. Por outro lado existe uma maior poluição do escopo global do arquivo. A utilização de funções aninhadas em **Pascal** elimina esse problema. Além de tornar a programação mais simples, não é mais necessário longas listas de parametros para certas funções e nem a preocupação com possiveis erros de manipulação de valores referenciados. Além disso, o código fica mais organizado com as subfunções encapsuladas na função principal.
 
-Em **ALGOL 60** *variáveis locais* podem ser declaradas em qualquer bloco e a declaração de *variáveis* deve ser no inicio do bloco. Enquanto em **Pascal** não permitido declarar variáveis locais em qualquer bloco e a sua declaração deve ser anterior ao bloco.
+##### Isomorfismo
 
-### Conclusão
+**Pascal**
+``` pascal
+function isomorfismo(n:integer):boolean;//verifica se dois grafos sao isomorfos
+var
+	np:integer=0;
+	s:array[1..10] of integer;
+	p:array[1..10] of integer;
+	v:array[1..10] of integer;
+	i:integer;
 
-Do ponto de vista de sintaxe as linguagens **ALGOL** são mais próximas de **Pascal** do que de **C**. **Pascal** preservou grande parte da sintaxe de **ALGOL** com o uso de palavras em inglês ao invés de símbolos para expressar comandos. Um exemplo disso é o comando de *bloco* que enquanto em **C** se representa com os caracteres *{* e *}*, em **Pascal** se representa como *begin* e *end*, existentes em **ALGOL**. Podemos ver que em termos de proximidade semântica, **Pascal** é mais próximo de **ALGOL 60** do que de **ALGOL 68** ou de **C**. **ALGOL 68** é uma linguagem sucessora de **ALGOL 60** assim como **Pascal**, mas contrasta com este último com relação a complexidade. **ALGOL 60** era menos complexo que **ALGOL 68**. **C** é uma linguagem muito mais próxima do nível baixo do que **Pascal**, principalmente as primeiras versões da linguagem. Sendo assim, **C** apresenta uma maior flexibilidade como linguagem mas perde muito em segurança com relação a **Pascal**. Muitas das funcionalidades de **C** que não existiam em **Pascal**, foram sendo acrescentadas em versões posteriores mais recentes da linguagem, perdendo mais a sua segurança. Em termos de **estruturas de controle de iteração**, **Pascal** é a linguagem mais limitada. O *loop* *for* tem poucas possibilidades perante as outras linguagens. Em termos de **estruturas de seleção**, **Pascal** também é mais limitado, já que linguagens como **C** e **ALGOL 68** possuem mais utilidades de uso dessas estruturas. Em termos de *subrotinas* **Pascal**, **ALGOL 60**, **ALGOL 68** possuem *funções aninhadas*, enquanto **C** não possui. Embora **C**, **ALGOL 60**, **ALGOL 68** e **Pascal** possuam as mesmas origens e o mesmo paradigma, em termos semânticos elas possuem diferenças significativas. 
+	procedure initBol();
+	var
+		i:integer;
+	begin
+		for i:=1 to n do
+			s[i]:=0;		
+	end;
+
+	function teste():boolean;
+	var
+		i,j:integer;
+	begin
+		teste:=true;
+		for i:=1 to n do
+		begin
+			for j:=1 to n do
+			begin
+				if g1[i,j]<>g2[p[i],p[j]] then
+					teste:=false;
+			end;
+		end;
+	end;
+	
+	procedure permut();
+	var
+		i,j:integer;
+	begin
+		for i:=1 to n do
+		begin
+			if s[i]=0 then
+			begin
+				np:=np+1;
+				p[np]:=i;
+				s[i]:=1;
+
+				if((np=n) and (teste())) then
+				begin
+					isomorfismo:=true;
+					for j:=1 to n do
+						v[j]:=p[j];
+					break;
+				end
+				else
+				begin
+					permut();
+				end;
+				np:=np-1;
+				s[i]:=0;
+			end;
+		end;
+	end;
+
+begin
+	isomorfismo:=false;
+	initBol();
+	permut();
+	if isomorfismo then
+	begin
+		writeln(#10,'G1 e G2 sao isomorfos');
+		writeln('funcao de isomorfismo f : V(G1) -> V(G2) ');
+		for i:=1 to n do
+			writeln('f(',i,') = ',v[i]);
+	end
+	else
+	begin
+		writeln(#10,'G1 e G2 nao sao isomorfos');
+	end;	
+end;
+```
+
+**C**
+``` C
+void initBol(int * s,int n){
+	int i;
+	for(i=1;i<=n;i++){
+		s[i]=0;
+	}		
+}
+
+int teste(int * p,int n){
+	int i,j;
+	for(i=1;i<=n;i++){
+		for(j=1;j<=n;j++){
+			if(g1[i][j]!=g2[p[i]][p[j]]){
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
+
+void permut(int * p,int * s,int * v,int * np,int * iso,int n){
+	int i,j;
+
+	for(i=1;i<=n;i++){
+		if(s[i]==0){
+			(*np)++;
+			p[(*np)]=i;
+			s[i]=1;
+				
+			if(((*np)==n)&&(teste(p,n))){
+				(*iso)=1;
+				for(j=1;j<=n;j++){
+					v[j]=p[j];
+				}
+				break;
+			}
+			else{
+				permut(p,s,v,np,iso,n);
+			}
+				
+			(*np)--;
+			s[i]=0;
+		}
+	}
+}
+
+int isomorfismo(int n){//verifica se dois grafos sao isomorfos
+	int np=0;
+	int s[11];
+	int p[11];
+	int v[11];
+	int i;
+	int iso=0;
+
+	initBol(s,n);
+	permut(p,s,v,&np,&iso,n);
+	if(iso){
+		printf("\nG1 e G2 sao isomorfos\n");
+		printf("funcao de isomorfismo f : V(G1) -> V(G2) \n");
+		for(i=1;i<=n;i++){
+			printf("f(%d) = %d\n",i,v[i]);
+		}
+	}
+	else{
+		printf("\nG1 e G2 nao sao isomorfos\n");
+	}	
+}
+
+void complementar(int n1,int * n2){//obtem grafo complementar de g1
+	int i,j;
+	(*n2)=n1;
+	for(i=1;i<=n1;i++){
+		for(j=1;j<=n1;j++){
+			if(i==j){
+				g2[i][j]=0;
+			}
+			else if(g1[i][j]==0){
+				g2[i][j]=1;
+			}
+			else if(g1[i][j]==1){
+				g2[i][j]=0;
+			}
+		}
+	}
+}
+```
+Esse parte do programa verifica se dois grafos são isomorfos a partir de backtracking. Para isso, é gerada uma permutação no conjunto de vertices de modo a obter com isso a função bijetiva de isomorfismo, ou seja, se o primeiro elemento do vetor possuir o vertice 2, então f(1)=2. Como foi dito anteriormente, a utilização de backtracking envolve variáveis que é necessário persistir na memoria após várias chamadas recursivas, além de que é aconselhavel dividir o código em várias subfunções de modo a torna-lo mais compreensivel. Observe que novamente, o código em **C** é mais confuso e existe a necessidade de utilização de funções com uma maior quantidade de parametros e a manipulação de ponteiros. Já **Pascal** elimina essa necessidade com o uso de funções aninhadas.
+
+#### Coloração
+
+**Pascal**
+``` pascal
+function coloracao(n,k:integer):boolean;//verifica se o grafo g1 possui uma k-coloracao
+var
+	v:array[1..10] of integer;
+	p:array[1..10] of integer;
+	i:integer;
+	np:integer=0;
+
+	procedure cor();
+	var
+		i,j:integer;
+		
+		function teste():boolean;
+		var
+			i,j:integer;
+		begin
+			teste:=true;
+
+			for i:=1 to n do
+			begin
+				for j:=1 to n do
+				begin
+					if((g1[i,j]=1)and(v[i]=v[j]))then
+					begin
+						teste:=false;
+						break;
+					end;
+				end;
+			end;
+		end; 
+		
+	begin
+		for i:=1 to k do
+		begin
+			np:=np+1;
+			v[np]:=i;
+
+			if(np=n)then
+			begin
+				if (teste())then
+				begin
+					if (not coloracao) then
+					begin
+						for j:=1 to n do
+							p[j]:=v[j];
+						coloracao:=true;
+						break;
+					end;	
+				end;
+			end
+			else
+			begin
+				cor();
+			end;		
+			np:=np-1;
+		end;
+	end;
+
+begin
+	coloracao:=false;
+	cor();
+	if coloracao then
+	begin
+		writeln(#10,'G1 possui ',k,'-coloracao');
+		writeln('f : V(G1) -> {numeros naturais menores ou iguais a ',k,'}');
+		for i:=1 to n do
+			writeln('f(',i,') = ',p[i]);
+		writeln();
+	end
+	else
+	begin
+		writeln(#10,'G1 nao possui ',k,'-coloracao');
+	end;
+end;
+
+function numeroCromatico(n:integer):integer;//obtem o numero cromatico
+var
+	i:integer;
+begin
+	for i:=1 to n do
+	begin
+		if(coloracao(n,i)) then
+		begin
+			numeroCromatico:=i;
+			break;
+		end;
+	end;
+end;
+```
+
+**C**
+``` C
+int testeCor(int * v,int n){
+	int i,j;
+	for(i=1;i<=n;i++){
+		for(j=1;j<=n;j++){
+			if((g1[i][j]==1)&&(v[i]==v[j])){
+				return 0;
+			}
+		}
+	}
+	return 1;
+} 
+
+void cor(int * v,int * p,int * col,int * np,int n,int k){
+	int i,j;
+	for(i=1;i<=k;i++){
+		(*np)++;
+		v[(*np)]=i;
+		if((*np)==n){
+			if(testeCor(v,n)){
+				if(!(*col)){
+					for(j=1;j<=n;j++){
+						p[j]=v[j];
+					}
+					(*col)=1;
+					break;	
+				}
+			}
+		}
+		else{
+			cor(v,p,col,np,n,k);
+		}			
+		(*np)--;
+	}
+}
+
+int coloracao(int n,int k){//verifica se o grafo g1 possui uma k-coloracao
+	int v[11];
+	int p[11];
+	int i;
+	int np=0;
+	int col=0;
+	
+	cor(v,p,&col,&np,n,k);
+	
+	if(col){
+		printf("\nG1 possui %d-coloracao\n",k);
+		printf("f : V(G1) -> {numeros naturais menores ou iguais a %d'}\n",k);
+		for(i=1;i<=n;i++){
+			printf("f(%d) = %d\n",i,p[i]);
+		}
+		printf("\n");
+	}
+	else{
+		printf("\nG1 nao possui %d-coloracao\n",k);
+	}
+	return col;
+}
+```
+Essa parte do programa verifica se o grafo tem uma k-coloração e caso tenha printa a k-coloração. Utiliza-se para isso de backtracking gerando todas as possibilidades de k cores que os vertices possam ter e verifica se configuram numa k-coloração valida. Novamente se observa que o código em **C** utiliza de funções com mais parametros e faz uso de manipulação de ponteiros. Em **Pascal** isso não é necessário devido ao uso da funcionalidade de funções aninhadas.
+
+##### Grafo Hamiltoniano
+
+**Pascal**
+``` pascal
+function hamiltoniano(n:integer):boolean;//verifica se o grafo e' hamiltoniano
+var
+	np:integer=0;
+	p:array[1..10] of integer;
+	
+	procedure halm(t:integer);
+	var
+		i:integer;
+		b:boolean;
+
+		procedure impr();
+		var
+			j:integer;
+		begin
+			write('ciclo hamiltoniano -> ( ');
+			for j:=1 to n-1 do
+				write(p[j],' , ');
+			writeln(p[n],' )');
+		end;
+
+		function verifica():boolean;
+		var 
+			i:integer;
+		begin
+			verifica:=true;
+			for i:=1 to n-1 do
+			begin
+				if(g1[p[i],p[i+1]]=0)then
+					verifica:=false;
+			end;
+			if(g1[p[1],p[n]]=0)then
+				verifica:=false;
+		end;
+	begin
+		for i:=t to n do
+		begin
+				np:=np+1;
+				p[np]:=i;
+				if((np=n)) then
+				begin
+					b:=verifica();
+					if b then
+					begin
+						hamiltoniano:=true;
+						impr();
+					end;
+				end
+				else
+				begin
+					halm(i+1);
+				end;
+				np:=np-1;
+		end;
+	end;
+begin
+	hamiltoniano:=false;
+	halm(1);
+end;
+```
+
+**C**
+``` C
+void imprHalm(int * p,int n){
+	int j;
+	printf("ciclo hamiltoniano -> ( ");
+	for(j=1;j<=n-1;j++){
+		printf("%d , ",p[j]);
+	}
+	printf("%d )\n",p[n]);
+}
+int verificaHalm(int * p,int n){
+	int i;
+	for(i=1;i<=n-1;i++){
+		if(g1[p[i]][p[i+1]]==0){
+			return 0;
+		}
+	}
+	if(g1[p[1]][p[n]]==0){
+		return 0;
+	}
+	return 1;
+}
+
+void halm(int t,int * p,int * np,int * hlm,int n){
+	int i,b;
+	
+	for(i=t;i<=n;i++){
+		(*np)++;
+		p[(*np)]=i;
+		if((*np)==n){
+			b=verificaHalm(p,n);
+			if(b){
+				(*hlm)=1;
+				imprHalm(p,n);
+			}
+		}
+		else{
+			halm(i+1,p,np,hlm,n);
+		}
+		(*np)--;
+	}
+}
+int hamiltoniano(int n){//verifica se o grafo e' hamiltoniano
+	int np=0;
+	int p[11];
+	int hlm=0;
+	halm(1,p,&np,&hlm,n);
+	return hlm;
+}
+```
+Essa parte do programa verifica se um grafo é hamiltoniano. Para isso verifica se existe um ciclo hamiltoniano utilizando backtracking. É permutado todos os vertices do grafo e se verifica se é um ciclo, no caso de ser um ciclo, como possui todos os vertices, então o ciclo é hamiltoniano. Novamente se observa como no código em **C** é necessário o uso de mais parametros nas funções e a manipulação de ponteiros é mais necessaria. Funções aninhadas eliminam essa necessidadem tornando o código em **Pascal** mais simples e compreensível.
+
+##### Conclusão
+
+É observável que o código em **C** além de mais complexo é menos seguro, organizado e compreensível. A utilização de muitos parametros para acessar variáveis fora do escopo local se faz necessária e isso torna a chamada de funções mais complexa. Fora isso, para alterar o valor dessas variáveis não locais é necessário o uso de ponteiros que pode induzir a erros de programação e tornar o código menos compreensível. Enquanto isso em **Pascal**, a funcionalidade de funções aninhadas elimina essa necessidade. É possível com isso acessar a escopos de funções de hierarquia superior sem a necessidade de utilização de parametros adicionais ou de valores referenciados. Além disso, ocorre menos poluição do escopo global com a utilização dessa funcionalidade, pois as funções aninhadas ficam encapsuladas dentro da função de hierarquia maior.
+
 
 ## Exemplos
 
