@@ -6504,3 +6504,4 @@ int main(){
 - C Completo e Total
 - http://www.plantation-productions.com/Webster/www.artofasm.com/Linux/PDFs/LexicalNesting.pdf
 - https://www.isi.edu/~pedro/Teaching/CSCI565-Spring14/Materials/NestedProcedures.pdf
+- http://www.rosettacode.org/wiki/Nested_function
