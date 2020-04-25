@@ -6500,3 +6500,7 @@ int main(){
 - https://en.wikipedia.org/wiki/Scope_(computer_science)
 - https://www.geeksforgeeks.org/scope-rules-in-c/
 - Essential Pascal - Marco Cantù
+- https://en.wikipedia.org/wiki/Scope_(computer_science)
+- C Completo e Total
+- http://www.plantation-productions.com/Webster/www.artofasm.com/Linux/PDFs/LexicalNesting.pdf
+- https://www.isi.edu/~pedro/Teaching/CSCI565-Spring14/Materials/NestedProcedures.pdf
