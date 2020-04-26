@@ -2113,11 +2113,91 @@ O programa resolve alguns problemas NP de grafos dado um grafo informado pelo us
 
 #### Sintese de Teoria dos Grafos
 
-Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses vertices. Definimos uma aresta como um par ordenado e=(v,w) onde v,w pertencem a V. Grafos podem ser digrafos(arestas possuem direção), multigrafos(pode existir mais que uma aresta entre dois vertices), permitir laço(aresta que possui como extremos apenas um vertice), simples e etc. No caso deste programa são analisados apenas grafos simples, ou seja, grafos não direcionados sem laços e que não são multigrafos. A matriz de adjacencia de um grafo é uma forma de representar um grafo. São utilizadas principalmente para representar-los computacionalmente. Tanto as linhas quanto as colunas representam um vertice. Desse modo, se um vertice 2 tem uma aresta com o vertice 4 colocamos 1 na posição da coluna 4 e linha 2. Como o grafo é simples, então colocamos 1 na linha 4 e coluna 2. Assim, 1 representa a presença de aresta entre o vertice da coluna com o vertice da linha, já 0 representa a ausencia de aresta entre o vertice da coluna e o vertice da linha. Como não é permitidos laços qualquer posição da diagonal tem sempre o valor 0. Uma clique é um subconjunto de vértices do grafo tal que cada par de vertices possui uma aresta. Um conjunto independente é um subconjunto de vertices tal que não existe um par de vertices que que possuam uma aresta entre esses vertices. Uma coloração do grafo é uma associação de alguma cor a cada vertices, de tal modo que cada vertice não possua um vertice adjacente da mesma cor. Dois grafos são isomorfos se existe uma função bijetiva que  leva o vertice de um grafo ao outro, de tal modo que as arestas do primeiro grafo quando têm o uso dessa função, são arestas do segundo grafo. Por exemplo, seja G1 e G2 isomorfos. Então existe f: V(G1) -> V(G2) tal que para todo a aresta pertencente a E(G1) e1=(v,w) temos e2=(f(v),f(w)) pertencente a E(G2). Um complementar de um grafo é um grafo que possui o mesmo conjunto de vertices só que se o primeiro grafo possui aresta entre dois vertices então o segundo não possui aresta, e se o primeiro não possui aresta então o segundo possui aresta. Um grafo é autocomplementar se é isomorfo ao seu complementar. Um caminho é um grafo com um conjunto de vertices V={v1,v2,...,vn} tal que E={(v,w) tal que v possui um indice igual ao indice de w menos 1}. Um ciclo é um caminho que os seus extremos, o inicial e o final, têm uma aresta entre si. Uma roda é um grafo possui um ciclo e um vertice adicional que é adjacente a todos os vertices desse ciclo. Um grafo completo é um grafo que cada vertice é adjacente a todos os outros vertices do grafo. Um grafo nulo é um grafo que não existe nenhuma aresta entre os seus vertices, ou seja, o conjunto de arestas é vazio. Uma estrela é um grafo que possui um vertice que tem adjacencia a todos os outros vertices, sendo que os outros vertices só possuem adjacencia a esse ultimo vertice. Um grafo bipartido completo é um grafo que possui dois grupos de vertices de tal modo que cada vertice de um grupo possui adjacencia com todos os vertices do outro grupo mas não possui nenhuma aresta com os vertices do seu próprio grupo. Além disso, é incluido no programa grafos especiais tais como butterfly, petersen, diamond e 3-cubo. Um ciclo hamiltoniano é um ciclo que possui todos os vertices do grafo de tal modo que nenhum vertice é repetido nesse caminho. Um grafo é hamiltoniano se possui ciclo hamiltoniano.
+Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses vertices. Definimos uma aresta como um par ordenado e=(v,w) onde v,w pertencem a V. Grafos podem ser digrafos(arestas possuem direção), multigrafos(pode existir mais que uma aresta entre dois vertices), permitir laço(aresta que possui como extremos apenas um vertice), simples e etc. No caso deste programa são analisados apenas grafos simples, ou seja, grafos não direcionados sem laços e que não são multigrafos. A matriz de adjacencia de um grafo é uma forma de representar um grafo. São utilizadas principalmente para representar-los computacionalmente. Tanto as linhas quanto as colunas representam um vertice. Desse modo, se um vertice 2 tem uma aresta com o vertice 4 colocamos 1 na posição da coluna 4 e linha 2. Como o grafo é simples, então colocamos 1 na linha 4 e coluna 2. Assim, 1 representa a presença de aresta entre o vertice da coluna com o vertice da linha, já 0 representa a ausencia de aresta entre o vertice da coluna e o vertice da linha. Como não é permitidos laços qualquer posição da diagonal tem sempre o valor 0. Uma clique é um subconjunto de vértices do grafo tal que cada par de vertices possui uma aresta. Um conjunto independente é um subconjunto de vertices tal que não existe um par de vertices que que possuam uma aresta entre esses vertices. O número de clique é o tamanho da maior clique do grafo. O número de independencia é o tamanho do maior conjunto independente do grafo. Uma coloração do grafo é uma associação de alguma cor a cada vertices, de tal modo que cada vertice não possua um vertice adjacente da mesma cor. Número cromatico é o número minimo de cores necessários para colorir um grafo. Dois grafos são isomorfos se existe uma função bijetiva que  leva o vertice de um grafo ao outro, de tal modo que as arestas do primeiro grafo quando têm o uso dessa função, são arestas do segundo grafo. Por exemplo, seja G1 e G2 isomorfos. Então existe f: V(G1) -> V(G2) tal que para todo a aresta pertencente a E(G1) e1=(v,w) temos e2=(f(v),f(w)) pertencente a E(G2). Um complementar de um grafo é um grafo que possui o mesmo conjunto de vertices só que se o primeiro grafo possui aresta entre dois vertices então o segundo não possui aresta, e se o primeiro não possui aresta então o segundo possui aresta. Um grafo é autocomplementar se é isomorfo ao seu complementar. Um caminho é um grafo com um conjunto de vertices V={v1,v2,...,vn} tal que E={(v,w) tal que v possui um indice igual ao indice de w menos 1}. Um ciclo é um caminho que os seus extremos, o inicial e o final, têm uma aresta entre si. Uma roda é um grafo possui um ciclo e um vertice adicional que é adjacente a todos os vertices desse ciclo. Um grafo completo é um grafo que cada vertice é adjacente a todos os outros vertices do grafo. Um grafo nulo é um grafo que não existe nenhuma aresta entre os seus vertices, ou seja, o conjunto de arestas é vazio. Uma estrela é um grafo que possui um vertice que tem adjacencia a todos os outros vertices, sendo que os outros vertices só possuem adjacencia a esse ultimo vertice. Um grafo bipartido completo é um grafo que possui dois grupos de vertices de tal modo que cada vertice de um grupo possui adjacencia com todos os vertices do outro grupo mas não possui nenhuma aresta com os vertices do seu próprio grupo. Além disso, é incluido no programa grafos especiais tais como butterfly, petersen, diamond e 3-cubo. Um ciclo hamiltoniano é um ciclo que possui todos os vertices do grafo de tal modo que nenhum vertice é repetido nesse caminho. Um grafo é hamiltoniano se possui ciclo hamiltoniano.
 
 <figure>
 	<img src="img/amat.gif" alt="amat">
 	<figcaption>Matriz de Adjacencia</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/iso.png" alt="iso">
+	<figcaption>Isomorfismo entre dois grafos</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/clcon.jpg" alt="clcon">
+	<figcaption>{3,4,5,6} é uma clique, e {4,7} um conjunto independente</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/path.png" alt="path">
+	<figcaption>Um caminho de 5 vertices</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/cic.png" alt="cic">
+	<figcaption>Um ciclo de 5 vertices</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/wheel.png" alt="wheel">
+	<figcaption>Rodas</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/comp.jpg" alt="comp">
+	<figcaption>Grafos Completos</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/cbg.png" alt="cbg">
+	<figcaption>Grafo Bipartido Completo K3,4</figcaption>
+</figure>
+
+
+
+<figure>
+	<img src="img/cmp.png" alt="cmp">
+	<figcaption>Grafo Complementar</figcaption>
+</figure>
+
+
+
+<figure>
+	<img src="img/col.png" alt="col">
+	<figcaption>3-Coloração do Grafo de Petersen</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/hml.png" alt="hml">
+	<figcaption>O Grafo Dodecaedro é Hamiltoniano</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/dia.png" alt="dia">
+	<figcaption>Grafo Diamond</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/pet.png" alt="pet">
+	<figcaption>Grafo de Petersen</figcaption>
+</figure>
+
+
+<figure>
+	<img src="img/but.png" alt="but">
+	<figcaption>Grafo Butterfly</figcaption>
 </figure>
 
 #### Código do Programa
