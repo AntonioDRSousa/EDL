@@ -35,7 +35,7 @@
 		- [Variaveis Locais](#Variáveis-Locais-2)
 	- [Conclusão](#Conclusão)
 - [Funções/procedimentos aninhados](#nested)
-	- [Introdução, Origens e Influências](#Introdução,-Origens-e-Influências)
+	- [História](#História)
 	- [Definição e Explicação de Funções Aninhadas](#Definição-e-Explicação-de-Funções-Aninhadas)
 		- [Código Simples](#Código-Simples)
 	- [Alguns Exemplos do uso de funções aninhadas](#Alguns-Exemplos-do-uso-de-funções-aninhadas)
@@ -259,7 +259,7 @@ Do ponto de vista de sintaxe as linguagens **ALGOL** são mais próximas de **Pa
 ## Funções/procedimentos aninhados <a name="nested"></a>
 
 
-### Introdução, Origens e Influências
+### História
 
 Funções aninhadas são uma funcionalidade que permite encapsular funções dentro de uma outra função. Essa funcionalidade permite que a função aninhada tenha acesso ao escopo da função ao qual ela está aninhada. **ALGOL 60** foi a primeira linguagem a implementar funções aninhadas com escopo lexico. **Pascal** herdou essa funcionalidade de **ALGOL 60**, linguagens que **Pascal** influenciou herdaram essa caracteristica. Uma das inovações dessa funcionalidade têm haver com a capacidade de encapsular rotinas as tornando ocultas fora do escopo da função onde elas estão aninhadas. Caracteristicas do gênero viriam posteriormente a ser mais desenvolvidas com o paradigma de programação orientada a objetos. Funções lambda e Closures são uma das funcionalidades influenciadas por funções aninhadas. Além de **ALGOL** e **Pascal**, grande parte das linguagens funcionais e dinâmicas modernas possuem a funcionalidade de funções aninhadas. 
 
