@@ -35,6 +35,7 @@
 		- [Variaveis Locais](#Variáveis-Locais-2)
 	- [Conclusão](#Conclusão)
 - [Funções/procedimentos aninhados](#nested)
+	- [Introdução, Origens e Influências](#Introdução,-Origens-e-Influências)
 	- [Definição e Explicação de Funções Aninhadas](#Definição-e-Explicação-de-Funções-Aninhadas)
 		- [Código Simples](#Código-Simples)
 	- [Alguns Exemplos do uso de funções aninhadas](#Alguns-Exemplos-do-uso-de-funções-aninhadas)
@@ -256,6 +257,11 @@ Em **ALGOL 60** *variáveis locais* podem ser declaradas em qualquer bloco e a d
 Do ponto de vista de sintaxe as linguagens **ALGOL** são mais próximas de **Pascal** do que de **C**. **Pascal** preservou grande parte da sintaxe de **ALGOL** com o uso de palavras em inglês ao invés de símbolos para expressar comandos. Um exemplo disso é o comando de *bloco* que enquanto em **C** se representa com os caracteres *{* e *}*, em **Pascal** se representa como *begin* e *end*, existentes em **ALGOL**. Podemos ver que em termos de proximidade semântica, **Pascal** é mais próximo de **ALGOL 60** do que de **ALGOL 68** ou de **C**. **ALGOL 68** é uma linguagem sucessora de **ALGOL 60** assim como **Pascal**, mas contrasta com este último com relação a complexidade. **ALGOL 60** era menos complexo que **ALGOL 68**. **C** é uma linguagem muito mais próxima do nível baixo do que **Pascal**, principalmente as primeiras versões da linguagem. Sendo assim, **C** apresenta uma maior flexibilidade como linguagem mas perde muito em segurança com relação a **Pascal**. Muitas das funcionalidades de **C** que não existiam em **Pascal**, foram sendo acrescentadas em versões posteriores mais recentes da linguagem, perdendo mais a sua segurança. Em termos de **estruturas de controle de iteração**, **Pascal** é a linguagem mais limitada. O *loop* *for* tem poucas possibilidades perante as outras linguagens. Em termos de **estruturas de seleção**, **Pascal** também é mais limitado, já que linguagens como **C** e **ALGOL 68** possuem mais utilidades de uso dessas estruturas. Em termos de *subrotinas* **Pascal**, **ALGOL 60**, **ALGOL 68** possuem *funções aninhadas*, enquanto **C** não possui. Embora **C**, **ALGOL 60**, **ALGOL 68** e **Pascal** possuam as mesmas origens e o mesmo paradigma, em termos semânticos elas possuem diferenças significativas. 
 
 ## Funções/procedimentos aninhados <a name="nested"></a>
+
+
+### Introdução, Origens e Influências
+
+Funções aninhadas são uma funcionalidade que permite encapsular funções dentro de uma outra função. Essa funcionalidade permite que a função aninhada tenha acesso ao escopo da função ao qual ela está aninhada. **ALGOL 60** foi a primeira linguagem a implementar funções aninhadas com escopo lexico. **Pascal** herdou essa funcionalidade de **ALGOL 60**, linguagens que **Pascal** influenciou herdaram essa caracteristica. Uma das inovações dessa funcionalidade têm haver com a capacidade de encapsular rotinas as tornando ocultas fora do escopo da função onde elas estão aninhadas. Caracteristicas do gênero viriam posteriormente a ser mais desenvolvidas com o paradigma de programação orientada a objetos. Funções lambda e Closures são uma das funcionalidades influenciadas por funções aninhadas. Além de **ALGOL** e **Pascal**, grande parte das linguagens funcionais e dinâmicas modernas possuem a funcionalidade de funções aninhadas. 
 
 ### Definição e Explicação de Funções Aninhadas
 
@@ -6505,3 +6511,12 @@ int main(){
 - http://www.plantation-productions.com/Webster/www.artofasm.com/Linux/PDFs/LexicalNesting.pdf
 - https://www.isi.edu/~pedro/Teaching/CSCI565-Spring14/Materials/NestedProcedures.pdf
 - http://www.rosettacode.org/wiki/Nested_function
+- Advances in Computers Ali R. HursonMaziar Goudarzi
+- https://codelani.com/languages/algol-60.html
+- https://www.toppr.com/ask/question/which-programming-language-is-based-on-algol-60/
+- http://dbpedia.org/page/ALGOL_60
+- http://metadatace.cci.drexel.edu/omeka/items/show/37820
+- https://es.wikipedia.org/wiki/Expresi%C3%B3n_lambda
+- https://www.studytonight.com/python/python-closures
+- https://pt.wikipedia.org/wiki/Clausura_(ci%C3%AAncia_da_computa%C3%A7%C3%A3o)
+- https://en.wikipedia.org/wiki/Closure_(computer_programming)
