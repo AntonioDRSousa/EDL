@@ -2121,10 +2121,18 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 </figure>
 
 
+
+
+
+
 <figure>
 	<img src="img/iso.png" alt="iso">
 	<figcaption>Isomorfismo entre dois grafos</figcaption>
 </figure>
+
+
+
+
 
 
 <figure>
@@ -2133,10 +2141,18 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 </figure>
 
 
+
+
+
+
 <figure>
 	<img src="img/path.png" alt="path">
 	<figcaption>Um caminho de 5 vertices</figcaption>
 </figure>
+
+
+
+
 
 
 <figure>
@@ -2145,10 +2161,18 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 </figure>
 
 
+
+
+
+
 <figure>
 	<img src="img/wheel.png" alt="wheel">
 	<figcaption>Rodas</figcaption>
 </figure>
+
+
+
+
 
 
 <figure>
@@ -2157,10 +2181,18 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 </figure>
 
 
+
+
+
+
 <figure>
 	<img src="img/cbg.png" alt="cbg">
 	<figcaption>Grafo Bipartido Completo K3,4</figcaption>
 </figure>
+
+
+
+
 
 
 
@@ -2171,10 +2203,18 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 
 
 
+
+
+
+
 <figure>
 	<img src="img/col.png" alt="col">
 	<figcaption>3-Coloração do Grafo de Petersen</figcaption>
 </figure>
+
+
+
+
 
 
 <figure>
@@ -2183,10 +2223,18 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 </figure>
 
 
+
+
+
+
 <figure>
 	<img src="img/dia.png" alt="dia">
 	<figcaption>Grafo Diamond</figcaption>
 </figure>
+
+
+
+
 
 
 <figure>
@@ -2195,10 +2243,19 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 </figure>
 
 
+
+
+
+
 <figure>
 	<img src="img/but.png" alt="but">
 	<figcaption>Grafo Butterfly</figcaption>
 </figure>
+
+
+
+
+
 
 #### Código do Programa
 **Pascal**
