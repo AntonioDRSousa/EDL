@@ -2119,9 +2119,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/amat.gif" alt="amat">
 	<figcaption>Matriz de Adjacencia</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2129,9 +2129,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/iso.png" alt="iso">
 	<figcaption>Isomorfismo entre dois grafos</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2139,9 +2139,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/clcon.jpg" alt="clcon">
 	<figcaption>{3,4,5,6} é uma clique, e {4,7} um conjunto independente</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2149,9 +2149,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/path.png" alt="path">
 	<figcaption>Um caminho de 5 vertices</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2159,9 +2159,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/cic.png" alt="cic">
 	<figcaption>Um ciclo de 5 vertices</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2169,9 +2169,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/wheel.png" alt="wheel">
 	<figcaption>Rodas</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2179,9 +2179,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/comp.jpg" alt="comp">
 	<figcaption>Grafos Completos</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2189,9 +2189,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/cbg.png" alt="cbg">
 	<figcaption>Grafo Bipartido Completo K3,4</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2200,9 +2200,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/cmp.png" alt="cmp">
 	<figcaption>Grafo Complementar</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2211,9 +2211,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/col.png" alt="col">
 	<figcaption>3-Coloração do Grafo de Petersen</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2221,9 +2221,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/hml.png" alt="hml">
 	<figcaption>O Grafo Dodecaedro é Hamiltoniano</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2231,9 +2231,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/dia.png" alt="dia">
 	<figcaption>Grafo Diamond</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2241,9 +2241,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/pet.png" alt="pet">
 	<figcaption>Grafo de Petersen</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
@@ -2251,9 +2251,9 @@ Um grafo G(V,E) é um conjunto V de vertices e um conjunto E de arestas desses v
 	<img src="img/but.png" alt="but">
 	<figcaption>Grafo Butterfly</figcaption>
 </figure>
-
-
-
+<br />
+<br />
+<br />
 
 
 
